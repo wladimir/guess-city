@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */; };
-		7D593BD91DE9B3A600695554 /* 8081_earthbump4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD41DE9B3A600695554 /* 8081_earthbump4k.jpg */; };
-		7D593BDA1DE9B3A600695554 /* 8081_earthlights4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD51DE9B3A600695554 /* 8081_earthlights4k.jpg */; };
-		7D593BDB1DE9B3A600695554 /* 8081_earthmap4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD61DE9B3A600695554 /* 8081_earthmap4k.jpg */; };
-		7D593BDC1DE9B3A600695554 /* 8081_earthspec4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD71DE9B3A600695554 /* 8081_earthspec4k.jpg */; };
 		7D593BDD1DE9B3A600695554 /* galaxy_starfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD81DE9B3A600695554 /* galaxy_starfield.png */; };
+		7D593BE51DE9D07500695554 /* earthmap4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE11DE9D07500695554 /* earthmap4k.jpg */; };
+		7D593BE61DE9D07500695554 /* earthnormal4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE21DE9D07500695554 /* earthnormal4k.jpg */; };
+		7D593BE71DE9D07500695554 /* earthspec4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE31DE9D07500695554 /* earthspec4k.jpg */; };
+		7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */; };
+		7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */; };
 		7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */; };
 		7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB061DE8F59A0047AE42 /* art.scnassets */; };
 		7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB081DE8F59A0047AE42 /* GameViewController.swift */; };
@@ -42,11 +43,12 @@
 
 /* Begin PBXFileReference section */
 		7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AtmosphereHalo.glsl; sourceTree = "<group>"; };
-		7D593BD41DE9B3A600695554 /* 8081_earthbump4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8081_earthbump4k.jpg; sourceTree = "<group>"; };
-		7D593BD51DE9B3A600695554 /* 8081_earthlights4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8081_earthlights4k.jpg; sourceTree = "<group>"; };
-		7D593BD61DE9B3A600695554 /* 8081_earthmap4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8081_earthmap4k.jpg; sourceTree = "<group>"; };
-		7D593BD71DE9B3A600695554 /* 8081_earthspec4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 8081_earthspec4k.jpg; sourceTree = "<group>"; };
 		7D593BD81DE9B3A600695554 /* galaxy_starfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy_starfield.png; sourceTree = "<group>"; };
+		7D593BE11DE9D07500695554 /* earthmap4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthmap4k.jpg; sourceTree = "<group>"; };
+		7D593BE21DE9D07500695554 /* earthnormal4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthnormal4k.jpg; sourceTree = "<group>"; };
+		7D593BE31DE9D07500695554 /* earthspec4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthspec4k.jpg; sourceTree = "<group>"; };
+		7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
+		7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthScene.swift; sourceTree = "<group>"; };
 		7DEABB011DE8F59A0047AE42 /* GuessCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEABB061DE8F59A0047AE42 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -91,10 +93,9 @@
 		7D593BD01DE9A98B00695554 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
-				7D593BD41DE9B3A600695554 /* 8081_earthbump4k.jpg */,
-				7D593BD51DE9B3A600695554 /* 8081_earthlights4k.jpg */,
-				7D593BD61DE9B3A600695554 /* 8081_earthmap4k.jpg */,
-				7D593BD71DE9B3A600695554 /* 8081_earthspec4k.jpg */,
+				7D593BE11DE9D07500695554 /* earthmap4k.jpg */,
+				7D593BE21DE9D07500695554 /* earthnormal4k.jpg */,
+				7D593BE31DE9D07500695554 /* earthspec4k.jpg */,
 				7D593BD81DE9B3A600695554 /* galaxy_starfield.png */,
 			);
 			name = Textures;
@@ -136,7 +137,9 @@
 				7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */,
 				7DEABB061DE8F59A0047AE42 /* art.scnassets */,
 				7DEABB081DE8F59A0047AE42 /* GameViewController.swift */,
+				7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */,
 				7DEABB0A1DE8F59A0047AE42 /* Main.storyboard */,
+				7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */,
 				7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */,
 				7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */,
 				7DEABB121DE8F59A0047AE42 /* Info.plist */,
@@ -225,7 +228,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0810;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vladimir Cirkovic";
 				TargetAttributes = {
 					7DEABB001DE8F59A0047AE42 = {
@@ -273,14 +276,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */,
-				7D593BDA1DE9B3A600695554 /* 8081_earthlights4k.jpg in Resources */,
+				7D593BE61DE9D07500695554 /* earthnormal4k.jpg in Resources */,
 				7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */,
-				7D593BDC1DE9B3A600695554 /* 8081_earthspec4k.jpg in Resources */,
 				7D593BDD1DE9B3A600695554 /* galaxy_starfield.png in Resources */,
-				7D593BDB1DE9B3A600695554 /* 8081_earthmap4k.jpg in Resources */,
-				7D593BD91DE9B3A600695554 /* 8081_earthbump4k.jpg in Resources */,
 				7DEABB0E1DE8F59A0047AE42 /* Assets.xcassets in Resources */,
 				7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */,
+				7D593BE51DE9D07500695554 /* earthmap4k.jpg in Resources */,
+				7D593BE71DE9D07500695554 /* earthspec4k.jpg in Resources */,
 				7DEABB0C1DE8F59A0047AE42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,7 +309,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
+				7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
+				7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -380,6 +384,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -429,6 +434,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
