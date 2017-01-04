@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D517E031E1D1F5600B72296 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7D517E021E1D1F5600B72296 /* README.md */; };
 		7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */; };
 		7D593BDD1DE9B3A600695554 /* galaxy_starfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD81DE9B3A600695554 /* galaxy_starfield.png */; };
 		7D593BE51DE9D07500695554 /* earthmap4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE11DE9D07500695554 /* earthmap4k.jpg */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D517E021E1D1F5600B72296 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AtmosphereHalo.glsl; sourceTree = "<group>"; };
 		7D593BD81DE9B3A600695554 /* galaxy_starfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy_starfield.png; sourceTree = "<group>"; };
 		7D593BE11DE9D07500695554 /* earthmap4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthmap4k.jpg; sourceTree = "<group>"; };
@@ -115,7 +113,6 @@
 		7DEABAF81DE8F59A0047AE42 = {
 			isa = PBXGroup;
 			children = (
-				7D517E021E1D1F5600B72296 /* README.md */,
 				7DEABB031DE8F59A0047AE42 /* GuessCity */,
 				7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */,
 				7DEABB251DE8F59A0047AE42 /* GuessCityUITests */,
@@ -313,7 +310,6 @@
 			files = (
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */,
-				7D517E031E1D1F5600B72296 /* README.md in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
 				7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */,
 			);
