@@ -13,6 +13,8 @@ class OverlayScene: SKScene {
     var pauseNode: SKSpriteNode!
     var scoreNode: SKLabelNode!
     
+    dynamic var center: Bool = false
+    
     var score = 0 {
         didSet {
             self.scoreNode.text = "Score: \(self.score)"
@@ -48,7 +50,7 @@ class OverlayScene: SKScene {
         
         if self.pauseNode.contains(location) {
             print("contains")
-            //overlayScene.pauseNode.texture = SKTexture(imageNamed: "Play Button")
+            self.center = true
         }
     }
 }

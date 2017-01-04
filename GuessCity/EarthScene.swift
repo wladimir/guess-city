@@ -37,6 +37,7 @@ class EarthScene: SCNScene {
         
         let constraint = SCNLookAtConstraint(target: earthNode)
         constraint.isGimbalLockEnabled = true
+        cameraNode.constraints = [constraint]
         
         rootNode.addChildNode(cameraNode)
         self.cameraNode = cameraNode
@@ -47,7 +48,7 @@ class EarthScene: SCNScene {
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
         
-        background.contents = UIImage(named: "galaxy_starfield.png")
+        self.background.contents = UIImage(named: "galaxy_starfield.png")
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -55,10 +56,10 @@ class EarthScene: SCNScene {
     }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "paused" {
+        if keyPath == "center" {
             if let c = change as? [NSKeyValueChangeKey: Bool] {
                 if let paused = c[.newKey] {
-                   print("paused")
+                   print("center")
                 }
             }
         }

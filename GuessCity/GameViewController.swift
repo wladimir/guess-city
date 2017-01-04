@@ -23,12 +23,15 @@ class GameViewController: UIViewController {
         // create a new scene
         earthScene = EarthScene()
         
+        print(earthScene.earthNode.rotation)
+        print(earthScene.earthNode.pivot)
+        print(earthScene.earthNode.transform)
+        
         sceneView = self.view as! SCNView
-        sceneView.allowsCameraControl = false
         sceneView.scene = earthScene
         
         overlayScene = OverlayScene(size: sceneView.bounds.size)
-        overlayScene.addObserver(earthScene, forKeyPath: "paused", options: .new, context: nil)
+        overlayScene.addObserver(earthScene, forKeyPath: "center", options: .new, context: nil)
         sceneView.overlaySKScene = overlayScene
         
         // cameraNode.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 1)))
@@ -43,16 +46,47 @@ class GameViewController: UIViewController {
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
         sceneView.addGestureRecognizer(pinchGesture)
         pinchGesture.cancelsTouchesInView = false
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
+        sceneView.addGestureRecognizer(panGesture)
+        panGesture.cancelsTouchesInView = false
     }
     
     func handlePinch(_ gestureRecognize: UIPinchGestureRecognizer) {
         
     }
     
+    func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
+        let translation = gestureRecognize.translation(in: view!)
+        let velocity = gestureRecognize.velocity(in: view!)
+        print(velocity.x)
+        
+        let x = Float(translation.x)
+        let y = Float(-translation.y)
+
+        let anglePan = sqrt(pow(x,2)+pow(y,2))/3*(Float)(M_PI)/180.0
+        
+        let rotationVector = SCNVector4(-y, x, 0, anglePan)
+        earthScene.earthNode.rotation = rotationVector
+        
+        if (gestureRecognize.state == .ended) {
+            let currentPivot = earthScene.earthNode.pivot
+            let changePivot = SCNMatrix4Invert(earthScene.earthNode.transform)
+            
+            earthScene.earthNode.pivot = SCNMatrix4Mult(changePivot, currentPivot)
+            earthScene.earthNode.transform = SCNMatrix4Identity
+        }
+        
+        // animated reset button
+    }
+    
     
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
         let location = gestureRecognize.location(in: sceneView)
         overlayScene.score += 1
+        
+        let hitResults = sceneView.hitTest(location, with: nil)
+        print(">", hitResults!)
     }
     
     override var shouldAutorotate: Bool {
