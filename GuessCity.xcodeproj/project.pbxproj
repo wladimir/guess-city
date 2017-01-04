@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D470D4D1E1D202E000BF4F0 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
 		7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */; };
-		7D593BDD1DE9B3A600695554 /* galaxy_starfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD81DE9B3A600695554 /* galaxy_starfield.png */; };
 		7D593BE51DE9D07500695554 /* earthmap4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE11DE9D07500695554 /* earthmap4k.jpg */; };
 		7D593BE61DE9D07500695554 /* earthnormal4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE21DE9D07500695554 /* earthnormal4k.jpg */; };
 		7D593BE71DE9D07500695554 /* earthspec4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE31DE9D07500695554 /* earthspec4k.jpg */; };
+		7DAE20371E1DB5B40095956C /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DAE20361E1DB5B40095956C /* cities.plist */; };
+		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
 		7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */; };
 		7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */; };
 		7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */; };
@@ -42,11 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AtmosphereHalo.glsl; sourceTree = "<group>"; };
-		7D593BD81DE9B3A600695554 /* galaxy_starfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = galaxy_starfield.png; sourceTree = "<group>"; };
 		7D593BE11DE9D07500695554 /* earthmap4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthmap4k.jpg; sourceTree = "<group>"; };
 		7D593BE21DE9D07500695554 /* earthnormal4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthnormal4k.jpg; sourceTree = "<group>"; };
 		7D593BE31DE9D07500695554 /* earthspec4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthspec4k.jpg; sourceTree = "<group>"; };
+		7DAE20361E1DB5B40095956C /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
+		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
 		7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthScene.swift; sourceTree = "<group>"; };
 		7DEABB011DE8F59A0047AE42 /* GuessCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +100,6 @@
 				7D593BE11DE9D07500695554 /* earthmap4k.jpg */,
 				7D593BE21DE9D07500695554 /* earthnormal4k.jpg */,
 				7D593BE31DE9D07500695554 /* earthspec4k.jpg */,
-				7D593BD81DE9B3A600695554 /* galaxy_starfield.png */,
 			);
 			name = Textures;
 			sourceTree = "<group>";
@@ -104,6 +107,7 @@
 		7D593BD11DE9B03300695554 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DAE20361E1DB5B40095956C /* cities.plist */,
 				7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */,
 				7D593BD01DE9A98B00695554 /* Textures */,
 			);
@@ -113,6 +117,7 @@
 		7DEABAF81DE8F59A0047AE42 = {
 			isa = PBXGroup;
 			children = (
+				7D470D4C1E1D202E000BF4F0 /* README.md */,
 				7DEABB031DE8F59A0047AE42 /* GuessCity */,
 				7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */,
 				7DEABB251DE8F59A0047AE42 /* GuessCityUITests */,
@@ -140,6 +145,7 @@
 				7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */,
 				7DEABB0A1DE8F59A0047AE42 /* Main.storyboard */,
 				7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */,
+				7DAE203A1E1DB7CF0095956C /* Cities.swift */,
 				7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */,
 				7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */,
 				7DEABB121DE8F59A0047AE42 /* Info.plist */,
@@ -275,10 +281,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAE20371E1DB5B40095956C /* cities.plist in Resources */,
 				7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */,
 				7D593BE61DE9D07500695554 /* earthnormal4k.jpg in Resources */,
 				7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */,
-				7D593BDD1DE9B3A600695554 /* galaxy_starfield.png in Resources */,
 				7DEABB0E1DE8F59A0047AE42 /* Assets.xcassets in Resources */,
 				7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */,
 				7D593BE51DE9D07500695554 /* earthmap4k.jpg in Resources */,
@@ -308,8 +314,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */,
+				7D470D4D1E1D202E000BF4F0 /* README.md in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
 				7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */,
 			);

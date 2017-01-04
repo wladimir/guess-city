@@ -50,7 +50,7 @@ class OverlayScene: SKScene {
         
         if self.pauseNode.contains(location) {
             print("contains")
-            self.center = true
+            self.center = !self.center
         }
     }
 }

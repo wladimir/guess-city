@@ -17,15 +17,12 @@ class GameViewController: UIViewController {
     var earthScene: EarthScene!
     var sceneView: SCNView!
     
+    let cities = Cities()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create a new scene
         earthScene = EarthScene()
-        
-        print(earthScene.earthNode.rotation)
-        print(earthScene.earthNode.pivot)
-        print(earthScene.earthNode.transform)
         
         sceneView = self.view as! SCNView
         sceneView.scene = earthScene
@@ -50,6 +47,13 @@ class GameViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
         panGesture.cancelsTouchesInView = false
+        
+        cities.load()
+        print(cities.cities[2].lon)
+    }
+    
+    func showMenu() {
+        
     }
     
     func handlePinch(_ gestureRecognize: UIPinchGestureRecognizer) {
@@ -58,9 +62,6 @@ class GameViewController: UIViewController {
     
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
         let translation = gestureRecognize.translation(in: view!)
-        let velocity = gestureRecognize.velocity(in: view!)
-        print(velocity.x)
-        
         let x = Float(translation.x)
         let y = Float(-translation.y)
 
@@ -76,8 +77,6 @@ class GameViewController: UIViewController {
             earthScene.earthNode.pivot = SCNMatrix4Mult(changePivot, currentPivot)
             earthScene.earthNode.transform = SCNMatrix4Identity
         }
-        
-        // animated reset button
     }
     
     

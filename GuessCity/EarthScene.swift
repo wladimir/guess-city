@@ -13,6 +13,9 @@ class EarthScene: SCNScene {
     var earthNode: SCNNode!
     var cameraNode: SCNNode!
     
+    var pivot: SCNMatrix4!
+    var rotation: SCNVector4!
+    
     override init() {
         super.init()
         
@@ -30,6 +33,8 @@ class EarthScene: SCNScene {
         let earthNode = SCNNode(geometry: earth)
         rootNode.addChildNode(earthNode)
         self.earthNode = earthNode;
+        self.pivot = earthNode.pivot
+        self.rotation = earthNode.rotation
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
@@ -47,10 +52,8 @@ class EarthScene: SCNScene {
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
-        
-        self.background.contents = UIImage(named: "galaxy_starfield.png")
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
@@ -58,8 +61,15 @@ class EarthScene: SCNScene {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if keyPath == "center" {
             if let c = change as? [NSKeyValueChangeKey: Bool] {
-                if let paused = c[.newKey] {
-                   print("center")
+                if c[.newKey] != nil {
+                    SCNTransaction.begin()
+                    SCNTransaction.animationDuration = 2
+                    
+                    self.earthNode.pivot = self.pivot
+                    self.earthNode.rotation = self.rotation
+                    self.earthNode.transform = SCNMatrix4Identity
+                    
+                    SCNTransaction.commit()
                 }
             }
         }
