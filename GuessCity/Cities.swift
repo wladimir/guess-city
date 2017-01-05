@@ -29,8 +29,8 @@ class Cities {
         let path = Bundle.main.path(forResource: "cities", ofType: "plist")
         let cities = NSArray(contentsOfFile: path!)
         
-        for city in cities! {
-            let dict = city as! Dictionary<String, Any>
+        for el in cities! {
+            let dict = el as! Dictionary<String, Any>
             let city = City(city: dict["Capital"] as! String, country: dict["Country"] as! String, lat: dict["Latitude"] as! Double, lon: dict["Longitude"] as! Double)
             self.cities.append(city)
         }

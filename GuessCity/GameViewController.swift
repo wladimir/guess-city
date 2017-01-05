@@ -23,7 +23,6 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         earthScene = EarthScene()
-        
         sceneView = self.view as! SCNView
         sceneView.scene = earthScene
         
@@ -50,6 +49,8 @@ class GameViewController: UIViewController {
         
         cities.load()
         print(cities.cities[2].lon)
+        
+        overlayScene.scoreNode.run(SKAction.fadeOut(withDuration: 2.0))
     }
     
     func showMenu() {
@@ -64,7 +65,7 @@ class GameViewController: UIViewController {
         let translation = gestureRecognize.translation(in: view!)
         let x = Float(translation.x)
         let y = Float(-translation.y)
-
+        
         let anglePan = sqrt(pow(x,2)+pow(y,2))/3*(Float)(M_PI)/180.0
         
         let rotationVector = SCNVector4(-y, x, 0, anglePan)
@@ -78,7 +79,6 @@ class GameViewController: UIViewController {
             earthScene.earthNode.transform = SCNMatrix4Identity
         }
     }
-    
     
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
         let location = gestureRecognize.location(in: sceneView)

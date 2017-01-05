@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 
 class OverlayScene: SKScene {
-    var pauseNode: SKSpriteNode!
+    var menuNode: SKSpriteNode!
     var scoreNode: SKLabelNode!
     
     dynamic var center: Bool = false
@@ -26,17 +26,17 @@ class OverlayScene: SKScene {
         
         backgroundColor = UIColor.clear
         let spriteSize = size.width / 12
-        pauseNode = SKSpriteNode(imageNamed: "Pause Button")
-        pauseNode.size = CGSize(width: spriteSize, height: spriteSize)
-        pauseNode.position = CGPoint(x: spriteSize + 8, y: spriteSize + 8)
+        menuNode = SKSpriteNode(imageNamed: "Pause Button")
+        menuNode.size = CGSize(width: spriteSize, height: spriteSize)
+        menuNode.position = CGPoint(x: spriteSize + 20, y: spriteSize + 20)
         
         scoreNode = SKLabelNode(text: "Score: 0")
         scoreNode.fontName = "DINAlternate-Bold"
         scoreNode.fontColor = UIColor.white
         scoreNode.fontSize = 24
-        scoreNode.position = CGPoint(x: size.width/2, y: self.pauseNode.position.y - 9)
+        scoreNode.position = CGPoint(x: size.width/2, y: self.menuNode.position.y - 9)
         
-        addChild(self.pauseNode)
+        addChild(self.menuNode)
         addChild(self.scoreNode)
     }
     
@@ -48,7 +48,7 @@ class OverlayScene: SKScene {
         let touch = touches.first!
         let location = touch.location(in: self)
         
-        if self.pauseNode.contains(location) {
+        if self.menuNode.contains(location) {
             print("contains")
             self.center = !self.center
         }
