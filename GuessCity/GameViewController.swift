@@ -12,90 +12,90 @@ import SceneKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-    
+
     var overlayScene: OverlayScene!
     var earthScene: EarthScene!
     var sceneView: SCNView!
-    
+
     let cities = Cities()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         earthScene = EarthScene()
         sceneView = self.view as! SCNView
         sceneView.scene = earthScene
-        
+
         overlayScene = OverlayScene(size: sceneView.bounds.size)
         overlayScene.addObserver(earthScene, forKeyPath: "center", options: .new, context: nil)
         sceneView.overlaySKScene = overlayScene
-        
+
         // cameraNode.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 1)))
         // earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-        
+
         sceneView.showsStatistics = true
-        
+
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
         tapGesture.cancelsTouchesInView = false
-        
+
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(handlePinch(_:)))
         sceneView.addGestureRecognizer(pinchGesture)
         pinchGesture.cancelsTouchesInView = false
-        
+
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
         panGesture.cancelsTouchesInView = false
-        
+
         cities.load()
         print(cities.cities[2].lon)
-        
+
         overlayScene.scoreNode.run(SKAction.fadeOut(withDuration: 2.0))
     }
-    
+
     func showMenu() {
-        
+
     }
-    
+
     func handlePinch(_ gestureRecognize: UIPinchGestureRecognizer) {
-        
+
     }
-    
+
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
         let translation = gestureRecognize.translation(in: view!)
         let x = Float(translation.x)
         let y = Float(-translation.y)
-        
-        let anglePan = sqrt(pow(x,2)+pow(y,2))/3*(Float)(M_PI)/180.0
-        
+
+        let anglePan = sqrt(pow(x, 2)+pow(y, 2))/3 * (Float)(M_PI)/180.0
+
         let rotationVector = SCNVector4(-y, x, 0, anglePan)
         earthScene.earthNode.rotation = rotationVector
-        
-        if (gestureRecognize.state == .ended) {
+
+        if gestureRecognize.state == .ended {
             let currentPivot = earthScene.earthNode.pivot
             let changePivot = SCNMatrix4Invert(earthScene.earthNode.transform)
-            
+
             earthScene.earthNode.pivot = SCNMatrix4Mult(changePivot, currentPivot)
             earthScene.earthNode.transform = SCNMatrix4Identity
         }
     }
-    
+
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
         let location = gestureRecognize.location(in: sceneView)
         overlayScene.score += 1
-        
+
         let hitResults = sceneView.hitTest(location, with: nil)
         print(">", hitResults!)
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown
@@ -103,7 +103,7 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.

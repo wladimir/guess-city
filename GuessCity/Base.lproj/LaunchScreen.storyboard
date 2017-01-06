@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,21 +21,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="McF-3a-yTk">
-                                <rect key="frame" x="123" y="269" width="283" height="587"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="McF-3a-yTk">
+                                <rect key="frame" x="123" y="269" width="128" height="587"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Pause Button" translatesAutoresizingMaskIntoConstraints="NO" id="SsW-4l-fgD">
-                                        <rect key="frame" x="0.0" y="0.0" width="283" height="587"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="587"/>
                                     </imageView>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="McF-3a-yTk" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="30" id="3CZ-Pf-tmv"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="McF-3a-yTk" secondAttribute="bottom" constant="30" id="UXd-lm-EbS"/>
-                            <constraint firstItem="McF-3a-yTk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="30" id="tjf-cB-OAj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="McF-3a-yTk" secondAttribute="trailing" constant="30" id="yTz-R9-bZD"/>
+                            <constraint firstItem="McF-3a-yTk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="EXQ-EF-gGL"/>
+                            <constraint firstItem="McF-3a-yTk" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="249" id="S4K-re-62C"/>
+                            <constraint firstAttribute="bottom" secondItem="McF-3a-yTk" secondAttribute="bottom" constant="-189" id="dOk-8M-hhP"/>
                         </constraints>
                     </view>
                 </viewController>
