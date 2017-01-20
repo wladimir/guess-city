@@ -8,6 +8,7 @@
 
 import UIKit
 import SceneKit
+import SpriteKit
 
 class EarthScene: SCNScene {
     var earthNode: SCNNode!
@@ -15,6 +16,9 @@ class EarthScene: SCNScene {
 
     var pivot: SCNMatrix4!
     var rotation: SCNVector4!
+
+    var hudNode:SCNNode!
+    var hudScene:HUDScene!
 
     override init() {
         super.init()
@@ -52,6 +56,23 @@ class EarthScene: SCNScene {
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
+
+        // HUD
+        hudScene = HUDScene(size: CGSize(width: 500, height: 100))
+        hudScene.backgroundColor = UIColor(white: 0.0, alpha: 0.0)
+
+        let plane = SCNPlane(width: 5, height: 1)
+        let hudMaterial = SCNMaterial()
+        hudMaterial.lightingModel = SCNMaterial.LightingModel.constant
+        hudMaterial.isDoubleSided = true
+        hudMaterial.diffuse.contents = hudScene
+        plane.materials = [hudMaterial]
+
+        hudNode = SCNNode(geometry: plane)
+        hudNode.name = "HUD"
+        hudNode.rotation = SCNVector4(x: 1, y: 0, z: 0, w: 3.14159265)
+        hudNode.position = SCNVector3(x:0, y: 1.8, z: -5)
+        cameraNode.addChildNode(hudNode)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -63,7 +84,7 @@ class EarthScene: SCNScene {
             if let c = change as? [NSKeyValueChangeKey: Bool] {
                 if c[.newKey] != nil {
                     SCNTransaction.begin()
-                    SCNTransaction.animationDuration = 2
+                    SCNTransaction.animationDuration = 1
 
                     self.earthNode.pivot = self.pivot
                     self.earthNode.rotation = self.rotation

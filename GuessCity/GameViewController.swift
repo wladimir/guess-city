@@ -12,8 +12,6 @@ import SceneKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
-    var overlayScene: OverlayScene!
     var earthScene: EarthScene!
     var sceneView: SCNView!
 
@@ -25,10 +23,6 @@ class GameViewController: UIViewController {
         earthScene = EarthScene()
         sceneView = self.view as! SCNView
         sceneView.scene = earthScene
-
-        overlayScene = OverlayScene(size: sceneView.bounds.size)
-        overlayScene.addObserver(earthScene, forKeyPath: "center", options: .new, context: nil)
-        sceneView.overlaySKScene = overlayScene
 
         // cameraNode.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 1)))
         // earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
@@ -50,7 +44,7 @@ class GameViewController: UIViewController {
         cities.load()
         print(cities.cities[2].lon)
 
-        overlayScene.scoreNode.run(SKAction.fadeOut(withDuration: 2.0))
+        // hudScene.scoreNode.run(SKAction.fadeOut(withDuration: 2.0))
     }
 
     func showMenu() {
@@ -66,7 +60,7 @@ class GameViewController: UIViewController {
         let x = Float(translation.x)
         let y = Float(-translation.y)
 
-        let anglePan = sqrt(pow(x, 2)+pow(y, 2))/3 * (Float)(M_PI)/180.0
+        let anglePan = sqrt(pow(x, 2) + pow(y, 2))/2 * (Float)(M_PI)/180.0
 
         let rotationVector = SCNVector4(-y, x, 0, anglePan)
         earthScene.earthNode.rotation = rotationVector
@@ -82,10 +76,16 @@ class GameViewController: UIViewController {
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
         let location = gestureRecognize.location(in: sceneView)
-        overlayScene.score += 1
+        //hudScene.score += 1
+        sceneView.isPlaying = true
 
         let hitResults = sceneView.hitTest(location, with: nil)
-        print(">", hitResults!)
+        // print(">", hitResults!)
+
+        print (location)
+        if self.earthScene.hudScene.contains(location) {
+            print("contains")
+        }
     }
 
     override var shouldAutorotate: Bool {

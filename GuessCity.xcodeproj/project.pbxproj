@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; };
 		7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* GameHelper.swift */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
 		7D593BD31DE9B05600695554 /* AtmosphereHalo.glsl in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */; };
@@ -15,7 +16,7 @@
 		7D593BE71DE9D07500695554 /* earthspec4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7D593BE31DE9D07500695554 /* earthspec4k.jpg */; };
 		7DAE20371E1DB5B40095956C /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DAE20361E1DB5B40095956C /* cities.plist */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
-		7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */; };
+		7DE904CB1E0FCB90004BBF85 /* HUDScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CA1E0FCB90004BBF85 /* HUDScene.swift */; };
 		7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */; };
 		7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */; };
 		7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB061DE8F59A0047AE42 /* art.scnassets */; };
@@ -45,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7D1D877C1E300CA8009144BB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		7D1D877E1E300D34009144BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7D3EC0FF1E1F0F690084953E /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHelper.swift; path = ../GameHelper.swift; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D593BD21DE9B05600695554 /* AtmosphereHalo.glsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AtmosphereHalo.glsl; sourceTree = "<group>"; };
@@ -53,7 +56,7 @@
 		7D593BE31DE9D07500695554 /* earthspec4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = earthspec4k.jpg; sourceTree = "<group>"; };
 		7DAE20361E1DB5B40095956C /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
-		7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayScene.swift; sourceTree = "<group>"; };
+		7DE904CA1E0FCB90004BBF85 /* HUDScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUDScene.swift; sourceTree = "<group>"; };
 		7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthScene.swift; sourceTree = "<group>"; };
 		7DEABB011DE8F59A0047AE42 /* GuessCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -76,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7D1D877B1E300CA8009144BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D1D877E1E300D34009144BB /* StoreKit.framework */,
+				7D1D877C1E300CA8009144BB /* GameKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D593BD01DE9A98B00695554 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +137,7 @@
 				7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */,
 				7DEABB251DE8F59A0047AE42 /* GuessCityUITests */,
 				7DEABB021DE8F59A0047AE42 /* Products */,
+				7D1D877B1E300CA8009144BB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,7 +160,7 @@
 				7D3EC0FF1E1F0F690084953E /* GameHelper.swift */,
 				7DEABB081DE8F59A0047AE42 /* GameViewController.swift */,
 				7DE904CC1E0FCD44004BBF85 /* EarthScene.swift */,
-				7DE904CA1E0FCB90004BBF85 /* OverlayScene.swift */,
+				7DE904CA1E0FCB90004BBF85 /* HUDScene.swift */,
 				7DEABB0A1DE8F59A0047AE42 /* Main.storyboard */,
 				7DAE203A1E1DB7CF0095956C /* Cities.swift */,
 				7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */,
@@ -244,6 +258,14 @@
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = ZXF6S9LSXH;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					7DEABB161DE8F59A0047AE42 = {
 						CreatedOnToolsVersion = 8.1;
@@ -322,7 +344,7 @@
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7DE904CD1E0FCD44004BBF85 /* EarthScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
-				7DE904CB1E0FCB90004BBF85 /* OverlayScene.swift in Sources */,
+				7DE904CB1E0FCB90004BBF85 /* HUDScene.swift in Sources */,
 				7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
