@@ -12,22 +12,30 @@ import SceneKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-    var earthScene: EarthScene!
+    var earthScene: SCNScene!
     var sceneView: SCNView!
+    var earthNode: SCNNode!
+    var cameraNode: SCNNode!
+    var hudNode:SCNNode!
+    //var hudScene:HUDScene!
+    var pivot: SCNMatrix4!
+    var rotation: SCNVector4!
 
     let cities = Cities()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        earthScene = EarthScene()
+        earthScene = SCNScene(named: "earth.scn")
         sceneView = self.view as! SCNView
         sceneView.scene = earthScene
+        sceneView.pointOfView = cameraNode
+
+        earthNode = earthScene.rootNode.childNode(withName: "earth", recursively: true)!
+        cameraNode = earthScene.rootNode.childNode(withName: "camera", recursively: true)!
 
         // cameraNode.runAction(SCNAction.repeatForever(SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 1)))
         // earthNode.runAction(SCNAction.repeatForever(SCNAction.rotateBy(x: 0, y: 2, z: 0, duration: 1)))
-
-        sceneView.showsStatistics = true
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         sceneView.addGestureRecognizer(tapGesture)
@@ -63,14 +71,15 @@ class GameViewController: UIViewController {
         let anglePan = sqrt(pow(x, 2) + pow(y, 2))/2 * (Float)(M_PI)/180.0
 
         let rotationVector = SCNVector4(-y, x, 0, anglePan)
-        earthScene.earthNode.rotation = rotationVector
+
+        earthNode.rotation = rotationVector
 
         if gestureRecognize.state == .ended {
-            let currentPivot = earthScene.earthNode.pivot
-            let changePivot = SCNMatrix4Invert(earthScene.earthNode.transform)
+            let currentPivot = earthNode.pivot
+            let changePivot = SCNMatrix4Invert(earthNode.transform)
 
-            earthScene.earthNode.pivot = SCNMatrix4Mult(changePivot, currentPivot)
-            earthScene.earthNode.transform = SCNMatrix4Identity
+            earthNode.pivot = SCNMatrix4Mult(changePivot, currentPivot)
+            earthNode.transform = SCNMatrix4Identity
         }
     }
 
@@ -82,10 +91,9 @@ class GameViewController: UIViewController {
         let hitResults = sceneView.hitTest(location, with: nil)
         // print(">", hitResults!)
 
-        print (location)
-        if self.earthScene.hudScene.contains(location) {
-            print("contains")
-        }
+        //if self.earthScene.hudScene.contains(location) {
+        //  print("contains")
+        //}
     }
 
     override var shouldAutorotate: Bool {
@@ -107,5 +115,26 @@ class GameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "center" {
+            if let c = change as? [NSKeyValueChangeKey: Bool] {
+                if c[.newKey] != nil {
+                    SCNTransaction.begin()
+                    SCNTransaction.animationDuration = 1
+
+                    self.earthNode.pivot = self.pivot
+                    self.earthNode.rotation = self.rotation
+                    self.earthNode.transform = SCNMatrix4Identity
+                    
+                    SCNTransaction.commit()
+                }
+            }
+        }
     }
 }
