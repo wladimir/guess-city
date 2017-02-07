@@ -29,6 +29,7 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
+		A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F873599BC3986510578AD5 /* Pods_GuessCity.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.release.xcconfig"; sourceTree = "<group>"; };
+		72F873599BC3986510578AD5 /* Pods_GuessCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D1D877C1E300CA8009144BB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		7D1D877E1E300D34009144BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7D3EC0FF1E1F0F690084953E /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHelper.swift; path = ../GameHelper.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 		7DEABB221DE8F59A0047AE42 /* GuessCityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessCityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */,
+				A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +116,7 @@
 			children = (
 				7D1D877E1E300D34009144BB /* StoreKit.framework */,
 				7D1D877C1E300CA8009144BB /* GameKit.framework */,
+				72F873599BC3986510578AD5 /* Pods_GuessCity.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -148,6 +154,7 @@
 				7DEABB251DE8F59A0047AE42 /* GuessCityUITests */,
 				7DEABB021DE8F59A0047AE42 /* Products */,
 				7D1D877B1E300CA8009144BB /* Frameworks */,
+				D6CB019EE7C479D7305A02A0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +204,15 @@
 			path = GuessCityUITests;
 			sourceTree = "<group>";
 		};
+		D6CB019EE7C479D7305A02A0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */,
+				0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -204,9 +220,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCity" */;
 			buildPhases = (
+				F616679EF083DF81904E5388 /* [CP] Check Pods Manifest.lock */,
 				7DEABAFD1DE8F59A0047AE42 /* Sources */,
 				7DEABAFE1DE8F59A0047AE42 /* Frameworks */,
 				7DEABAFF1DE8F59A0047AE42 /* Resources */,
+				9088E28F1A85DBD547E048D6 /* [CP] Embed Pods Frameworks */,
+				4E504CE06F4B97ED6759C1AA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -345,6 +364,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E504CE06F4B97ED6759C1AA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9088E28F1A85DBD547E048D6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F616679EF083DF81904E5388 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		7DEABAFD1DE8F59A0047AE42 /* Sources */ = {
@@ -507,6 +574,7 @@
 		};
 		7DEABB2C1DE8F59A0047AE42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
@@ -520,6 +588,7 @@
 		};
 		7DEABB2D1DE8F59A0047AE42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
