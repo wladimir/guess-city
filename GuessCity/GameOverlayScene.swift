@@ -1,15 +1,15 @@
 //
-//  OverlayScene.swift
+//  GameOverlayScene.swift
 //  GuessCity
 //
-//  Created by Vladimir Cirkovic on 12/25/16.
-//  Copyright © 2016 Vladimir Cirkovic. All rights reserved.
+//  Created by Vladimir Cirkovic on 2/10/17.
+//  Copyright © 2017 Vladimir Cirkovic. All rights reserved.
 //
 
 import UIKit
 import SpriteKit
 
-class MenuOverlayScene: SKScene {
+class GameOverlayScene: SKScene {
     var labelNode:SKLabelNode!
 
     dynamic var center: Bool = false
@@ -26,7 +26,7 @@ class MenuOverlayScene: SKScene {
         labelNode.fontSize = 20
         labelNode.position.y = 50
         labelNode.position.x = 250
-        labelNode.text = "menu"
+        labelNode.text = "EARTH!"
 
         self.addChild(labelNode)
     }

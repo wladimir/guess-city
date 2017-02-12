@@ -11,7 +11,7 @@ import QuartzCore
 import SceneKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+class MenuViewController: UIViewController {
     var sceneView: SCNView!
     var gameScene: GameScene!
     var gameOverlayScene: GameOverlayScene!

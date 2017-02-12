@@ -6,4 +6,9 @@
 //  Copyright © 2017 Vladimir Cirkovic. All rights reserved.
 //
 
-import Foundation
+import UIKit
+import SceneKit
+
+class MenuScene: SCNScene {
+    
+}
