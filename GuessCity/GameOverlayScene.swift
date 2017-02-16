@@ -24,8 +24,8 @@ class GameOverlayScene: SKScene {
         super.init(size: size)
         labelNode = SKLabelNode(fontNamed: "Menlo-Bold")
         labelNode.fontSize = 20
-        labelNode.position.y = 50
-        labelNode.position.x = 250
+        labelNode.position.y = size.height/5
+        labelNode.position.x = size.width/5
         labelNode.text = "EARTH!"
 
         self.addChild(labelNode)
