@@ -15,9 +15,7 @@
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7DAE20371E1DB5B40095956C /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DAE20361E1DB5B40095956C /* cities.plist */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
-		7DCC1D591E5075DF00AF0DDF /* menu.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DCC1D581E5075DF00AF0DDF /* menu.scn */; };
 		7DD903F81E33AEA900760688 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD903F71E33AEA900760688 /* GameScene.swift */; };
-		7DD903FA1E33AEB500760688 /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD903F91E33AEB500760688 /* MenuScene.swift */; };
 		7DDE0DD71E3256EF009951D1 /* earth.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DDE0DD61E3256EF009951D1 /* earth.scn */; };
 		7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */; };
 		7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */; };
@@ -65,9 +63,7 @@
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverlayScene.swift; sourceTree = "<group>"; };
 		7DAE20361E1DB5B40095956C /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
-		7DCC1D581E5075DF00AF0DDF /* menu.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menu.scn; sourceTree = "<group>"; };
 		7DD903F71E33AEA900760688 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
-		7DD903F91E33AEB500760688 /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuScene.swift; path = ../MenuScene.swift; sourceTree = "<group>"; };
 		7DDE0DD61E3256EF009951D1 /* earth.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = earth.scn; path = ../earth.scn; sourceTree = "<group>"; };
 		7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_no_clouds_4k.jpg; sourceTree = "<group>"; };
 		7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elev_bump_4k.jpg; sourceTree = "<group>"; };
@@ -147,7 +143,6 @@
 				7D2D8A051E55C228004EF899 /* Rise03.wav */,
 				7D2D8A061E55C228004EF899 /* Downer01.wav */,
 				7DDE0DD61E3256EF009951D1 /* earth.scn */,
-				7DCC1D581E5075DF00AF0DDF /* menu.scn */,
 				7DAE20361E1DB5B40095956C /* cities.plist */,
 				7D593BD01DE9A98B00695554 /* Textures */,
 			);
@@ -183,7 +178,6 @@
 				7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */,
 				7DEABB061DE8F59A0047AE42 /* art.scnassets */,
 				7D593BD11DE9B03300695554 /* Resources */,
-				7DD903F91E33AEB500760688 /* MenuScene.swift */,
 				7DD903F71E33AEA900760688 /* GameScene.swift */,
 				7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */,
 				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
@@ -360,7 +354,6 @@
 				7DEABB0C1DE8F59A0047AE42 /* Main.storyboard in Resources */,
 				7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */,
 				7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */,
-				7DCC1D591E5075DF00AF0DDF /* menu.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,7 +430,6 @@
 				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */,
-				7DD903FA1E33AEB500760688 /* MenuScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
 				7DE904CB1E0FCB90004BBF85 /* MenuOverlayScene.swift in Sources */,
 				7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */,
