@@ -10,6 +10,7 @@ import UIKit
 import QuartzCore
 import SceneKit
 import SpriteKit
+import CoreLocation
 
 class GameViewController: UIViewController {
     var sceneView: SCNView!
@@ -83,26 +84,44 @@ class GameViewController: UIViewController {
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
         let zoomOut = SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 2.0)
         zoomOut.timingMode = .easeInEaseOut
-        gameScene.earthNode.runAction(zoomOut, completionHandler: {
-            self.sceneView.overlaySKScene = self.menuOverlayScene
-        })
+        //gameScene.earthNode.runAction(zoomOut, completionHandler: {
+        //    self.sceneView.overlaySKScene = self.menuOverlayScene
+        //})
 
-        if game.state == .TapToPlay {
-            showGame()
+//        if game.state == .TapToPlay {
+//            showGame()
+//            return
+//        }
+
+        let eventLocation = gestureRecognize.location(in: sceneView)
+        let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
+        let hit = hitResults.first
+
+        if (hit == nil) {
             return
         }
 
-        let location = gestureRecognize.location(in: sceneView)
-        //hudScene.score += 1
-        sceneView.isPlaying = true
+        let textureCoordinate = hit?.textureCoordinates(withMappingChannel: 0)
+        let location: CLLocation = coordinateFromPoint(point: textureCoordinate!)
 
-        let hitResults = sceneView.hitTest(location, with: nil)
-        // print(">", hitResults!)
+        print(location)
 
         //if self.earthScene.hudScene.contains(location) {
         //  print("contains")
         //}
     }
+
+    func coordinateFromPoint(point:CGPoint) -> CLLocation
+    {
+        let u = Double(point.x);
+        let v = Double(point.y);
+
+        let lat: CLLocationDegrees = (0.5-v)*180.0;
+        let lon : CLLocationDegrees = (u-0.5)*360.0;
+
+        return CLLocation(latitude: lat, longitude: lon)
+    }
+
 
     override var shouldAutorotate: Bool {
         return false
@@ -149,7 +168,7 @@ class GameViewController: UIViewController {
         music!.shouldStream = false
         music!.isPositional = false
         let musicPlayer = SCNAudioPlayer(source: music!)
-        music!.volume = 0.5;
+        music!.volume = 0.4;
         gameScene.rootNode.addAudioPlayer(musicPlayer)
 
         game.loadSound(name: "positive", fileNamed: "Rise03.wav")

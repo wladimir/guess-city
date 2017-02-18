@@ -30,8 +30,8 @@ class GameScene: SCNScene {
         earthNode.rotation = SCNVector4Make(0, 1, 0, 0)
 
         let rotateAnimation = CABasicAnimation(keyPath: "rotation.w")
-        rotateAnimation.byValue = M_PI*3.0
-        rotateAnimation.duration = 50.0
+        rotateAnimation.byValue = M_PI*2.0
+        rotateAnimation.duration = 50
         rotateAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
         rotateAnimation.repeatCount = .infinity;
 
