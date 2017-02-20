@@ -29,12 +29,16 @@ class GameScene: SCNScene {
         earthNode = self.rootNode.childNode(withName: "earth", recursively: true)!
         earthNode.rotation = SCNVector4Make(0, 1, 0, 0)
 
-        let rotateAnimation = CABasicAnimation(keyPath: "rotation.w")
-        rotateAnimation.byValue = M_PI*2.0
-        rotateAnimation.duration = 50
-        rotateAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
-        rotateAnimation.repeatCount = .infinity;
+        pivot = earthNode.pivot
+        rotation = earthNode.rotation
+    }
 
-        earthNode.addAnimation(rotateAnimation, forKey: "rotate the earth")
+    func turnStarted() {
+        SCNTransaction.begin()
+        SCNTransaction.animationDuration = 1.0
+        earthNode.pivot = pivot
+        earthNode.rotation = rotation
+        earthNode.transform = SCNMatrix4Identity
+        SCNTransaction.commit()
     }
 }

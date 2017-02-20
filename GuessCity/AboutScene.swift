@@ -9,12 +9,7 @@
 import UIKit
 import SceneKit
 
-class AttributionOverlayScene: SCNScene {
-    var earthNode: SCNNode!
-    var cameraNode: SCNNode!
-
-    var pivot: SCNMatrix4!
-    var rotation: SCNVector4!
+class AboutScene: SCNScene {
 
     override init() {
         super.init()

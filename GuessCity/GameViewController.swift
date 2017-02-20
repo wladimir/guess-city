@@ -15,8 +15,11 @@ import CoreLocation
 class GameViewController: UIViewController {
     var sceneView: SCNView!
     var gameScene: GameScene!
+    var menuScene: MenuScene!
+    var aboutScene: AboutScene!
     var gameOverlayScene: GameOverlayScene!
     var menuOverlayScene: MenuOverlayScene!
+    var aboutOverlayScene: AboutOverlayScene!
 
     let game = GameHelper.sharedInstance
 
@@ -28,10 +31,13 @@ class GameViewController: UIViewController {
         sceneView = self.view as! SCNView
 
         gameScene = GameScene(named: "earth.scn")
-        sceneView.scene = gameScene
+        menuScene = MenuScene(named: "menu.scn")
+        aboutScene = AboutScene(named: "about.scn")
+        sceneView.scene = menuScene
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
+        aboutOverlayScene = AboutOverlayScene(size: sceneView.bounds.size)
         sceneView.overlaySKScene = menuOverlayScene
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -44,17 +50,6 @@ class GameViewController: UIViewController {
         print(cities.cities[2].lon)
 
         setupSounds()
-
-        let turnStarted = SCNAction.run { (node) in
-            SCNTransaction.begin()
-            SCNTransaction.animationDuration = 1
-
-            self.gameScene.earthNode.pivot = self.gameScene.pivot
-            self.gameScene.earthNode.rotation = self.gameScene.rotation
-            self.gameScene.earthNode.transform = SCNMatrix4Identity
-
-            SCNTransaction.commit()
-        }
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
@@ -82,16 +77,15 @@ class GameViewController: UIViewController {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        let zoomOut = SCNAction.moveBy(x: 0, y: 0, z: -5, duration: 2.0)
-        zoomOut.timingMode = .easeInEaseOut
-        //gameScene.earthNode.runAction(zoomOut, completionHandler: {
-        //    self.sceneView.overlaySKScene = self.menuOverlayScene
-        //})
+        if game.state == .TapToPlay {
+            sceneView.present(gameScene, with: .fade(withDuration: 1.5), incomingPointOfView: nil, completionHandler: {
+                self.sceneView.overlaySKScene = self.gameOverlayScene;
+                self.game.state = .Playing
+            })
+            return
+        }
 
-//        if game.state == .TapToPlay {
-//            showGame()
-//            return
-//        }
+        //gameScene.turnStarted()
 
         let eventLocation = gestureRecognize.location(in: sceneView)
         let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
@@ -105,13 +99,9 @@ class GameViewController: UIViewController {
         let location: CLLocation = coordinateFromPoint(point: textureCoordinate!)
 
         print(location)
-
-        //if self.earthScene.hudScene.contains(location) {
-        //  print("contains")
-        //}
     }
 
-    func coordinateFromPoint(point:CGPoint) -> CLLocation
+    private func coordinateFromPoint(point:CGPoint) -> CLLocation
     {
         let u = Double(point.x);
         let v = Double(point.y);
@@ -144,42 +134,20 @@ class GameViewController: UIViewController {
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "center" {
-            if let c = change as? [NSKeyValueChangeKey: Bool] {
-                if c[.newKey] != nil {
-                    SCNTransaction.begin()
-                    SCNTransaction.animationDuration = 1
-
-                    gameScene.earthNode.pivot = gameScene.pivot
-                    gameScene.earthNode.rotation = gameScene.rotation
-                    gameScene.earthNode.transform = SCNMatrix4Identity
-
-                    SCNTransaction.commit()
-                }
-            }
+    private func setupSounds() {
+        if game.state == .TapToPlay {
+            let music = SCNAudioSource(fileNamed: "BlueLineLoopFixed.mp3")
+            music!.volume = 0.3;
+            music!.loops = true
+            music!.shouldStream = false
+            music!.isPositional = false
+            let musicPlayer = SCNAudioPlayer(source: music!)
+            music!.volume = 0.4;
+            menuScene.rootNode.addAudioPlayer(musicPlayer)
+        } else {
+            game.loadSound(name: "positive", fileNamed: "Rise03.wav")
+            game.loadSound(name: "negative", fileNamed: "Downer01.wav")
+            
         }
-    }
-
-    func setupSounds() {
-        let music = SCNAudioSource(fileNamed: "BlueLineLoopFixed.mp3")
-        music!.volume = 0.3;
-        music!.loops = true
-        music!.shouldStream = false
-        music!.isPositional = false
-        let musicPlayer = SCNAudioPlayer(source: music!)
-        music!.volume = 0.4;
-        gameScene.rootNode.addAudioPlayer(musicPlayer)
-
-        game.loadSound(name: "positive", fileNamed: "Rise03.wav")
-        game.loadSound(name: "negative", fileNamed: "Downer01.wav")
-    }
-    
-    func showMenu() {
-        sceneView.overlaySKScene = menuOverlayScene
-    }
-    
-    func showGame() {
-        sceneView.overlaySKScene = gameOverlayScene
     }
 }
