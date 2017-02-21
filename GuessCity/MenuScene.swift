@@ -19,7 +19,8 @@ class MenuScene: SCNScene {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        earthNode = self.rootNode.childNode(withName: "earthm", recursively: true)!
+        earthNode = self.rootNode.childNode(withName: "earth", recursively: true)!
+        earthNode.rotation = SCNVector4Make(0, 1, 0, 0)
 
         addRotateAnimation()
     }

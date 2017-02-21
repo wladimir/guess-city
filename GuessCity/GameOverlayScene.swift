@@ -17,6 +17,7 @@ class GameOverlayScene: SKScene {
     var score = 0 {
         didSet {
             self.labelNode.text = "Score: \(self.score)"
+            self.labelNode.animate(newText: "May the source be with you", characterDelay: 0.1)
         }
     }
 

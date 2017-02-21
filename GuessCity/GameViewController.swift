@@ -34,6 +34,7 @@ class GameViewController: UIViewController {
         menuScene = MenuScene(named: "menu.scn")
         aboutScene = AboutScene(named: "about.scn")
         sceneView.scene = menuScene
+        sceneView.isPlaying = true
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
@@ -57,9 +58,19 @@ class GameViewController: UIViewController {
             return
         }
 
+        let eventLocation = gestureRecognize.location(in: sceneView)
+        let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
+        let hit = hitResults.first
+
+        if (hit == nil) {
+            return
+        }
+
         let translation = gestureRecognize.translation(in: view!)
         let x = Float(translation.x)
         let y = Float(-translation.y)
+
+        // if doesn't hit with earth, return
 
         let anglePan = sqrt(pow(x, 2) + pow(y, 2))/2 * (Float)(M_PI)/180.0
 
@@ -81,7 +92,12 @@ class GameViewController: UIViewController {
             sceneView.present(gameScene, with: .fade(withDuration: 1.5), incomingPointOfView: nil, completionHandler: {
                 self.sceneView.overlaySKScene = self.gameOverlayScene;
                 self.game.state = .Playing
+                self.gameOverlayScene.score += 1
             })
+            sceneView.isPlaying = true
+            gameOverlayScene.isPaused = false
+            gameScene.isPaused = false
+            menuScene.isPaused = false
             return
         }
 

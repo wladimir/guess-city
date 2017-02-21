@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D0080261E5BA424006CADEB /* menu.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7D0080251E5BA424006CADEB /* menu.scn */; };
 		7D0080281E5BA452006CADEB /* about.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7D0080271E5BA452006CADEB /* about.scn */; };
 		7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0080291E5BA4BC006CADEB /* MenuScene.swift */; };
 		7D00802C1E5BA52D006CADEB /* AboutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00802B1E5BA52D006CADEB /* AboutScene.swift */; };
@@ -17,9 +16,11 @@
 		7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* GameHelper.swift */; };
 		7D43CC121E5879DB00CD1B4C /* AboutOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
+		7D63090C1E5C59B400F862EE /* SKLabelNode+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7DAE20371E1DB5B40095956C /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DAE20361E1DB5B40095956C /* cities.plist */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
+		7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DD53B1C1E5C332400F8E0A3 /* menu.scn */; };
 		7DD903F81E33AEA900760688 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD903F71E33AEA900760688 /* GameScene.swift */; };
 		7DDE0DD71E3256EF009951D1 /* earth.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DDE0DD61E3256EF009951D1 /* earth.scn */; };
 		7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */; };
@@ -59,7 +60,6 @@
 /* Begin PBXFileReference section */
 		0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.release.xcconfig"; sourceTree = "<group>"; };
 		72F873599BC3986510578AD5 /* Pods_GuessCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7D0080251E5BA424006CADEB /* menu.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menu.scn; sourceTree = "<group>"; };
 		7D0080271E5BA452006CADEB /* about.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = about.scn; sourceTree = SOURCE_ROOT; };
 		7D0080291E5BA4BC006CADEB /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		7D00802B1E5BA52D006CADEB /* AboutScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutScene.swift; sourceTree = "<group>"; };
@@ -70,9 +70,11 @@
 		7D3EC0FF1E1F0F690084953E /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHelper.swift; path = ../GameHelper.swift; sourceTree = "<group>"; };
 		7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutOverlayScene.swift; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Animations.swift"; sourceTree = "<group>"; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverlayScene.swift; sourceTree = "<group>"; };
 		7DAE20361E1DB5B40095956C /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
+		7DD53B1C1E5C332400F8E0A3 /* menu.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menu.scn; sourceTree = SOURCE_ROOT; };
 		7DD903F71E33AEA900760688 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		7DDE0DD61E3256EF009951D1 /* earth.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = earth.scn; path = ../earth.scn; sourceTree = "<group>"; };
 		7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_no_clouds_4k.jpg; sourceTree = "<group>"; };
@@ -162,8 +164,8 @@
 				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
 				7D2D8A061E55C228004EF899 /* Downer01.wav */,
 				7DDE0DD61E3256EF009951D1 /* earth.scn */,
+				7DD53B1C1E5C332400F8E0A3 /* menu.scn */,
 				7D0080271E5BA452006CADEB /* about.scn */,
-				7D0080251E5BA424006CADEB /* menu.scn */,
 				7DAE20361E1DB5B40095956C /* cities.plist */,
 			);
 			name = Resources;
@@ -172,6 +174,7 @@
 		7DEABAF81DE8F59A0047AE42 = {
 			isa = PBXGroup;
 			children = (
+				7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */,
 				7D470D4C1E1D202E000BF4F0 /* README.md */,
 				7DEABB031DE8F59A0047AE42 /* GuessCity */,
 				7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */,
@@ -368,7 +371,6 @@
 				7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */,
 				7D470D4D1E1D202E000BF4F0 /* README.md in Resources */,
 				7DAE20371E1DB5B40095956C /* cities.plist in Resources */,
-				7D0080261E5BA424006CADEB /* menu.scn in Resources */,
 				7D0080281E5BA452006CADEB /* about.scn in Resources */,
 				7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */,
 				7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */,
@@ -379,6 +381,7 @@
 				7DEABB0C1DE8F59A0047AE42 /* Main.storyboard in Resources */,
 				7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */,
 				7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */,
+				7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7DD903F81E33AEA900760688 /* GameScene.swift in Sources */,
+				7D63090C1E5C59B400F862EE /* SKLabelNode+Animations.swift in Sources */,
 				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
 				7D00802C1E5BA52D006CADEB /* AboutScene.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
