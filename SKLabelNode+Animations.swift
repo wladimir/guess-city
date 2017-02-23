@@ -14,7 +14,6 @@ extension SKLabelNode {
 
     func animate(newText: String, characterDelay: TimeInterval) {
         DispatchQueue.main.async {
-
             self.text = ""
 
             for (index, character) in newText.characters.enumerated() {

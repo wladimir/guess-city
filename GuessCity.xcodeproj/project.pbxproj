@@ -10,11 +10,12 @@
 		7D0080281E5BA452006CADEB /* about.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7D0080271E5BA452006CADEB /* about.scn */; };
 		7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0080291E5BA4BC006CADEB /* MenuScene.swift */; };
 		7D00802C1E5BA52D006CADEB /* AboutScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00802B1E5BA52D006CADEB /* AboutScene.swift */; };
-		7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; };
+		7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A051E55C228004EF899 /* Rise03.wav */; };
 		7D2D8A081E55C228004EF899 /* Downer01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A061E55C228004EF899 /* Downer01.wav */; };
 		7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* GameHelper.swift */; };
 		7D43CC121E5879DB00CD1B4C /* AboutOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */; };
+		7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4674841E5EEB6D00F7A3C0 /* splash2.png */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
 		7D63090C1E5C59B400F862EE /* SKLabelNode+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
@@ -69,6 +70,7 @@
 		7D2D8A061E55C228004EF899 /* Downer01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Downer01.wav; sourceTree = "<group>"; };
 		7D3EC0FF1E1F0F690084953E /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHelper.swift; path = ../GameHelper.swift; sourceTree = "<group>"; };
 		7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutOverlayScene.swift; sourceTree = "<group>"; };
+		7D4674841E5EEB6D00F7A3C0 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Animations.swift"; sourceTree = "<group>"; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverlayScene.swift; sourceTree = "<group>"; };
@@ -137,13 +139,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		7D43CC171E58803D00CD1B4C /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Icons;
-			sourceTree = "<group>";
-		};
 		7D593BD01DE9A98B00695554 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +146,7 @@
 				7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */,
 				7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */,
 				7DE794E81E3D7860006FCF54 /* water_4k.png */,
+				7D4674841E5EEB6D00F7A3C0 /* splash2.png */,
 			);
 			name = Textures;
 			sourceTree = "<group>";
@@ -158,7 +154,6 @@
 		7D593BD11DE9B03300695554 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7D43CC171E58803D00CD1B4C /* Icons */,
 				7D593BD01DE9A98B00695554 /* Textures */,
 				7D2D8A051E55C228004EF899 /* Rise03.wav */,
 				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
@@ -379,6 +374,7 @@
 				7DDE0DD71E3256EF009951D1 /* earth.scn in Resources */,
 				7DE794EB1E3D7861006FCF54 /* fair_clouds_4k.png in Resources */,
 				7DEABB0C1DE8F59A0047AE42 /* Main.storyboard in Resources */,
+				7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */,
 				7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */,
 				7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */,
 				7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */,
@@ -620,7 +616,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				INFOPLIST_FILE = GuessCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.guesscity.GuessCity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.GuessCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -634,7 +630,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				INFOPLIST_FILE = GuessCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.guesscity.GuessCity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.GuessCity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
