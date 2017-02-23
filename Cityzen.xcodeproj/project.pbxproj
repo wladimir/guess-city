@@ -17,6 +17,7 @@
 		7D43CC121E5879DB00CD1B4C /* AboutOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */; };
 		7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4674841E5EEB6D00F7A3C0 /* splash2.png */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
+		7D4EAEA01E5F3D5F00605052 /* tycho.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */; };
 		7D63090C1E5C59B400F862EE /* SKLabelNode+Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7D7E9CD41E5F1A85003688B7 /* Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D7E9CB61E5F1A85003688B7 /* Icon-20@2x.png */; };
@@ -53,7 +54,7 @@
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
 		7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DD53B1C1E5C332400F8E0A3 /* menu.scn */; };
 		7DD903F81E33AEA900760688 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD903F71E33AEA900760688 /* GameScene.swift */; };
-		7DDE0DD71E3256EF009951D1 /* earth.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DDE0DD61E3256EF009951D1 /* earth.scn */; };
+		7DDE0DD71E3256EF009951D1 /* game.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DDE0DD61E3256EF009951D1 /* game.scn */; };
 		7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */; };
 		7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */; };
 		7DE794EB1E3D7861006FCF54 /* fair_clouds_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */; };
@@ -102,6 +103,7 @@
 		7D43CC111E5879DB00CD1B4C /* AboutOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutOverlayScene.swift; sourceTree = "<group>"; };
 		7D4674841E5EEB6D00F7A3C0 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tycho.ttf; sourceTree = "<group>"; };
 		7D63090B1E5C59B400F862EE /* SKLabelNode+Animations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Animations.swift"; sourceTree = "<group>"; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverlayScene.swift; sourceTree = "<group>"; };
 		7D7E9CB61E5F1A85003688B7 /* Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20@2x.png"; sourceTree = "<group>"; };
@@ -138,14 +140,14 @@
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		7DD53B1C1E5C332400F8E0A3 /* menu.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menu.scn; sourceTree = SOURCE_ROOT; };
 		7DD903F71E33AEA900760688 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
-		7DDE0DD61E3256EF009951D1 /* earth.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = earth.scn; path = ../earth.scn; sourceTree = "<group>"; };
+		7DDE0DD61E3256EF009951D1 /* game.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = game.scn; path = ../game.scn; sourceTree = "<group>"; };
 		7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_no_clouds_4k.jpg; sourceTree = "<group>"; };
 		7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elev_bump_4k.jpg; sourceTree = "<group>"; };
 		7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fair_clouds_4k.png; sourceTree = "<group>"; };
 		7DE794E81E3D7860006FCF54 /* water_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_4k.png; sourceTree = "<group>"; };
 		7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOverlayScene.swift; sourceTree = "<group>"; };
 		7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlueLineLoopFixed.mp3; sourceTree = "<group>"; };
-		7DEABB011DE8F59A0047AE42 /* GuessCity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessCity.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEABB011DE8F59A0047AE42 /* Cityzen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cityzen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7DEABB061DE8F59A0047AE42 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		7DEABB081DE8F59A0047AE42 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -153,10 +155,10 @@
 		7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7DEABB101DE8F59A0047AE42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7DEABB121DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DEABB171DE8F59A0047AE42 /* GuessCityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessCityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEABB171DE8F59A0047AE42 /* CityzenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityTests.swift; sourceTree = "<group>"; };
 		7DEABB1D1DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DEABB221DE8F59A0047AE42 /* GuessCityUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GuessCityUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.debug.xcconfig"; sourceTree = "<group>"; };
@@ -202,7 +204,6 @@
 		7D593BD01DE9A98B00695554 /* Textures */ = {
 			isa = PBXGroup;
 			children = (
-				7D7E9C391E5F14D3003688B7 /* Icons */,
 				7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */,
 				7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */,
 				7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */,
@@ -215,13 +216,11 @@
 		7D593BD11DE9B03300695554 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DFF5B701E5F33FE00A4A50B /* Fonts */,
+				7DB744FC1E5F2CEE008DA4BC /* Scenes */,
+				7DB744FB1E5F2CDD008DA4BC /* Sounds */,
+				7D7E9C391E5F14D3003688B7 /* Icons */,
 				7D593BD01DE9A98B00695554 /* Textures */,
-				7D2D8A051E55C228004EF899 /* Rise03.wav */,
-				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
-				7D2D8A061E55C228004EF899 /* Downer01.wav */,
-				7DDE0DD61E3256EF009951D1 /* earth.scn */,
-				7DD53B1C1E5C332400F8E0A3 /* menu.scn */,
-				7D0080271E5BA452006CADEB /* about.scn */,
 				7DAE20361E1DB5B40095956C /* cities.plist */,
 			);
 			name = Resources;
@@ -264,6 +263,26 @@
 			name = Icons;
 			sourceTree = "<group>";
 		};
+		7DB744FB1E5F2CDD008DA4BC /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7D2D8A051E55C228004EF899 /* Rise03.wav */,
+				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
+				7D2D8A061E55C228004EF899 /* Downer01.wav */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		7DB744FC1E5F2CEE008DA4BC /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				7DDE0DD61E3256EF009951D1 /* game.scn */,
+				7DD53B1C1E5C332400F8E0A3 /* menu.scn */,
+				7D0080271E5BA452006CADEB /* about.scn */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		7DEABAF81DE8F59A0047AE42 = {
 			isa = PBXGroup;
 			children = (
@@ -281,9 +300,9 @@
 		7DEABB021DE8F59A0047AE42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DEABB011DE8F59A0047AE42 /* GuessCity.app */,
-				7DEABB171DE8F59A0047AE42 /* GuessCityTests.xctest */,
-				7DEABB221DE8F59A0047AE42 /* GuessCityUITests.xctest */,
+				7DEABB011DE8F59A0047AE42 /* Cityzen.app */,
+				7DEABB171DE8F59A0047AE42 /* CityzenTests.xctest */,
+				7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -329,6 +348,14 @@
 			path = GuessCityUITests;
 			sourceTree = "<group>";
 		};
+		7DFF5B701E5F33FE00A4A50B /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		D6CB019EE7C479D7305A02A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,9 +368,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DEABB001DE8F59A0047AE42 /* GuessCity */ = {
+		7DEABB001DE8F59A0047AE42 /* Cityzen */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCity" */;
+			buildConfigurationList = 7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "Cityzen" */;
 			buildPhases = (
 				F616679EF083DF81904E5388 /* [CP] Check Pods Manifest.lock */,
 				7DEABAFD1DE8F59A0047AE42 /* Sources */,
@@ -356,14 +383,14 @@
 			);
 			dependencies = (
 			);
-			name = GuessCity;
+			name = Cityzen;
 			productName = GuessCity;
-			productReference = 7DEABB011DE8F59A0047AE42 /* GuessCity.app */;
+			productReference = 7DEABB011DE8F59A0047AE42 /* Cityzen.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7DEABB161DE8F59A0047AE42 /* GuessCityTests */ = {
+		7DEABB161DE8F59A0047AE42 /* CityzenTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DEABB2E1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCityTests" */;
+			buildConfigurationList = 7DEABB2E1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "CityzenTests" */;
 			buildPhases = (
 				7DEABB131DE8F59A0047AE42 /* Sources */,
 				7DEABB141DE8F59A0047AE42 /* Frameworks */,
@@ -374,14 +401,14 @@
 			dependencies = (
 				7DEABB191DE8F59A0047AE42 /* PBXTargetDependency */,
 			);
-			name = GuessCityTests;
+			name = CityzenTests;
 			productName = GuessCityTests;
-			productReference = 7DEABB171DE8F59A0047AE42 /* GuessCityTests.xctest */;
+			productReference = 7DEABB171DE8F59A0047AE42 /* CityzenTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		7DEABB211DE8F59A0047AE42 /* GuessCityUITests */ = {
+		7DEABB211DE8F59A0047AE42 /* CityzenUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DEABB311DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCityUITests" */;
+			buildConfigurationList = 7DEABB311DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "CityzenUITests" */;
 			buildPhases = (
 				7DEABB1E1DE8F59A0047AE42 /* Sources */,
 				7DEABB1F1DE8F59A0047AE42 /* Frameworks */,
@@ -392,9 +419,9 @@
 			dependencies = (
 				7DEABB241DE8F59A0047AE42 /* PBXTargetDependency */,
 			);
-			name = GuessCityUITests;
+			name = CityzenUITests;
 			productName = GuessCityUITests;
-			productReference = 7DEABB221DE8F59A0047AE42 /* GuessCityUITests.xctest */;
+			productReference = 7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -434,7 +461,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7DEABAFC1DE8F59A0047AE42 /* Build configuration list for PBXProject "GuessCity" */;
+			buildConfigurationList = 7DEABAFC1DE8F59A0047AE42 /* Build configuration list for PBXProject "Cityzen" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -447,9 +474,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DEABB001DE8F59A0047AE42 /* GuessCity */,
-				7DEABB161DE8F59A0047AE42 /* GuessCityTests */,
-				7DEABB211DE8F59A0047AE42 /* GuessCityUITests */,
+				7DEABB001DE8F59A0047AE42 /* Cityzen */,
+				7DEABB161DE8F59A0047AE42 /* CityzenTests */,
+				7DEABB211DE8F59A0047AE42 /* CityzenUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -483,7 +510,7 @@
 				7D7E9CE61E5F1A85003688B7 /* Icon-76.png in Resources */,
 				7DEABB0E1DE8F59A0047AE42 /* Assets.xcassets in Resources */,
 				7D7E9CD71E5F1A85003688B7 /* Icon-27.5@2x.png in Resources */,
-				7DDE0DD71E3256EF009951D1 /* earth.scn in Resources */,
+				7DDE0DD71E3256EF009951D1 /* game.scn in Resources */,
 				7D7E9CF11E5F1A85003688B7 /* iTunesArtwork@3x.png in Resources */,
 				7D7E9CDC1E5F1A85003688B7 /* Icon-40@3x.png in Resources */,
 				7D7E9CE81E5F1A85003688B7 /* Icon-76@3x.png in Resources */,
@@ -503,6 +530,7 @@
 				7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */,
 				7D7E9CD51E5F1A85003688B7 /* Icon-20@3x.png in Resources */,
 				7D7E9CE11E5F1A85003688B7 /* Icon-60@2x.png in Resources */,
+				7D4EAEA01E5F3D5F00605052 /* tycho.ttf in Resources */,
 				7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */,
 				7D7E9CDB1E5F1A85003688B7 /* Icon-40@2x.png in Resources */,
 				7D7E9CF01E5F1A85003688B7 /* iTunesArtwork@2x.png in Resources */,
@@ -613,12 +641,12 @@
 /* Begin PBXTargetDependency section */
 		7DEABB191DE8F59A0047AE42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7DEABB001DE8F59A0047AE42 /* GuessCity */;
+			target = 7DEABB001DE8F59A0047AE42 /* Cityzen */;
 			targetProxy = 7DEABB181DE8F59A0047AE42 /* PBXContainerItemProxy */;
 		};
 		7DEABB241DE8F59A0047AE42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7DEABB001DE8F59A0047AE42 /* GuessCity */;
+			target = 7DEABB001DE8F59A0047AE42 /* Cityzen */;
 			targetProxy = 7DEABB231DE8F59A0047AE42 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -744,7 +772,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				INFOPLIST_FILE = GuessCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.GuessCity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.Cityzen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -758,7 +786,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				INFOPLIST_FILE = GuessCity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.GuessCity;
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.Cityzen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -775,7 +803,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.guesscity.GuessCityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessCity.app/GuessCity";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cityzen.app/Cityzen";
 			};
 			name = Debug;
 		};
@@ -790,7 +818,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.guesscity.GuessCityTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GuessCity.app/GuessCity";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cityzen.app/Cityzen";
 			};
 			name = Release;
 		};
@@ -825,7 +853,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7DEABAFC1DE8F59A0047AE42 /* Build configuration list for PBXProject "GuessCity" */ = {
+		7DEABAFC1DE8F59A0047AE42 /* Build configuration list for PBXProject "Cityzen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DEABB291DE8F59A0047AE42 /* Debug */,
@@ -834,7 +862,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCity" */ = {
+		7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "Cityzen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DEABB2C1DE8F59A0047AE42 /* Debug */,
@@ -843,7 +871,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DEABB2E1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCityTests" */ = {
+		7DEABB2E1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "CityzenTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DEABB2F1DE8F59A0047AE42 /* Debug */,
@@ -852,7 +880,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DEABB311DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "GuessCityUITests" */ = {
+		7DEABB311DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "CityzenUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DEABB321DE8F59A0047AE42 /* Debug */,

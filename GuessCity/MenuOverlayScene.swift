@@ -14,11 +14,11 @@ class MenuOverlayScene: SKScene {
 
     override init(size: CGSize) {
         super.init(size: size)
-        labelNode = SKLabelNode(fontNamed: "Menlo-Bold")
+        labelNode = SKLabelNode(fontNamed: "tycho")
         labelNode.fontSize = 20
         labelNode.position.y = size.height/5
-        labelNode.position.x = size.width/5
-        labelNode.text = "menu"
+        labelNode.position.x = size.width/2
+        labelNode.text = "super duper game"
 
         self.addChild(labelNode)
     }

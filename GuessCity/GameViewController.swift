@@ -30,7 +30,7 @@ class GameViewController: UIViewController {
 
         sceneView = self.view as! SCNView
 
-        gameScene = GameScene(named: "earth.scn")
+        gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
         aboutScene = AboutScene(named: "about.scn")
         sceneView.scene = menuScene

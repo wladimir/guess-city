@@ -23,7 +23,7 @@ class GameOverlayScene: SKScene {
 
     override init(size: CGSize) {
         super.init(size: size)
-        labelNode = SKLabelNode(fontNamed: "Menlo-Bold")
+        labelNode = SKLabelNode(fontNamed: "Ampersand")
         labelNode.fontSize = 10
         labelNode.position.y = size.height/5
         labelNode.position.x = size.width/5

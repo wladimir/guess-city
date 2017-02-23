@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7DEABB001DE8F59A0047AE42"
-               BuildableName = "GuessCity.app"
-               BlueprintName = "GuessCity"
-               ReferencedContainer = "container:GuessCity.xcodeproj">
+               BuildableName = "Cityzen.app"
+               BlueprintName = "Cityzen"
+               ReferencedContainer = "container:Cityzen.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7DEABB161DE8F59A0047AE42"
-               BuildableName = "GuessCityTests.xctest"
-               BlueprintName = "GuessCityTests"
-               ReferencedContainer = "container:GuessCity.xcodeproj">
+               BuildableName = "CityzenTests.xctest"
+               BlueprintName = "CityzenTests"
+               ReferencedContainer = "container:Cityzen.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7DEABB211DE8F59A0047AE42"
-               BuildableName = "GuessCityUITests.xctest"
-               BlueprintName = "GuessCityUITests"
-               ReferencedContainer = "container:GuessCity.xcodeproj">
+               BuildableName = "CityzenUITests.xctest"
+               BlueprintName = "CityzenUITests"
+               ReferencedContainer = "container:Cityzen.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7DEABB001DE8F59A0047AE42"
-            BuildableName = "GuessCity.app"
-            BlueprintName = "GuessCity"
-            ReferencedContainer = "container:GuessCity.xcodeproj">
+            BuildableName = "Cityzen.app"
+            BlueprintName = "Cityzen"
+            ReferencedContainer = "container:Cityzen.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7DEABB001DE8F59A0047AE42"
-            BuildableName = "GuessCity.app"
-            BlueprintName = "GuessCity"
-            ReferencedContainer = "container:GuessCity.xcodeproj">
+            BuildableName = "Cityzen.app"
+            BlueprintName = "Cityzen"
+            ReferencedContainer = "container:Cityzen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7DEABB001DE8F59A0047AE42"
-            BuildableName = "GuessCity.app"
-            BlueprintName = "GuessCity"
-            ReferencedContainer = "container:GuessCity.xcodeproj">
+            BuildableName = "Cityzen.app"
+            BlueprintName = "Cityzen"
+            ReferencedContainer = "container:Cityzen.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
