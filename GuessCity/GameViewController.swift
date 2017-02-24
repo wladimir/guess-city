@@ -16,10 +16,10 @@ class GameViewController: UIViewController {
     var sceneView: SCNView!
     var gameScene: GameScene!
     var menuScene: MenuScene!
-    var aboutScene: AboutScene!
+    var settingsScene: SettingsScene!
     var gameOverlayScene: GameOverlayScene!
     var menuOverlayScene: MenuOverlayScene!
-    var aboutOverlayScene: AboutOverlayScene!
+    var settingsOverlayScene: SettingsOverlayScene!
 
     let game = GameHelper.sharedInstance
 
@@ -32,13 +32,13 @@ class GameViewController: UIViewController {
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
-        aboutScene = AboutScene(named: "about.scn")
+        settingsScene = SettingsScene(named: "settings.scn")
         sceneView.scene = menuScene
         sceneView.isPlaying = true
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        aboutOverlayScene = AboutOverlayScene(size: sceneView.bounds.size)
+        settingsOverlayScene = SettingsOverlayScene(size: sceneView.bounds.size)
         sceneView.overlaySKScene = menuOverlayScene
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
