@@ -10,17 +10,21 @@ import UIKit
 import SpriteKit
 
 class MenuOverlayScene: SKScene {
-    var labelNode:SKLabelNode!
+    var title: SKLabelNode!
+    var text: SKLabelNode!
+    // play button (largest)
+    // leaderboard button (crown or axis)
+    // settings button
 
     override init(size: CGSize) {
         super.init(size: size)
-        labelNode = SKLabelNode(fontNamed: "tycho")
-        labelNode.fontSize = 20
-        labelNode.position.y = size.height/5
-        labelNode.position.x = size.width/2
-        labelNode.text = "super duper game"
+        title = SKLabelNode(fontNamed: "tycho")
+        title.fontSize = 20
+        title.position.y = size.height/5
+        title.position.x = size.width/2
+        title.text = "Cityzen"
 
-        self.addChild(labelNode)
+        self.addChild(title)
     }
 
     required init?(coder aDecoder: NSCoder) {

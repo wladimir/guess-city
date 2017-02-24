@@ -9,8 +9,14 @@
 import UIKit
 import SpriteKit
 
-class AboutOverlayScene: SKScene {
+class SettingsOverlayScene: SKScene {
     var labelNode:SKLabelNode!
+    // rate us button
+    // remove ads
+    // restore purchase buttom
+    // all sounds off button
+    // email button
+    // info button
 
     override init(size: CGSize) {
         super.init(size: size)

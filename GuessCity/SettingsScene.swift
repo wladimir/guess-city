@@ -9,7 +9,7 @@
 import UIKit
 import SceneKit
 
-class AboutScene: SCNScene {
+class SettingsScene: SCNScene {
 
     override init() {
         super.init()

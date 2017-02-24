@@ -10,26 +10,29 @@ import UIKit
 import SpriteKit
 
 class GameOverlayScene: SKScene {
-    var labelNode:SKLabelNode!
+    var city: SKLabelNode!
+    var scores: SKLabelNode!
+    // play button
+    // back to menu button
 
     dynamic var center: Bool = false
 
     var score = 0 {
         didSet {
-            self.labelNode.text = "Score: \(self.score)"
-            self.labelNode.animate(newText: "May the source be with you", characterDelay: 0.1)
+            self.city.text = "Score: \(self.score)"
+            self.city.animate(newText: "May the source be with you", characterDelay: 0.1)
         }
     }
 
     override init(size: CGSize) {
         super.init(size: size)
-        labelNode = SKLabelNode(fontNamed: "Ampersand")
-        labelNode.fontSize = 10
-        labelNode.position.y = size.height/5
-        labelNode.position.x = size.width/5
-        labelNode.text = "EARTH!"
+        city = SKLabelNode(fontNamed: "Ampersand")
+        city.fontSize = 10
+        city.position.y = size.height/5
+        city.position.x = size.width/5
+        city.text = "EARTH!"
 
-        self.addChild(labelNode)
+        self.addChild(city)
     }
 
     required init?(coder aDecoder: NSCoder) {
