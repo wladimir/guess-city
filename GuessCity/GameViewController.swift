@@ -58,14 +58,6 @@ class GameViewController: UIViewController {
             return
         }
 
-        let eventLocation = gestureRecognize.location(in: sceneView)
-        let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
-        let hit = hitResults.first
-
-        if (hit == nil) {
-            return
-        }
-
         let translation = gestureRecognize.translation(in: view!)
         let x = Float(translation.x)
         let y = Float(-translation.y)

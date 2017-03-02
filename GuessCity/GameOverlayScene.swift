@@ -20,7 +20,6 @@ class GameOverlayScene: SKScene {
     var score = 0 {
         didSet {
             self.city.text = "Score: \(self.score)"
-            self.city.animate(newText: "May the source be with you", characterDelay: 0.1)
         }
     }
 

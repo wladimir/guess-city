@@ -23,6 +23,8 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>tycho.ttf</string>
+		<string>hyperion.ttf</string>
+		<string>fontawesome-webfont.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
