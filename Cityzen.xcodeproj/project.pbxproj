@@ -58,6 +58,7 @@
 		7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */; };
 		7DE794EB1E3D7861006FCF54 /* fair_clouds_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */; };
 		7DE794ED1E3D7861006FCF54 /* water_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E81E3D7860006FCF54 /* water_4k.png */; };
+		7DE7B1EA1E6F1F9200A5CAD6 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DE7B1E91E6F1F9000A5CAD6 /* FontAwesome.ttf */; };
 		7DE904CB1E0FCB90004BBF85 /* MenuOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */; };
 		7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */; };
 		7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */; };
@@ -68,9 +69,8 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
-		7DF393F81E68BEAD00E10FB3 /* fontawesome-webfont.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DF393F61E68BE0800E10FB3 /* fontawesome-webfont.ttf */; };
-		7DF393FB1E68BFE300E10FB3 /* hyperion.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7DF393FA1E68BFE000E10FB3 /* hyperion.ttf */; };
 		A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F873599BC3986510578AD5 /* Pods_GuessCity.framework */; };
+		B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,8 @@
 
 /* Begin PBXFileReference section */
 		0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.release.xcconfig"; sourceTree = "<group>"; };
+		12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cityzen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.release.xcconfig"; sourceTree = "<group>"; };
 		72F873599BC3986510578AD5 /* Pods_GuessCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0080291E5BA4BC006CADEB /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
 		7D00802B1E5BA52D006CADEB /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elev_bump_4k.jpg; sourceTree = "<group>"; };
 		7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fair_clouds_4k.png; sourceTree = "<group>"; };
 		7DE794E81E3D7860006FCF54 /* water_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water_4k.png; sourceTree = "<group>"; };
+		7DE7B1E91E6F1F9000A5CAD6 /* FontAwesome.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.ttf; sourceTree = "<group>"; };
 		7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuOverlayScene.swift; sourceTree = "<group>"; };
 		7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = BlueLineLoopFixed.mp3; sourceTree = "<group>"; };
 		7DEABB011DE8F59A0047AE42 /* Cityzen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cityzen.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -161,9 +164,8 @@
 		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DF393F61E68BE0800E10FB3 /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
-		7DF393FA1E68BFE000E10FB3 /* hyperion.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = hyperion.ttf; sourceTree = "<group>"; };
 		93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.debug.xcconfig"; sourceTree = "<group>"; };
+		AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			files = (
 				7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */,
 				A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */,
+				B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,6 +202,7 @@
 				7D1D877E1E300D34009144BB /* StoreKit.framework */,
 				7D1D877C1E300CA8009144BB /* GameKit.framework */,
 				72F873599BC3986510578AD5 /* Pods_GuessCity.framework */,
+				12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -360,9 +364,8 @@
 		7DFF5B701E5F33FE00A4A50B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				7DF393FA1E68BFE000E10FB3 /* hyperion.ttf */,
-				7DF393F61E68BE0800E10FB3 /* fontawesome-webfont.ttf */,
 				7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */,
+				7DE7B1E91E6F1F9000A5CAD6 /* FontAwesome.ttf */,
 			);
 			name = Fonts;
 			sourceTree = "<group>";
@@ -372,6 +375,8 @@
 			children = (
 				93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */,
 				0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */,
+				AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */,
+				437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -512,9 +517,9 @@
 				7DB2E2771E680EEF00703F0E /* Icon-29@2x.png in Resources */,
 				7DB2E2821E680EEF00703F0E /* Icon-72@2x.png in Resources */,
 				7DB2E27F1E680EEF00703F0E /* Icon-60@2x.png in Resources */,
+				7DE7B1EA1E6F1F9200A5CAD6 /* FontAwesome.ttf in Resources */,
 				7DAE20371E1DB5B40095956C /* cities.plist in Resources */,
 				7D6350081E60684D00C17BE7 /* settings.scn in Resources */,
-				7DF393F81E68BEAD00E10FB3 /* fontawesome-webfont.ttf in Resources */,
 				7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */,
 				7DB2E27E1E680EEF00703F0E /* Icon-60.png in Resources */,
 				7DB2E27C1E680EEF00703F0E /* Icon-57@2x.png in Resources */,
@@ -543,7 +548,6 @@
 				7DB2E2721E680EEF00703F0E /* Icon-20@2x.png in Resources */,
 				7DE932401E55E90A007CB28C /* BlueLineLoopFixed.mp3 in Resources */,
 				7DB2E2811E680EEF00703F0E /* Icon-72.png in Resources */,
-				7DF393FB1E68BFE300E10FB3 /* hyperion.ttf in Resources */,
 				7DB2E28E1E680EEF00703F0E /* iTunesArtwork@2x.png in Resources */,
 				7D4EAEA01E5F3D5F00605052 /* tycho.ttf in Resources */,
 				7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */,
@@ -579,7 +583,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9088E28F1A85DBD547E048D6 /* [CP] Embed Pods Frameworks */ = {
@@ -594,7 +598,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F616679EF083DF81904E5388 /* [CP] Check Pods Manifest.lock */ = {
@@ -778,7 +782,7 @@
 		};
 		7DEABB2C1DE8F59A0047AE42 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */;
+			baseConfigurationReference = AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
@@ -792,7 +796,7 @@
 		};
 		7DEABB2D1DE8F59A0047AE42 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */;
+			baseConfigurationReference = 437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;

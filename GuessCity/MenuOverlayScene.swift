@@ -18,14 +18,14 @@ class MenuOverlayScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
 
-        let title = SKLabelNode(fontNamed: "hyperion")
-        title.fontSize = 25
+        let title = SKLabelNode(fontNamed: "tycho")
+        title.fontSize = 20
         title.position.y = size.height - 50
         title.position.x = size.width/2
         title.text = "Cityzen"
         self.addChild(title)
 
-        let text = SKLabelNode(fontNamed: "tycho")
+        let text = SKLabelNode(fontNamed: "FontAwesome")
         text.text = "tap to play"
         text.fontSize = 15
         text.position.y = 50

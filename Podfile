@@ -1,6 +1,6 @@
 platform :ios, '9.0'
 use_frameworks!
 
-target 'GuessCity' do
+target 'Cityzen' do
 	pod 'SwiftPhoenixClient'
 end

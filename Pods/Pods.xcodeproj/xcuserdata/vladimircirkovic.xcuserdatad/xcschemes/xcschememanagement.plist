@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-GuessCity.xcscheme</key>
+		<key>Pods-Cityzen.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -22,17 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>04183E6672D78DB43A4D8B545FB13F54</key>
+		<key>1E365A6B521D941BFBF192E170EF200F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>19578814A01788DB2CCF55E2643F8E6E</key>
+		<key>4AEDF2201D05D51654A756FEAB26518E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F10F81493A799A054A4491072A65B3D9</key>
+		<key>5ECA07BECAB922B731DE1FC28540D826</key>
 		<dict>
 			<key>primary</key>
 			<true/>
