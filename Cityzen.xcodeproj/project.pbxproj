@@ -91,7 +91,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.release.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.release.xcconfig"; sourceTree = "<group>"; };
 		12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cityzen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.release.xcconfig"; sourceTree = "<group>"; };
 		72F873599BC3986510578AD5 /* Pods_GuessCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -164,7 +163,6 @@
 		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GuessCity.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GuessCity/Pods-GuessCity.debug.xcconfig"; sourceTree = "<group>"; };
 		AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -373,8 +371,6 @@
 		D6CB019EE7C479D7305A02A0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				93FE328ADBB6F93E93815A18 /* Pods-GuessCity.debug.xcconfig */,
-				0907D90C123F30525B04C68E /* Pods-GuessCity.release.xcconfig */,
 				AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */,
 				437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */,
 			);
