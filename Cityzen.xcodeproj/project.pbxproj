@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0080291E5BA4BC006CADEB /* MenuScene.swift */; };
 		7D00802C1E5BA52D006CADEB /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00802B1E5BA52D006CADEB /* SettingsScene.swift */; };
-		7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A051E55C228004EF899 /* Rise03.wav */; };
 		7D2D8A081E55C228004EF899 /* Downer01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A061E55C228004EF899 /* Downer01.wav */; };
 		7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* GameHelper.swift */; };
@@ -69,7 +68,6 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
-		A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72F873599BC3986510578AD5 /* Pods_GuessCity.framework */; };
 		B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */; };
 /* End PBXBuildFile section */
 
@@ -171,8 +169,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D1D877D1E300CA8009144BB /* GameKit.framework in Frameworks */,
-				A945BC021D903572544E98A5 /* Pods_GuessCity.framework in Frameworks */,
 				B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,9 +288,9 @@
 			isa = PBXGroup;
 			children = (
 				7D470D4C1E1D202E000BF4F0 /* README.md */,
-				7DEABB031DE8F59A0047AE42 /* GuessCity */,
-				7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */,
-				7DEABB251DE8F59A0047AE42 /* GuessCityUITests */,
+				7DEABB031DE8F59A0047AE42 /* Cityzen */,
+				7DEABB1A1DE8F59A0047AE42 /* CityzenTests */,
+				7DEABB251DE8F59A0047AE42 /* CityzenUITests */,
 				7DEABB021DE8F59A0047AE42 /* Products */,
 				7D1D877B1E300CA8009144BB /* Frameworks */,
 				D6CB019EE7C479D7305A02A0 /* Pods */,
@@ -311,7 +307,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7DEABB031DE8F59A0047AE42 /* GuessCity */ = {
+		7DEABB031DE8F59A0047AE42 /* Cityzen */ = {
 			isa = PBXGroup;
 			children = (
 				7DEABB0D1DE8F59A0047AE42 /* Assets.xcassets */,
@@ -331,24 +327,27 @@
 				7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */,
 				7DEABB121DE8F59A0047AE42 /* Info.plist */,
 			);
+			name = Cityzen;
 			path = GuessCity;
 			sourceTree = "<group>";
 		};
-		7DEABB1A1DE8F59A0047AE42 /* GuessCityTests */ = {
+		7DEABB1A1DE8F59A0047AE42 /* CityzenTests */ = {
 			isa = PBXGroup;
 			children = (
 				7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */,
 				7DEABB1D1DE8F59A0047AE42 /* Info.plist */,
 			);
+			name = CityzenTests;
 			path = GuessCityTests;
 			sourceTree = "<group>";
 		};
-		7DEABB251DE8F59A0047AE42 /* GuessCityUITests */ = {
+		7DEABB251DE8F59A0047AE42 /* CityzenUITests */ = {
 			isa = PBXGroup;
 			children = (
 				7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */,
 				7DEABB281DE8F59A0047AE42 /* Info.plist */,
 			);
+			name = CityzenUITests;
 			path = GuessCityUITests;
 			sourceTree = "<group>";
 		};

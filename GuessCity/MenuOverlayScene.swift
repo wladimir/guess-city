@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import Iconic
 
 class MenuOverlayScene: SKScene {
     // play button (largest)
@@ -18,6 +19,8 @@ class MenuOverlayScene: SKScene {
     override init(size: CGSize) {
         super.init(size: size)
 
+        FontAwesomeIcon.register()
+
         let title = SKLabelNode(fontNamed: "tycho")
         title.fontSize = 20
         title.position.y = size.height - 50
@@ -25,12 +28,14 @@ class MenuOverlayScene: SKScene {
         title.text = "Cityzen"
         self.addChild(title)
 
-        let text = SKLabelNode(fontNamed: "FontAwesome")
-        text.text = "tap to play"
-        text.fontSize = 15
+        let size = CGSize(width: 50, height: 50)
+        let icon = FontAwesomeIcon.playIcon
+        let image = icon.image(ofSize: size, color: .white)
+        let texture = SKTexture(image: image)
+
+        let text = SKSpriteNode(texture: texture)
         text.position.y = 50
-        text.position.x = size.width/2
-        text.fontColor = UIColor.green
+        text.position.x = self.size.width/2
         text.name = "tap"
         self.addChild(text)
     }
