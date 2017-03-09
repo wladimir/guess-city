@@ -1,0 +1,6 @@
+framework module Pods_Cityzen {
+  umbrella header "Pods-Cityzen-umbrella.h"
+
+  export *
+  module * { export * }
+}

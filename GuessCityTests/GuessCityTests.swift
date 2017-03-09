@@ -7,9 +7,9 @@
 //
 
 import XCTest
-@testable import GuessCity
+@testable import Cityzen
 
-class GuessCityTests: XCTestCase {
+class CityzenTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

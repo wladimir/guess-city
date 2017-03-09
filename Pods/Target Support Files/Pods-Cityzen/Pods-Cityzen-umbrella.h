@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_GuessCityVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_GuessCityVersionString[];
+FOUNDATION_EXPORT double Pods_CityzenVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_CityzenVersionString[];
 
