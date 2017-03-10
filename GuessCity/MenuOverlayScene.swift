@@ -34,13 +34,15 @@ class MenuOverlayScene: SKScene {
         let largeSize = CGSize(width: 60, height: 60)
         let smallSize = CGSize(width: 30, height: 30)
         let secondRowX = (self.size.width - 50)/5
-        let secondRowY = size.height/4
+        let secondRowY = size.height/3
+        let secondRowY1 = size.height/3.5
+        let secondRowY2 = size.height/4
 
         addButton(image: FontAwesomeIcon.playIcon.image(ofSize: largeSize, color: .white), x: self.size.width/2, y: (size.height/4)*3, name: "play")
         addButton(image: FontAwesomeIcon.cogIcon.image(ofSize: smallSize, color: .white), x: secondRowX, y: secondRowY, name: "settings")
-        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: smallSize, color: .white), x: secondRowX*2, y: secondRowY, name: "leaderboard")
-        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: smallSize, color: .white), x: secondRowX*3, y: secondRowY, name: "about")
-        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: smallSize, color: .white), x: secondRowX*4, y: secondRowY, name: "rate")
+        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: smallSize, color: .white), x: secondRowX*2, y: secondRowY1, name: "leaderboard")
+        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: smallSize, color: .white), x: secondRowX*3, y: secondRowY2, name: "about")
+        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: smallSize, color: .white), x: secondRowX*4, y: secondRowY1, name: "rate")
         addButton(image: FontAwesomeIcon.volumeOffIcon.image(ofSize: smallSize, color: .white), x: secondRowX*5, y: secondRowY, name: "volume")
     }
 

@@ -13,6 +13,8 @@ import Iconic
 class GameOverlayScene: SKScene {
     var city: SKLabelNode!
     var scores: SKLabelNode!
+
+    // ads on the bottom!
     
     dynamic var center: Bool = false
 
@@ -27,7 +29,7 @@ class GameOverlayScene: SKScene {
 
         FontAwesomeIcon.register()
 
-        city = SKLabelNode(fontNamed: "Ampersand")
+        city = SKLabelNode(fontNamed: "tycho")
         city.fontSize = 10
         city.position.y = size.height/5
         city.position.x = size.width/5
