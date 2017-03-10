@@ -8,15 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0080291E5BA4BC006CADEB /* MenuScene.swift */; };
-		7D00802C1E5BA52D006CADEB /* SettingsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D00802B1E5BA52D006CADEB /* SettingsScene.swift */; };
 		7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A051E55C228004EF899 /* Rise03.wav */; };
 		7D2D8A081E55C228004EF899 /* Downer01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A061E55C228004EF899 /* Downer01.wav */; };
 		7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* GameHelper.swift */; };
-		7D43CC121E5879DB00CD1B4C /* SettingsOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D43CC111E5879DB00CD1B4C /* SettingsOverlayScene.swift */; };
 		7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4674841E5EEB6D00F7A3C0 /* splash2.png */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
 		7D4EAEA01E5F3D5F00605052 /* tycho.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */; };
-		7D6350081E60684D00C17BE7 /* settings.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7D6350071E60684D00C17BE7 /* settings.scn */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7DAE20371E1DB5B40095956C /* cities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7DAE20361E1DB5B40095956C /* cities.plist */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
@@ -93,17 +90,14 @@
 		437E60786BBDEA41D812F078 /* Pods-Cityzen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.release.xcconfig"; sourceTree = "<group>"; };
 		72F873599BC3986510578AD5 /* Pods_GuessCity.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GuessCity.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D0080291E5BA4BC006CADEB /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
-		7D00802B1E5BA52D006CADEB /* SettingsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsScene.swift; sourceTree = "<group>"; };
 		7D1D877C1E300CA8009144BB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		7D1D877E1E300D34009144BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		7D2D8A051E55C228004EF899 /* Rise03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rise03.wav; sourceTree = "<group>"; };
 		7D2D8A061E55C228004EF899 /* Downer01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Downer01.wav; sourceTree = "<group>"; };
 		7D3EC0FF1E1F0F690084953E /* GameHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameHelper.swift; path = ../GameHelper.swift; sourceTree = "<group>"; };
-		7D43CC111E5879DB00CD1B4C /* SettingsOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsOverlayScene.swift; sourceTree = "<group>"; };
 		7D4674841E5EEB6D00F7A3C0 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D4EAE9F1E5F3D5E00605052 /* tycho.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tycho.ttf; sourceTree = "<group>"; };
-		7D6350071E60684D00C17BE7 /* settings.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = settings.scn; sourceTree = SOURCE_ROOT; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameOverlayScene.swift; sourceTree = "<group>"; };
 		7DAE20361E1DB5B40095956C /* cities.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = cities.plist; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
@@ -279,7 +273,6 @@
 			children = (
 				7DDE0DD61E3256EF009951D1 /* game.scn */,
 				7DD53B1C1E5C332400F8E0A3 /* menu.scn */,
-				7D6350071E60684D00C17BE7 /* settings.scn */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -315,8 +308,6 @@
 				7D593BD11DE9B03300695554 /* Resources */,
 				7DD903F71E33AEA900760688 /* GameScene.swift */,
 				7D0080291E5BA4BC006CADEB /* MenuScene.swift */,
-				7D00802B1E5BA52D006CADEB /* SettingsScene.swift */,
-				7D43CC111E5879DB00CD1B4C /* SettingsOverlayScene.swift */,
 				7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */,
 				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
 				7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */,
@@ -514,7 +505,6 @@
 				7DB2E27F1E680EEF00703F0E /* Icon-60@2x.png in Resources */,
 				7DE7B1EA1E6F1F9200A5CAD6 /* FontAwesome.ttf in Resources */,
 				7DAE20371E1DB5B40095956C /* cities.plist in Resources */,
-				7D6350081E60684D00C17BE7 /* settings.scn in Resources */,
 				7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */,
 				7DB2E27E1E680EEF00703F0E /* Icon-60.png in Resources */,
 				7DB2E27C1E680EEF00703F0E /* Icon-57@2x.png in Resources */,
@@ -620,12 +610,10 @@
 			files = (
 				7DD903F81E33AEA900760688 /* GameScene.swift in Sources */,
 				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
-				7D00802C1E5BA52D006CADEB /* SettingsScene.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */,
 				7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
-				7D43CC121E5879DB00CD1B4C /* SettingsOverlayScene.swift in Sources */,
 				7DE904CB1E0FCB90004BBF85 /* MenuOverlayScene.swift in Sources */,
 				7D3EC1001E1F0F690084953E /* GameHelper.swift in Sources */,
 			);

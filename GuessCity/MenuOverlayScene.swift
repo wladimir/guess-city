@@ -11,11 +11,6 @@ import SpriteKit
 import Iconic
 
 class MenuOverlayScene: SKScene {
-    // play button (largest)
-    // leaderboard button (crown or axis)
-    // settings button
-    // title on top
-
     override init(size: CGSize) {
         super.init(size: size)
 
@@ -28,16 +23,34 @@ class MenuOverlayScene: SKScene {
         title.text = "Cityzen"
         self.addChild(title)
 
-        let size = CGSize(width: 50, height: 50)
-        let icon = FontAwesomeIcon.playIcon
-        let image = icon.image(ofSize: size, color: .white)
-        let texture = SKTexture(image: image)
-
-        let text = SKSpriteNode(texture: texture)
-        text.position.y = 50
-        text.position.x = self.size.width/2
+        let text = SKLabelNode(fontNamed: "tycho")
+        text.fontSize = 10
+        text.position.y = (size.height/4)*3 + 40
+        text.position.x = size.width/2
+        text.text = "Tap to play"
         text.name = "tap"
         self.addChild(text)
+
+        let largeSize = CGSize(width: 60, height: 60)
+        let smallSize = CGSize(width: 30, height: 30)
+        let secondRowX = (self.size.width - 50)/5
+        let secondRowY = size.height/4
+
+        addButton(image: FontAwesomeIcon.playIcon.image(ofSize: largeSize, color: .white), x: self.size.width/2, y: (size.height/4)*3, name: "play")
+        addButton(image: FontAwesomeIcon.cogIcon.image(ofSize: smallSize, color: .white), x: secondRowX, y: secondRowY, name: "settings")
+        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: smallSize, color: .white), x: secondRowX*2, y: secondRowY, name: "leaderboard")
+        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: smallSize, color: .white), x: secondRowX*3, y: secondRowY, name: "about")
+        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: smallSize, color: .white), x: secondRowX*4, y: secondRowY, name: "rate")
+        addButton(image: FontAwesomeIcon.volumeOffIcon.image(ofSize: smallSize, color: .white), x: secondRowX*5, y: secondRowY, name: "volume")
+    }
+
+    private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat,  name: String) {
+        let texture = SKTexture(image: image)
+        let button = SKSpriteNode(texture: texture)
+        button.position.y = y
+        button.position.x = x
+        button.name = name
+        self.addChild(button)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

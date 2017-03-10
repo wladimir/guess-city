@@ -16,10 +16,8 @@ class GameViewController: UIViewController {
     var sceneView: SCNView!
     var gameScene: GameScene!
     var menuScene: MenuScene!
-    var settingsScene: SettingsScene!
     var gameOverlayScene: GameOverlayScene!
     var menuOverlayScene: MenuOverlayScene!
-    var settingsOverlayScene: SettingsOverlayScene!
 
     let game = GameHelper.sharedInstance
 
@@ -32,13 +30,11 @@ class GameViewController: UIViewController {
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
-        settingsScene = SettingsScene(named: "settings.scn")
         sceneView.scene = menuScene
         sceneView.isPlaying = true
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        settingsOverlayScene = SettingsOverlayScene(size: sceneView.bounds.size)
         sceneView.overlaySKScene = menuOverlayScene
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -61,8 +57,6 @@ class GameViewController: UIViewController {
         let translation = gestureRecognize.translation(in: view!)
         let x = Float(translation.x)
         let y = Float(-translation.y)
-
-        // if doesn't hit with earth, return
 
         let anglePan = sqrt(pow(x, 2) + pow(y, 2))/2 * (Float)(M_PI)/180.0
 
