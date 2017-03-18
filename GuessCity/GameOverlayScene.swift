@@ -8,48 +8,64 @@
 
 import UIKit
 import SpriteKit
+import SceneKit
 import Iconic
 
 class GameOverlayScene: SKScene {
-    var city: SKLabelNode!
-    var scores: SKLabelNode!
+    let bandColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(87/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
+    let color: UIColor = UIColor.white
 
-    // ads on the bottom!
-    
-    dynamic var center: Bool = false
+    var location: SKLabelNode!
+    var points: SKLabelNode!
+    var pos: SKLabelNode!
+    var band: SKNode!
 
     var score = 0 {
         didSet {
-            self.city.text = "Score: \(self.score)"
+            self.points.text = "Score: \(self.score)"
         }
     }
 
+    var sceneView: SCNView!
+    var menuScene: SCNScene!
+    var menuOverlayScene: SKScene!
+
+    // home icon is button
+    // star -> points, players -> position
+
     override init(size: CGSize) {
         super.init(size: size)
+    }
 
+    func setup(sceneView: SCNView, menuScene: SCNScene, menuOverlayScene: SKScene) {
         FontAwesomeIcon.register()
 
-        city = SKLabelNode(fontNamed: "tycho")
-        city.fontSize = 10
-        city.position.y = size.height/5
-        city.position.x = size.width/5
-        city.text = "EARTH!"
-        self.addChild(city)
+        self.sceneView = sceneView
+        self.menuScene = menuScene
+        self.menuOverlayScene = menuOverlayScene
 
-        let largeSize = CGSize(width: 60, height: 60)
-        let smallSize = CGSize(width: 30, height: 30)
-        let secondRowX = (self.size.width - 50)/5
-        let secondRowY = size.height/4
+        location = addText(x: size.width/10, y: size.height/(13/12), text: "Waiting for next turn!", size: 17)
+        points = addText(x: size.width/10, y: size.height/(26/4), text: "100", size: 17)
+        pos = addText(x: size.width/10, y: size.height/(26/3), text: "2 / 5" , size: 17)
 
-        addButton(image: FontAwesomeIcon.homeIcon.image(ofSize: smallSize, color: .white), x: self.size.width/2, y: (size.height/4)*3, name: "play")    }
+        band = SKSpriteNode(color: bandColor, size: CGSize(width: 20, height: 20))
+        band.position.x = 0
+        band.position.y = self.size.height
+        self.addChild(band)
+    }
 
-    private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat,  name: String) {
-        let texture = SKTexture(image: image)
-        let button = SKSpriteNode(texture: texture)
-        button.position.y = y
-        button.position.x = x
-        button.name = name
-        self.addChild(button)
+    private func addText(x: CGFloat,  y: CGFloat, text: String, size: CGFloat) -> SKLabelNode {
+        let node = SKLabelNode(fontNamed: "Futura-Medium")
+        node.fontSize = size
+        node.position.x = x
+        node.position.y = y
+        node.name = name
+        node.text = text
+        node.horizontalAlignmentMode = .left
+
+        self.addChild(node)
+        
+        return node
     }
 
     required init?(coder aDecoder: NSCoder) {

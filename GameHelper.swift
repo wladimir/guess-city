@@ -22,22 +22,29 @@ class GameHelper {
     static let sharedInstance = GameHelper()
 
     var sounds = [String:SCNAudioSource]()
+    var soundFiles = [String:String]()
 
     static func random(maxValue: UInt32) -> UInt32 {
         return arc4random_uniform(maxValue + 1)
     }
 
-    func loadSound(name:String, fileNamed:String) {
+    func loadSound(name: String, fileNamed: String) {
         if let sound = SCNAudioSource(fileNamed: fileNamed) {
             sound.isPositional = false
             sound.volume = 0.3
             sound.load()
             sounds[name] = sound
+            soundFiles[name] = fileNamed
         }
     }
 
-    func playSound(node:SCNNode, name:String) {
+    func playSound(node: SCNNode, name: String) {
         let sound = sounds[name]
         node.runAction(SCNAction.playAudio(sound!, waitForCompletion: false))
+    }
+
+    func playSound(node: SKNode, name: String) {
+        let sound = soundFiles[name]
+        node.run(SKAction.playSoundFileNamed(sound!, waitForCompletion: false))
     }
 }

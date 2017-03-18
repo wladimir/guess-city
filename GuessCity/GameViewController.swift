@@ -11,17 +11,23 @@ import QuartzCore
 import SceneKit
 import SpriteKit
 import CoreLocation
+import AVFoundation
 
 class GameViewController: UIViewController {
     var sceneView: SCNView!
     var gameScene: GameScene!
     var menuScene: MenuScene!
+    var blankScene: BlankScene!
     var gameOverlayScene: GameOverlayScene!
     var menuOverlayScene: MenuOverlayScene!
+    var leaderboardOverlayScene: LeaderboardOverlayScene!
+    var aboutOverlayScene: AboutOverlayScene!
 
     let game = GameHelper.sharedInstance
 
     let cities = Cities()
+
+    var audioPlayer: AVAudioPlayer!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,11 +36,19 @@ class GameViewController: UIViewController {
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
+        blankScene = BlankScene(named: "blank.scn")
         sceneView.scene = menuScene
-        sceneView.isPlaying = true
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
+        leaderboardOverlayScene = LeaderboardOverlayScene(size: sceneView.bounds.size)
+        aboutOverlayScene = AboutOverlayScene(size: sceneView.bounds.size)
+
+        gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
+        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene, aboutOverlayScene: aboutOverlayScene)
+        leaderboardOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
+        aboutOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
+
         sceneView.overlaySKScene = menuOverlayScene
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
@@ -74,20 +88,11 @@ class GameViewController: UIViewController {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        if game.state == .TapToPlay {
-            sceneView.present(gameScene, with: .fade(withDuration: 1.5), incomingPointOfView: nil, completionHandler: {
-                self.sceneView.overlaySKScene = self.gameOverlayScene;
-                self.game.state = .Playing
-                self.gameOverlayScene.score += 1
-            })
-            sceneView.isPlaying = true
-            gameOverlayScene.isPaused = false
-            gameScene.isPaused = false
-            menuScene.isPaused = false
+        if game.state != .Playing {
             return
         }
 
-        //gameScene.turnStarted()
+        // gameScene.turnStarted()
 
         let eventLocation = gestureRecognize.location(in: sceneView)
         let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
@@ -105,11 +110,11 @@ class GameViewController: UIViewController {
 
     private func coordinateFromPoint(point:CGPoint) -> CLLocation
     {
-        let u = Double(point.x);
-        let v = Double(point.y);
+        let u = Double(point.x)
+        let v = Double(point.y)
 
-        let lat: CLLocationDegrees = (0.5-v)*180.0;
-        let lon : CLLocationDegrees = (u-0.5)*360.0;
+        let lat: CLLocationDegrees = (0.5-v)*180.0
+        let lon : CLLocationDegrees = (u-0.5)*360.0
 
         return CLLocation(latitude: lat, longitude: lon)
     }
@@ -137,19 +142,29 @@ class GameViewController: UIViewController {
     }
 
     private func setupSounds() {
-        if game.state == .TapToPlay {
-            let music = SCNAudioSource(fileNamed: "BlueLineLoopFixed.mp3")
-            music!.volume = 0.3;
-            music!.loops = true
-            music!.shouldStream = false
-            music!.isPositional = false
-            let musicPlayer = SCNAudioPlayer(source: music!)
-            music!.volume = 0.4;
-            menuScene.rootNode.addAudioPlayer(musicPlayer)
-        } else {
-            game.loadSound(name: "positive", fileNamed: "Rise03.wav")
-            game.loadSound(name: "negative", fileNamed: "Downer01.wav")
-            
+        // if game.state == .TapToPlay {}
+
+        playBackgroundMusic(filename: "BlueLineLoopFixed.mp3")
+
+        game.loadSound(name: "positive", fileNamed: "Rise03.wav")
+        game.loadSound(name: "negative", fileNamed: "Downer01.wav")
+        game.loadSound(name: "click", fileNamed: "misc_menu_4.wav")
+    }
+
+    func playBackgroundMusic(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: newURL)
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.volume = 0.4
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
         }
     }
 }

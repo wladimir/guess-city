@@ -30,7 +30,7 @@ class MenuScene: SCNScene {
         rotateAnimation.byValue = M_PI*2.0
         rotateAnimation.duration = 50
         rotateAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
-        rotateAnimation.repeatCount = .infinity;
+        rotateAnimation.repeatCount = .infinity
 
         earthNode.addAnimation(rotateAnimation, forKey: "rotate the earth")
     }
