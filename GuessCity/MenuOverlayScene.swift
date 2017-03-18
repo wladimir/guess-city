@@ -71,7 +71,8 @@ class MenuOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                game.playSound(node: node, name: "click")
+                game.playSound(filename: "misc_menu_4.wav")
+
                 switch node.name! {
                 case "play": play()
                 case "leaderboard": showLeaderboard()
@@ -81,7 +82,6 @@ class MenuOverlayScene: SKScene {
                 }
             }
         }
-        super.touchesBegan(touches, with: event)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +89,8 @@ class MenuOverlayScene: SKScene {
     }
 
     private func play() {
+        game.muteBackgroundMusic()
+
         self.sceneView.overlaySKScene = self.gameOverlayScene
         self.game.state = .Playing
         sceneView.present(gameScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)

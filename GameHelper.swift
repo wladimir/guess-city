@@ -9,6 +9,7 @@
 import Foundation
 import SceneKit
 import SpriteKit
+import AVFoundation
 
 public enum GameState {
     case Playing
@@ -19,32 +20,65 @@ public enum GameState {
 class GameHelper {
     var state = GameState.TapToPlay
 
+    var musicPlayer: AVAudioPlayer!
+    var soundsPlayer: AVAudioPlayer!
+
     static let sharedInstance = GameHelper()
 
     var sounds = [String:SCNAudioSource]()
     var soundFiles = [String:String]()
 
+    init() {
+
+    }
+
     static func random(maxValue: UInt32) -> UInt32 {
         return arc4random_uniform(maxValue + 1)
     }
 
-    func loadSound(name: String, fileNamed: String) {
-        if let sound = SCNAudioSource(fileNamed: fileNamed) {
-            sound.isPositional = false
-            sound.volume = 0.3
-            sound.load()
-            sounds[name] = sound
-            soundFiles[name] = fileNamed
+    func playBackgroundMusic(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: newURL)
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.volume = 0.5
+            musicPlayer.prepareToPlay()
+            musicPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
         }
     }
 
-    func playSound(node: SCNNode, name: String) {
-        let sound = sounds[name]
-        node.runAction(SCNAction.playAudio(sound!, waitForCompletion: false))
+    func muteBackgroundMusic() {
+        if let p = musicPlayer {
+            p.setVolume(0, fadeDuration: 0)
+        }
     }
 
-    func playSound(node: SKNode, name: String) {
-        let sound = soundFiles[name]
-        node.run(SKAction.playSoundFileNamed(sound!, waitForCompletion: false))
+    func resumeBackgroundMusic() {
+        if let p = musicPlayer {
+            p.setVolume(0.5, fadeDuration: 3)
+        }
+    }
+
+    func playSound(filename: String) {
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            soundsPlayer = try AVAudioPlayer(contentsOf: newURL)
+            soundsPlayer.numberOfLoops = 0
+            soundsPlayer.volume = 0.5
+            soundsPlayer.prepareToPlay()
+            soundsPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
 }

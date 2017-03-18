@@ -29,11 +29,11 @@ class AboutOverlayScene: SKScene {
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
 
-        let texture = SKTexture(image: FontAwesomeIcon.homeIcon.image(ofSize: CGSize(width: 50, height: 50), color: .white))
+        let texture = SKTexture(image: FontAwesomeIcon.homeIcon.image(ofSize: CGSize(width: 30, height: 30), color: .white))
         let button = SKSpriteNode(texture: texture)
         button.position.x = 50
         button.position.y = 50
-        button.name = name
+        button.name = "home"
         self.addChild(button)
 
         let title = SKLabelNode(fontNamed: "tycho")
@@ -50,11 +50,12 @@ class AboutOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                game.playSound(node: node, name: "click")
-                backToMenu()
+                if (node.name == "home") {
+                    game.soundsPlayer.play()
+                    backToMenu()
+                }
             }
         }
-        super.touchesBegan(touches, with: event)
     }
 
     required init?(coder aDecoder: NSCoder) {

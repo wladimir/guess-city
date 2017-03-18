@@ -60,7 +60,7 @@ class GameViewController: UIViewController {
         cities.load()
         print(cities.cities[2].lon)
 
-        setupSounds()
+        game.playBackgroundMusic(filename: "BlueLineLoopFixed.mp3")
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
@@ -139,32 +139,5 @@ class GameViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
-    }
-
-    private func setupSounds() {
-        // if game.state == .TapToPlay {}
-
-        playBackgroundMusic(filename: "BlueLineLoopFixed.mp3")
-
-        game.loadSound(name: "positive", fileNamed: "Rise03.wav")
-        game.loadSound(name: "negative", fileNamed: "Downer01.wav")
-        game.loadSound(name: "click", fileNamed: "misc_menu_4.wav")
-    }
-
-    func playBackgroundMusic(filename: String) {
-        let url = Bundle.main.url(forResource: filename, withExtension: nil)
-        guard let newURL = url else {
-            print("Could not find file: \(filename)")
-            return
-        }
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOf: newURL)
-            audioPlayer.numberOfLoops = -1
-            audioPlayer.volume = 0.4
-            audioPlayer.prepareToPlay()
-            audioPlayer.play()
-        } catch let error as NSError {
-            print(error.description)
-        }
     }
 }
