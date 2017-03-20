@@ -28,8 +28,12 @@ class GameHelper {
     var sounds = [String:SCNAudioSource]()
     var soundFiles = [String:String]()
 
-    init() {
+    let bandColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(87/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
+    let mainColor: UIColor = UIColor(red: CGFloat(244/255.0), green: CGFloat(244/255.0), blue: CGFloat(244/255.0), alpha: CGFloat(1.0))
+    let pointsColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(243/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
+    let positionColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(175/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
 
+    init() {
     }
 
     static func random(maxValue: UInt32) -> UInt32 {
@@ -55,13 +59,13 @@ class GameHelper {
 
     func muteBackgroundMusic() {
         if let p = musicPlayer {
-            p.setVolume(0, fadeDuration: 0)
+            p.setVolume(0.3, fadeDuration: 2)
         }
     }
 
     func resumeBackgroundMusic() {
         if let p = musicPlayer {
-            p.setVolume(0.5, fadeDuration: 3)
+            p.setVolume(0.5, fadeDuration: 2)
         }
     }
 

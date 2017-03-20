@@ -29,19 +29,12 @@ class LeaderboardOverlayScene: SKScene {
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
 
-        let texture = SKTexture(image: FontAwesomeIcon.homeIcon.image(ofSize: CGSize(width: 30, height: 30), color: .white))
-        let button = SKSpriteNode(texture: texture)
-        button.position.x = 50
-        button.position.y = 50
-        button.name = "home"
-        self.addChild(button)
-
-        let title = SKLabelNode(fontNamed: "tycho")
+        let title = SKLabelNode(fontNamed: "Futura-Medium")
         title.fontSize = 20
         title.position.y = 100
         title.position.x = 100
         title.text = "leaderboard"
-        title.fontColor = .white
+        title.fontColor = game.mainColor
         self.addChild(title)
     }
 
