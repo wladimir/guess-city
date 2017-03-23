@@ -45,7 +45,8 @@ class GameViewController: UIViewController {
         aboutOverlayScene = AboutOverlayScene(size: sceneView.bounds.size)
 
         gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
-        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene, aboutOverlayScene: aboutOverlayScene)
+        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene,
+                               blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene, aboutOverlayScene: aboutOverlayScene)
         leaderboardOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
         aboutOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
 
@@ -135,7 +136,7 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.
