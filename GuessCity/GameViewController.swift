@@ -58,7 +58,8 @@ class GameViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
 
-        game.playBackgroundMusic(filename: "BlueLineLoopFixed.mp3")
+        game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
+        game.playBackgroundMusic()
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
@@ -90,8 +91,6 @@ class GameViewController: UIViewController {
             return
         }
 
-        // gameScene.turnStarted()
-
         let eventLocation = gestureRecognize.location(in: sceneView)
         let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode:self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes:true] )
         let hit = hitResults.first
@@ -104,6 +103,17 @@ class GameViewController: UIViewController {
         let location: CLLocation = coordinateFromPoint(point: textureCoordinate!)
 
         print(location)
+
+        gameScene.getPin().position = (hit?.localCoordinates)!;
+
+        let pinDirection = GLKVector3Make(0.0, 1.0, 0.0)
+        let normal       = SCNVector3ToGLKVector3((hit?.localNormal)!)
+
+        let rotationAxis = GLKVector3CrossProduct(pinDirection, normal)
+        let cosAngle     = GLKVector3DotProduct(pinDirection, normal)
+
+        let rotation = GLKVector4MakeWithVector3(rotationAxis, acos(cosAngle))
+        gameScene.getPin().rotation = SCNVector4FromGLKVector4(rotation)
     }
 
     private func coordinateFromPoint(point:CGPoint) -> CLLocation

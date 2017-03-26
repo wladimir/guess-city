@@ -40,7 +40,7 @@ class GameHelper {
         return arc4random_uniform(maxValue + 1)
     }
 
-    func playBackgroundMusic(filename: String) {
+    func createMusicPlayer(filename: String) {
         let url = Bundle.main.url(forResource: filename, withExtension: nil)
         guard let newURL = url else {
             print("Could not find file: \(filename)")
@@ -51,13 +51,25 @@ class GameHelper {
             musicPlayer.numberOfLoops = -1
             musicPlayer.volume = 0.5
             musicPlayer.prepareToPlay()
-            musicPlayer.play()
         } catch let error as NSError {
             print(error.description)
         }
     }
 
-    func muteBackgroundMusic() {
+    func playBackgroundMusic() {
+        if let p = musicPlayer {
+            p.play()
+        }
+    }
+
+
+    func stopBackgroundMusic() {
+        if let p = musicPlayer {
+            p.stop()
+        }
+    }
+
+    func fadeBackgroundMusic() {
         if let p = musicPlayer {
             p.setVolume(0.3, fadeDuration: 2)
         }
