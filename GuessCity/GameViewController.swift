@@ -58,9 +58,6 @@ class GameViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
 
-        cities.load()
-        print(cities.cities[2].lon)
-
         game.playBackgroundMusic(filename: "BlueLineLoopFixed.mp3")
     }
 

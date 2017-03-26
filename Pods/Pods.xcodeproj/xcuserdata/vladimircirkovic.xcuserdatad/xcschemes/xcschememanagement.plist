@@ -14,45 +14,15 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Socket.IO-Client-Swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Starscream.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>SwiftPhoenixClient.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>421E2CDF5BD21B640F0988B8A8B651D7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>481E651DCACB5DD71F54B25325ACBD52</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>4CBD8E9D471BCDC28E39AA8A16090A16</key>
+		<key>5F8AB28D83E8F8F4717C55D3FC75B4BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>79163952CF40D556490BF8DA268070A1</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C4B66D091925B77530955FA4A09AD1EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
