@@ -27,7 +27,7 @@ class MenuScene: SCNScene {
 
     func addRotateAnimation() {
         let rotateAnimation = CABasicAnimation(keyPath: "rotation.w")
-        rotateAnimation.byValue = M_PI*2.0
+        rotateAnimation.byValue = .pi*2.0
         rotateAnimation.duration = 50
         rotateAnimation.timingFunction = CAMediaTimingFunction.init(name: kCAMediaTimingFunctionLinear)
         rotateAnimation.repeatCount = .infinity
