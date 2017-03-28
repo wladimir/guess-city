@@ -29,9 +29,6 @@ class GameOverlayScene: SKScene {
     var menuScene: SCNScene!
     var menuOverlayScene: SKScene!
 
-    // home icon is button
-    // star -> points, players -> position
-
     override init(size: CGSize) {
         super.init(size: size)
     }

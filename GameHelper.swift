@@ -41,24 +41,24 @@ class GameHelper {
     }
 
     func createMusicPlayer(filename: String) {
-//        let url = Bundle.main.url(forResource: filename, withExtension: nil)
-//        guard let newURL = url else {
-//            print("Could not find file: \(filename)")
-//            return
-//        }
-//        do {
-//            musicPlayer = try AVAudioPlayer(contentsOf: newURL)
-//            musicPlayer.numberOfLoops = -1
-//            musicPlayer.volume = 0.5
-//            musicPlayer.prepareToPlay()
-//        } catch let error as NSError {
-//            print(error.description)
-//        }
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            musicPlayer = try AVAudioPlayer(contentsOf: newURL)
+            musicPlayer.numberOfLoops = -1
+            musicPlayer.volume = 0.5
+            musicPlayer.prepareToPlay()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
 
     func playBackgroundMusic() {
         if let p = musicPlayer {
-//            p.play()
+            p.play()
         }
     }
 
@@ -82,19 +82,19 @@ class GameHelper {
     }
 
     func playSound(filename: String) {
-//        let url = Bundle.main.url(forResource: filename, withExtension: nil)
-//        guard let newURL = url else {
-//            print("Could not find file: \(filename)")
-//            return
-//        }
-//        do {
-//            soundsPlayer = try AVAudioPlayer(contentsOf: newURL)
-//            soundsPlayer.numberOfLoops = 0
-//            soundsPlayer.volume = 0.5
-//            soundsPlayer.prepareToPlay()
-//            soundsPlayer.play()
-//        } catch let error as NSError {
-//            print(error.description)
-//        }
+        let url = Bundle.main.url(forResource: filename, withExtension: nil)
+        guard let newURL = url else {
+            print("Could not find file: \(filename)")
+            return
+        }
+        do {
+            soundsPlayer = try AVAudioPlayer(contentsOf: newURL)
+            soundsPlayer.numberOfLoops = 0
+            soundsPlayer.volume = 0.5
+            soundsPlayer.prepareToPlay()
+            soundsPlayer.play()
+        } catch let error as NSError {
+            print(error.description)
+        }
     }
 }
