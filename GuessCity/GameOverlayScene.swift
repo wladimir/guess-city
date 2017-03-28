@@ -14,10 +14,12 @@ import Iconic
 class GameOverlayScene: SKScene {
     let game = GameHelper.sharedInstance
 
-    var location: SKLabelNode!
+    var location1: SKLabelNode!
+    var location2: SKLabelNode!
     var points: SKLabelNode!
     var pos: SKLabelNode!
     var band: SKNode!
+    let fire = "🔥"
 
     var score = 0 {
         didSet {
@@ -47,23 +49,10 @@ class GameOverlayScene: SKScene {
         homeButton.name = "home"
         self.addChild(homeButton)
 
-        let pointsTexture = SKTexture(image: FontAwesomeIcon.starIcon.image(ofSize: CGSize(width: 20, height: 20), color: GameHelper.sharedInstance.pointsColor))
-        let pointsButton = SKSpriteNode(texture: pointsTexture)
-        pointsButton.position.x = size.width/8
-        pointsButton.position.y = size.height/(26/4)
-        pointsButton.name = "points"
-        self.addChild(pointsButton)
-
-        let positionTexture = SKTexture(image: FontAwesomeIcon.userIcon.image(ofSize: CGSize(width: 20, height: 20), color: GameHelper.sharedInstance.positionColor))
-        let positionButton = SKSpriteNode(texture: positionTexture)
-        positionButton.position.x = size.width/8
-        positionButton.position.y = size.height/(26/3)
-        positionButton.name = "position"
-        self.addChild(positionButton)
-
-        location = addText(x: size.width/10, y: size.height/(13/12), text: "Waiting for next turn!", size: 17)
-        points = addText(x: size.width/5, y: size.height/(26/4), text: "100", size: 17)
-        pos = addText(x: size.width/5, y: size.height/(26/3), text: "2 / 5" , size: 17)
+        location1 = addText(x: size.width/10, y: size.height/(13/12), text: "Waiting for next turn!", size: 17)
+        location2 = addText(x: size.width/10, y: size.height/(13/10), text: "", size: 17)
+        points = addText(x: (size.width/10)*3, y: size.height/(26/4), text: "⭐ 1000000 points", size: 17)
+        pos = addText(x: (size.width/10)*7, y: size.height/(26/4), text: "👥 2/5 players" , size: 17)
 
         band = SKSpriteNode(color: GameHelper.sharedInstance.bandColor, size: CGSize(width: 20, height: 20))
         band.position.x = 0
