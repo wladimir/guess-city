@@ -105,33 +105,22 @@ class GameViewController: UIViewController {
         let textureCoordinate = hit?.textureCoordinates(withMappingChannel: 0)
         let location: CLLocation = coordinateFromPoint(point: textureCoordinate!)
 
-        gameScene.getUserPin().position = (hit?.localCoordinates)!
+        setUserPin(vec: (hit?.localCoordinates)!)
+        setActualPin(latitude: 40.415363, longitude: -3.707398)
 
-        print(location)
-        print(hit?.localCoordinates)
-        print(hit?.localNormal)
+        let delta = distance(loc1: location, loc2: CLLocation(latitude: 40.415363, longitude: -3.707398))
+        print(delta)
+    }
 
+    func distance(loc1: CLLocation, loc2: CLLocation) -> CLLocationDistance {
+        return loc1.distance(from: loc2)
+    }
 
-        var latitude = 40.416775
-        var longitude = -3.703790
-        let LAT = latitude * .pi/180
-        let LON = longitude * .pi/180
-        let x = 1 * cos(LAT) * sin(LON)
-        let y = 1 * sin(LAT)
-        let z = 1 * cos(LAT) * cos(LON)
-        gameScene.getActualPin().position = SCNVector3Make(Float(x), Float(y), Float(z))
-        let pinDirection2 = GLKVector3Make(0.0, 1.0, 0.0)
-        let normal2 = SCNVector3ToGLKVector3(gameScene.getActualPin().position)
-
-        let rotationAxis2 = GLKVector3CrossProduct(pinDirection2, normal2)
-        let cosAngle2 = GLKVector3DotProduct(pinDirection2, normal2)
-
-        let rotation2 = GLKVector4MakeWithVector3(rotationAxis2, acos(cosAngle2))
-        gameScene.getActualPin().rotation = SCNVector4FromGLKVector4(rotation2)
-
+    func setUserPin(vec: SCNVector3) {
+        gameScene.getUserPin().position = vec
 
         let pinDirection = GLKVector3Make(0.0, 1.0, 0.0)
-        let normal = SCNVector3ToGLKVector3( gameScene.getUserPin().position)
+        let normal = SCNVector3ToGLKVector3(vec)
 
         let rotationAxis = GLKVector3CrossProduct(pinDirection, normal)
         let cosAngle = GLKVector3DotProduct(pinDirection, normal)
@@ -140,7 +129,27 @@ class GameViewController: UIViewController {
         gameScene.getUserPin().rotation = SCNVector4FromGLKVector4(rotation)
     }
 
-    private func coordinateFromPoint(point:CGPoint) -> CLLocation {
+    func setActualPin(latitude: Double, longitude: Double) {
+        let lat = latitude * .pi/180
+        let lon = longitude * .pi/180
+        let x = 1 * cos(lat) * sin(lon)
+        let y = 1 * sin(lat)
+        let z = 1 * cos(lat) * cos(lon)
+
+        let vec = SCNVector3Make(Float(x), Float(y), Float(z))
+        gameScene.getActualPin().position = vec
+
+        let pinDirection2 = GLKVector3Make(0.0, 1.0, 0.0)
+        let normal2 = SCNVector3ToGLKVector3(vec)
+
+        let rotationAxis2 = GLKVector3CrossProduct(pinDirection2, normal2)
+        let cosAngle2 = GLKVector3DotProduct(pinDirection2, normal2)
+
+        let rotation2 = GLKVector4MakeWithVector3(rotationAxis2, acos(cosAngle2))
+        gameScene.getActualPin().rotation = SCNVector4FromGLKVector4(rotation2)
+    }
+
+    func coordinateFromPoint(point:CGPoint) -> CLLocation {
         let u = Double(point.x)
         let v = Double(point.y)
 
