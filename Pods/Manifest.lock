@@ -1,8 +1,10 @@
 PODS:
   - Iconic (1.2)
+  - Socket.IO-Client-Swift (8.3.3)
 
 DEPENDENCIES:
   - Iconic (from `https://github.com/dzenbot/Iconic.git`, tag `1.3`)
+  - Socket.IO-Client-Swift (~> 8.3.3)
 
 EXTERNAL SOURCES:
   Iconic:
@@ -16,7 +18,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Iconic: 03d941cfad0c499ba0cde153cfbea6de6487f936
+  Socket.IO-Client-Swift: a2faffdbde89c63aebc5d631041530c1068b02b8
 
-PODFILE CHECKSUM: 56678e6ac40c065019c6f71f20e45b34e8ab4930
+PODFILE CHECKSUM: 0fc994cb573cf046904be38f5216f2e6292e984a
 
 COCOAPODS: 1.2.0

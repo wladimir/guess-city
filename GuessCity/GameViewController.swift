@@ -15,6 +15,7 @@ import AVFoundation
 import Darwin
 import MapKit
 import GameKit
+import SocketIO
 
 class GameViewController: UIViewController {
     var sceneView: SCNView!
@@ -36,6 +37,8 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         sceneView = self.view as! SCNView
+
+        // Scenes
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
@@ -60,6 +63,31 @@ class GameViewController: UIViewController {
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
+
+        // SocketIO
+
+        let socket = SocketIOClient(socketURL: URL(string: "http://localhost:5000")!, config: [.log(true), .connectParams(["ping_interval":10000])])
+
+        socket.on("connect") {data, ack in
+            print("socket connected")
+            print(data)
+            socket.emit("message", with: ["blabla"])
+        }
+
+        socket.on("currentAmount") {data, ack in
+            if let cur = data[0] as? Double {
+                socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
+                    socket.emit("update", ["amount": cur + 2.50])
+                }
+
+                ack.with("Got your currentAmount", "dude")
+            }
+        }
+        
+        
+        socket.connect()
+
+        // Sounds
 
         game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
         game.playBackgroundMusic()

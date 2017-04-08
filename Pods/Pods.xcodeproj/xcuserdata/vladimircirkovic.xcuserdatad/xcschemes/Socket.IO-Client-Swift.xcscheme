@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D0865244E22CA84541BF8642CE582217"
-               BuildableName = "Pods_Cityzen.framework"
-               BlueprintName = "Pods-Cityzen"
+               BlueprintIdentifier = "9C7234B5B8221794F46E77C6970FD0E3"
+               BuildableName = "SocketIO.framework"
+               BlueprintName = "Socket.IO-Client-Swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D0865244E22CA84541BF8642CE582217"
-            BuildableName = "Pods_Cityzen.framework"
-            BlueprintName = "Pods-Cityzen"
+            BlueprintIdentifier = "9C7234B5B8221794F46E77C6970FD0E3"
+            BuildableName = "SocketIO.framework"
+            BlueprintName = "Socket.IO-Client-Swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
