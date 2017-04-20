@@ -33,12 +33,15 @@ class GameViewController: UIViewController {
 
     var audioPlayer: AVAudioPlayer!
 
+    var socket: SocketIOClient?
+    var resetAck: SocketAckEmitter?
+
+    var connected: Bool! = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         sceneView = self.view as! SCNView
-
-        // Scenes
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
@@ -52,7 +55,8 @@ class GameViewController: UIViewController {
 
         gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
         menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene,
-                               blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene, aboutOverlayScene: aboutOverlayScene)
+                               blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene,
+                               aboutOverlayScene: aboutOverlayScene)
         leaderboardOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
         aboutOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
 
@@ -64,33 +68,87 @@ class GameViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
 
-        // SocketIO
+        socket = SocketIOClient(socketURL: URL(string: "http://localhost:5000")!,
+                                config: [.log(true),
+                                         .connectParams(["ping_interval":5000, "player_id":123])]) // log in
 
-        let socket = SocketIOClient(socketURL: URL(string: "http://localhost:5000")!, config: [.log(true), .connectParams(["ping_interval":10000])])
+        addHandlers()
 
-        socket.on("connect") {data, ack in
-            print("socket connected")
-            print(data)
-            socket.emit("message", with: ["blabla"])
+        socket?.connect()
+
+        game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
+        game.playBackgroundMusic()
+    }
+
+    private func addHandlers() {
+        socket?.on("connect") {data, ack in
+            self.connected = true
         }
 
-        socket.on("currentAmount") {data, ack in
+        socket?.on("disconnect") {data, ack in
+            self.connected = false
+        }
+
+        socket?.on("joined") {data, ack in
+            // inform player
+        }
+
+        socket?.on("answer") {data, ack in
             if let cur = data[0] as? Double {
-                socket.emitWithAck("canUpdate", cur).timingOut(after: 0) {data in
-                    socket.emit("update", ["amount": cur + 2.50])
+                self.socket?.emitWithAck("canAnswer", cur).timingOut(after: 2) {data in
+                    self.socket?.emit("sendAnswer", ["amount": cur + 2.50])
                 }
 
                 ack.with("Got your currentAmount", "dude")
             }
         }
-        
-        
-        socket.connect()
 
-        // Sounds
+        socket?.on("error") {data, ack in
+            print("error")
+        }
 
-        game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
-        game.playBackgroundMusic()
+        socket?.on("startGame") {[weak self] data, ack in
+            self?.handleStart()
+            return
+        }
+
+        socket?.on("playerMove") {[weak self] data, ack in
+            if let name = data[0] as? String, let x = data[1] as? Int, let y = data[2] as? Int {
+                self?.handlePlayerMove(name: name, coord: (x, y))
+            }
+        }
+
+        socket?.on("win") {[weak self] data, ack in
+            if let name = data[0] as? String, let typeDict = data[1] as? NSDictionary {
+                self?.handleWin(name: name, type: typeDict)
+            }
+        }
+
+        socket?.on("gameReset") {[weak self] data, ack in
+            let alert = UIAlertController(title: "Play Again?", message: "Do you want to play another round?", preferredStyle: .alert)
+
+            let okButton = UIAlertAction(title: "Yes", style: .default, handler: { (UIAlertAction) in
+                self!.resetAck?.with(false)
+            })
+
+            alert.addAction(okButton)
+            self!.present(alert, animated: true, completion: nil)
+        }
+
+        socket?.onAny {print("Got event: \($0.event), with items: \($0.items ?? [])")}
+
+    }
+
+    func handleWin(name: String, type: NSDictionary) {
+
+    }
+
+    func handleStart() {
+
+    }
+
+    func handlePlayerMove(name: String, coord: (Int, Int) ) {
+
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
@@ -195,7 +253,7 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown

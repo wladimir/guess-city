@@ -19,7 +19,6 @@ class GameOverlayScene: SKScene {
     var points: SKLabelNode!
     var pos: SKLabelNode!
     var band: SKNode!
-    let fire = "🔥"
 
     var score = 0 {
         didSet {
@@ -42,22 +41,38 @@ class GameOverlayScene: SKScene {
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
 
-        let homeTexture = SKTexture(image: FontAwesomeIcon.homeIcon.image(ofSize: CGSize(width: 20, height: 20), color: game.mainColor))
+        let homeTexture = SKTexture(image: FontAwesomeIcon.arrowLeftIcon.image(ofSize: game.smallIcon, color: game.mainColor))
         let homeButton = SKSpriteNode(texture: homeTexture)
-        homeButton.position.x = size.width - 15
-        homeButton.position.y = size.height - 25
+        homeButton.position.x = size.width - game.margin
+        homeButton.position.y = size.height - game.margin
         homeButton.name = "home"
         self.addChild(homeButton)
 
-        location1 = addText(x: size.width/10, y: size.height/(13/12), text: "Waiting for next turn!", size: 17)
-        location2 = addText(x: size.width/10, y: size.height/(13/10), text: "", size: 17)
-        points = addText(x: (size.width/10)*3, y: size.height/(26/4), text: "⭐ 1000000 points", size: 17)
-        pos = addText(x: (size.width/10)*7, y: size.height/(26/4), text: "👥 2/5 players" , size: 17)
+        location1 = addText(x: size.width/10, y: size.height/(13/11), text: "Waiting for next turn!", size: 17)
+        location2 = addText(x: size.width/10, y: size.height/(13/10.5), text: "Asd", size: 17)
+
+        let pointsText = "0"
+        addButton(image: FontAwesomeIcon.starIcon.image(ofSize: game.smallIcon, color: game.pointsColor), x: game.margin, y: game.margin, name: "star")
+        points = addText(x: game.margin * 2, y: game.margin, text: pointsText, size: 17)
+
+        addButton(image: FontAwesomeIcon.globeIcon.image(ofSize: game.smallIcon, color: game.positionColor), x: size.width - game.margin, y: game.margin, name: "globe")
+        let posText = "0/0"
+        pos = addText(x: size.width - 3 * game.margin - CGFloat(posText.characters.count), y: game.margin, text: posText , size: 17)
 
         band = SKSpriteNode(color: GameHelper.sharedInstance.bandColor, size: CGSize(width: 20, height: 20))
         band.position.x = 0
         band.position.y = self.size.height
         self.addChild(band)
+    }
+
+    private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat, name: String) {
+        let texture = SKTexture(image: image)
+        let button = SKSpriteNode(texture: texture)
+        button.position.x = x
+        button.position.y = y
+        button.name = name
+
+        self.addChild(button)
     }
 
     private func addText(x: CGFloat,  y: CGFloat, text: String, size: CGFloat) -> SKLabelNode {

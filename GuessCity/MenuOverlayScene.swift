@@ -38,20 +38,17 @@ class MenuOverlayScene: SKScene {
         self.aboutOverlayScene = aboutOverlayScene
 
         let title = SKLabelNode(fontNamed: "tycho")
-        title.fontSize = 28
-        title.position.y = size.height - 30
+        title.fontSize = 20
+        title.position.y = size.height - game.margin * 2
         title.position.x = size.width/2
         title.text = "CITYZEN"
         title.fontColor = GameHelper.sharedInstance.mainColor
         self.addChild(title)
 
-        let large = CGSize(width: 50, height: 50)
-        let small = CGSize(width: 30, height: 30)
-
-        addButton(image: FontAwesomeIcon.playIcon.image(ofSize: large, color: game.mainColor), x: size.width/2, y: size.height/(13/10), name: "play")
-        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: small, color: game.mainColor), x: size.width/(13/2), y: size.height/(13/3), name: "leaderboard")
-        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: small, color: game.mainColor), x: size.width/(13/6.5), y: size.height/(13/3), name: "rate")
-        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: small, color: game.mainColor), x: size.width/(13/11), y: size.height/(13/3), name: "about")
+        addButton(image: FontAwesomeIcon.playIcon.image(ofSize: game.largeIcon, color: game.mainColor), x: size.width/2, y: size.height/(13/10), name: "play")
+        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/3), y: size.height/(13/3), name: "leaderboard")
+        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/6.5), y: size.height/(13/3), name: "rate")
+        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/10), y: size.height/(13/3), name: "about")
     }
 
     private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat, name: String) {

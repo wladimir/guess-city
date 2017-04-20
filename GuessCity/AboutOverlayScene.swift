@@ -29,7 +29,7 @@ class AboutOverlayScene: SKScene {
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
 
-        let texture = SKTexture(image: FontAwesomeIcon.homeIcon.image(ofSize: CGSize(width: 20, height: 20), color: .white))
+        let texture = SKTexture(image: FontAwesomeIcon.arrowLeftIcon.image(ofSize: CGSize(width: 20, height: 20), color: .white))
         let button = SKSpriteNode(texture: texture)
         button.position.x = size.width - 50
         button.position.y = size.height - 50

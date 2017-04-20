@@ -31,7 +31,13 @@ class GameHelper {
     let bandColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(87/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
     let mainColor: UIColor = UIColor(red: CGFloat(244/255.0), green: CGFloat(244/255.0), blue: CGFloat(244/255.0), alpha: CGFloat(1.0))
     let pointsColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(243/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
-    let positionColor: UIColor = UIColor(red: CGFloat(255/255.0), green: CGFloat(175/255.0), blue: CGFloat(51/255.0), alpha: CGFloat(1.0))
+    let positionColor: UIColor = UIColor(red: CGFloat(33/255.0), green: CGFloat(164/255.0), blue: CGFloat(63/255.0), alpha: CGFloat(1.0))
+
+    let largeIcon = CGSize(width: 40, height: 40)
+    let mediumIcon = CGSize(width: 30, height: 30)
+    let smallIcon = CGSize(width: 20, height: 20)
+
+    let margin: CGFloat = 25.0
 
     init() {
     }
