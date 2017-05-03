@@ -54,6 +54,7 @@
 		7DD53B1D1E5C332400F8E0A3 /* menu.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DD53B1C1E5C332400F8E0A3 /* menu.scn */; };
 		7DD903F81E33AEA900760688 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DD903F71E33AEA900760688 /* GameScene.swift */; };
 		7DDE0DD71E3256EF009951D1 /* game.scn in Resources */ = {isa = PBXBuildFile; fileRef = 7DDE0DD61E3256EF009951D1 /* game.scn */; };
+		7DE6F4881EA94C0400D8877D /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE6F4871EA94C0400D8877D /* Answer.swift */; };
 		7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */; };
 		7DE794EA1E3D7861006FCF54 /* elev_bump_4k.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */; };
 		7DE794EB1E3D7861006FCF54 /* fair_clouds_4k.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */; };
@@ -69,6 +70,7 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
+		7DFB29711EB385680032C443 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB29701EB385680032C443 /* SocketHelper.swift */; };
 		B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +144,7 @@
 		7DD53B1C1E5C332400F8E0A3 /* menu.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = menu.scn; sourceTree = SOURCE_ROOT; };
 		7DD903F71E33AEA900760688 /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameScene.swift; path = ../GameScene.swift; sourceTree = "<group>"; };
 		7DDE0DD61E3256EF009951D1 /* game.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = game.scn; path = ../game.scn; sourceTree = "<group>"; };
+		7DE6F4871EA94C0400D8877D /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		7DE794E41E3D7860006FCF54 /* 2_no_clouds_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2_no_clouds_4k.jpg; sourceTree = "<group>"; };
 		7DE794E51E3D7860006FCF54 /* elev_bump_4k.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = elev_bump_4k.jpg; sourceTree = "<group>"; };
 		7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fair_clouds_4k.png; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DFB29701EB385680032C443 /* SocketHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,8 +328,10 @@
 				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
 				7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */,
 				7DEABB081DE8F59A0047AE42 /* GameViewController.swift */,
+				7DFB29701EB385680032C443 /* SocketHelper.swift */,
 				7D3EC0FF1E1F0F690084953E /* GameHelper.swift */,
 				7DAE203A1E1DB7CF0095956C /* Cities.swift */,
+				7DE6F4871EA94C0400D8877D /* Answer.swift */,
 				7DEABB0A1DE8F59A0047AE42 /* Main.storyboard */,
 				7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */,
 				7DEABB121DE8F59A0047AE42 /* Info.plist */,
@@ -624,8 +630,10 @@
 				7DD903F81E33AEA900760688 /* GameScene.swift in Sources */,
 				7D9DCB011E7D721300B7D8BA /* LeaderboardOverlayScene.swift in Sources */,
 				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
+				7DE6F4881EA94C0400D8877D /* Answer.swift in Sources */,
 				7D9DCAFF1E7D71F700B7D8BA /* BlankScene.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
+				7DFB29711EB385680032C443 /* SocketHelper.swift in Sources */,
 				7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */,
 				7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,

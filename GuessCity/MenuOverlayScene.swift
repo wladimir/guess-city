@@ -84,7 +84,7 @@ class MenuOverlayScene: SKScene {
     }
 
     private func play() {
-        game.fadeBackgroundMusic()
+        game.fadeOutBackgroundMusic()
 
         self.sceneView.overlaySKScene = self.gameOverlayScene
         self.game.state = .Playing

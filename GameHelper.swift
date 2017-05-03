@@ -11,6 +11,7 @@ import SceneKit
 import SpriteKit
 import AVFoundation
 
+
 public enum GameState {
     case Playing
     case TapToPlay
@@ -18,13 +19,12 @@ public enum GameState {
 }
 
 class GameHelper {
+    static let sharedInstance = GameHelper()
+
     var state = GameState.TapToPlay
 
     var musicPlayer: AVAudioPlayer!
     var soundsPlayer: AVAudioPlayer!
-
-    static let sharedInstance = GameHelper()
-
     var sounds = [String:SCNAudioSource]()
     var soundFiles = [String:String]()
 
@@ -36,10 +36,26 @@ class GameHelper {
     let largeIcon = CGSize(width: 40, height: 40)
     let mediumIcon = CGSize(width: 30, height: 30)
     let smallIcon = CGSize(width: 20, height: 20)
+    let margin: CGFloat = 25
 
-    let margin: CGFloat = 25.0
+    let salt = "GJQJVhVfulaYFiAIRjZv"
 
-    init() {
+    var sockets = [SocketHelper]()
+
+    func addSocket(socket: SocketHelper) {
+        sockets.append(socket)
+    }
+
+    func connect() {
+        for socket in sockets {
+            socket.connect()
+        }
+    }
+
+    func disconnect() {
+        for socket in sockets {
+            socket.disconnect()
+        }
     }
 
     static func random(maxValue: UInt32) -> UInt32 {
@@ -75,13 +91,13 @@ class GameHelper {
         }
     }
 
-    func fadeBackgroundMusic() {
+    func fadeOutBackgroundMusic() {
         if let p = musicPlayer {
-            p.setVolume(0.3, fadeDuration: 2)
+            p.setVolume(0.0, fadeDuration: 2)
         }
     }
 
-    func resumeBackgroundMusic() {
+    func fadeInBackgroundMusic() {
         if let p = musicPlayer {
             p.setVolume(0.5, fadeDuration: 2)
         }

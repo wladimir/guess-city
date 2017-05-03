@@ -104,6 +104,8 @@ class GameOverlayScene: SKScene {
     }
 
     private func backToMenu() {
+        game.fadeInBackgroundMusic()
+        
         self.sceneView.overlaySKScene = self.menuOverlayScene
         sceneView.present(menuScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)
     }
