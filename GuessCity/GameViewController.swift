@@ -76,8 +76,8 @@ class GameViewController: UIViewController {
     func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
                                                name: Notification.Name("connected"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleDisconnected),
-                                               name: Notification.Name("disconnected"), object: nil)
+        //NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleDisconnected),
+        //                                     name: Notification.Name("disconnected"), object: nil)
     }
 
     func handleConnected() {

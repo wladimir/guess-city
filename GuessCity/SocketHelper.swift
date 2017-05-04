@@ -15,7 +15,7 @@ class SocketHelper {
 
     init(playerId: String) {
         socket = SocketIOClient(socketURL: URL(string: "http://localhost:5000")!,
-                                config: [.log(true),
+                                config: [.log(false),
                                          .connectParams(["ping_interval":5000, "name":playerId])]) // log in
 
         addHandlers()
@@ -82,19 +82,23 @@ class SocketHelper {
             //self!.present(alert, animated: true, completion: nil)
         }
 
-        // socket?.onAny {print("Got event: \($0.event), with items: \($0.items ?? [])")}
+        socket?.onAny {print("Got event: \($0.event), with items: \($0.items ?? [])")}
 
     }
 
     func handleWin(name: String, type: NSDictionary) {
 
     }
-    
+
     func handleStart() {
         
     }
     
     func handlePlayerMove(name: String, coord: (Int, Int) ) {
+        
+    }
+    
+    func updateLeaderboard() {
         
     }
 }
