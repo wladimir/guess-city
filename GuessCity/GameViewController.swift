@@ -7,13 +7,10 @@
 //
 
 import UIKit
-import QuartzCore
 import SceneKit
 import SpriteKit
 import CoreLocation
 import AVFoundation
-import Darwin
-import MapKit
 import GameKit
 
 class GameViewController: UIViewController {
@@ -31,8 +28,6 @@ class GameViewController: UIViewController {
     let cities = Cities()
 
     var audioPlayer: AVAudioPlayer!
-
-    var socket: SocketHelper!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,9 +61,6 @@ class GameViewController: UIViewController {
 
         handleNotifications()
 
-        socket = SocketHelper(playerId: "123")
-        game.addSocket(socket: socket)
-
         game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
         game.playBackgroundMusic()
     }
@@ -76,11 +68,15 @@ class GameViewController: UIViewController {
     func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
                                                name: Notification.Name("connected"), object: nil)
-        //NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleDisconnected),
-        //                                     name: Notification.Name("disconnected"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleDisconnected),
+                                               name: Notification.Name("disconnected"), object: nil)
     }
 
     func handleConnected() {
+
+    }
+
+    func handleDisconnected() {
 
     }
 
@@ -89,7 +85,7 @@ class GameViewController: UIViewController {
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
-        if game.state != .Playing {
+        if game.state != .playing {
             return
         }
 
@@ -113,7 +109,7 @@ class GameViewController: UIViewController {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        if game.state != .Playing {
+        if game.state != .playing {
             return
         }
 

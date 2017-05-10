@@ -13,15 +13,15 @@ import AVFoundation
 
 
 public enum GameState {
-    case Playing
-    case TapToPlay
-    case GameOver
+    case playing
+    case tapToPlay
+    case gameOver
 }
 
 class GameHelper {
     static let sharedInstance = GameHelper()
 
-    var state = GameState.TapToPlay
+    var state = GameState.tapToPlay
 
     var musicPlayer: AVAudioPlayer!
     var soundsPlayer: AVAudioPlayer!
@@ -37,26 +37,6 @@ class GameHelper {
     let mediumIcon = CGSize(width: 30, height: 30)
     let smallIcon = CGSize(width: 20, height: 20)
     let margin: CGFloat = 25
-
-    let salt = "GJQJVhVfulaYFiAIRjZv"
-
-    var sockets = [SocketHelper]()
-
-    func addSocket(socket: SocketHelper) {
-        sockets.append(socket)
-    }
-
-    func connect() {
-        for socket in sockets {
-            socket.connect()
-        }
-    }
-
-    func disconnect() {
-        for socket in sockets {
-            socket.disconnect()
-        }
-    }
 
     static func random(maxValue: UInt32) -> UInt32 {
         return arc4random_uniform(maxValue + 1)

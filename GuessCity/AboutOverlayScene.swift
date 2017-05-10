@@ -50,7 +50,7 @@ class AboutOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                if (node.name == "home") {
+                if node.name == "home" {
                     game.soundsPlayer.play()
                     backToMenu()
                 }

@@ -65,7 +65,7 @@ class GameOverlayScene: SKScene {
         self.addChild(band)
     }
 
-    private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat, name: String) {
+    private func addButton(image: UIImage, x: CGFloat, y: CGFloat, name: String) {
         let texture = SKTexture(image: image)
         let button = SKSpriteNode(texture: texture)
         button.position.x = x
@@ -95,7 +95,7 @@ class GameOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                if (node.name == "home") {
+                if node.name == "home" {
                     game.soundsPlayer.play()
                     backToMenu()
                 }

@@ -70,7 +70,6 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
-		7DFB29711EB385680032C443 /* SocketHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB29701EB385680032C443 /* SocketHelper.swift */; };
 		B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */; };
 /* End PBXBuildFile section */
 
@@ -166,7 +165,6 @@
 		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7DFB29701EB385680032C443 /* SocketHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketHelper.swift; sourceTree = "<group>"; };
 		AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -328,7 +326,6 @@
 				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
 				7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */,
 				7DEABB081DE8F59A0047AE42 /* GameViewController.swift */,
-				7DFB29701EB385680032C443 /* SocketHelper.swift */,
 				7D3EC0FF1E1F0F690084953E /* GameHelper.swift */,
 				7DAE203A1E1DB7CF0095956C /* Cities.swift */,
 				7DE6F4871EA94C0400D8877D /* Answer.swift */,
@@ -633,7 +630,6 @@
 				7DE6F4881EA94C0400D8877D /* Answer.swift in Sources */,
 				7D9DCAFF1E7D71F700B7D8BA /* BlankScene.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
-				7DFB29711EB385680032C443 /* SocketHelper.swift in Sources */,
 				7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */,
 				7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */,
 				7DEABB051DE8F59A0047AE42 /* AppDelegate.swift in Sources */,
