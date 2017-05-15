@@ -63,6 +63,8 @@ class GameViewController: UIViewController {
 
         game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
         game.playBackgroundMusic()
+
+        cities.load()
     }
 
     func handleNotifications() {

@@ -1,8 +1,12 @@
 PODS:
   - Iconic (1.2)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
 
 DEPENDENCIES:
   - Iconic (from `https://github.com/dzenbot/Iconic.git`, tag `1.3`)
+  - SQLite.swift (~> 0.11.3)
 
 EXTERNAL SOURCES:
   Iconic:
@@ -16,7 +20,8 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Iconic: 03d941cfad0c499ba0cde153cfbea6de6487f936
+  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
 
-PODFILE CHECKSUM: 56678e6ac40c065019c6f71f20e45b34e8ab4930
+PODFILE CHECKSUM: 8e8cac99de65bf100da850834d80d2d4eb525fe0
 
 COCOAPODS: 1.2.0

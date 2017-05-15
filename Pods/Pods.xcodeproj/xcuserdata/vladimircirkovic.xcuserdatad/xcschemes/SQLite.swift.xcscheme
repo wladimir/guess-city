@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C8FA6EE58EEA17D12C1C9FAAC78A9345"
-               BuildableName = "Pods_Cityzen.framework"
-               BlueprintName = "Pods-Cityzen"
+               BlueprintIdentifier = "1DAA7D05460006803AC7B543CB3ABA90"
+               BuildableName = "SQLite.framework"
+               BlueprintName = "SQLite.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C8FA6EE58EEA17D12C1C9FAAC78A9345"
-            BuildableName = "Pods_Cityzen.framework"
-            BlueprintName = "Pods-Cityzen"
+            BlueprintIdentifier = "1DAA7D05460006803AC7B543CB3ABA90"
+            BuildableName = "SQLite.framework"
+            BlueprintName = "SQLite.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

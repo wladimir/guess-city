@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import SQLite
 
 class Cities {
-    var cities = [City]()
+    static let cities = Cities()
 
     class City {
         let city: String
@@ -22,6 +23,17 @@ class Cities {
             self.country = country
             self.lat = lat
             self.lon = lon
+        }
+    }
+
+    func load() {
+        do {
+            let path = Bundle.main.path(forResource:"cities", ofType: "db")!
+            let db = try Connection(path, readonly: true)
+
+            print (db)
+        } catch {
+            print ("Datatabase error: \(error)")
         }
     }
 }
