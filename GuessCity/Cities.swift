@@ -6,13 +6,12 @@
 //  Copyright © 2017 Vladimir Cirkovic. All rights reserved.
 //
 
-import Foundation
 import SQLite
 
 class Cities {
     var cities = [City]()
 
-    class City {
+    struct City {
         let capital: String
         let country: String
         let lat: Double

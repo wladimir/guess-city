@@ -18,7 +18,7 @@ class GameOverlayScene: SKScene {
     var location2: SKLabelNode!
     var points: SKLabelNode!
     var pos: SKLabelNode!
-    var band: SKNode!
+    var band: SKShapeNode!
 
     var score = 0 {
         didSet {
@@ -59,10 +59,17 @@ class GameOverlayScene: SKScene {
         let posText = "0/0"
         pos = addText(x: size.width - 3 * game.margin - CGFloat(posText.characters.count), y: game.margin, text: posText , size: 17)
 
-        band = SKSpriteNode(color: GameHelper.sharedInstance.bandColor, size: CGSize(width: 20, height: 20))
+        band = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
+        band.fillColor = game.bandColor
+        band.strokeColor = game.bandColor
         band.position.x = 0
         band.position.y = self.size.height
         self.addChild(band)
+    }
+
+    func runProgressBar() {
+        let resize = SKAction.scaleX(to: self.frame.width, duration: 50)
+        band.run(resize)
     }
 
     private func addButton(image: UIImage, x: CGFloat, y: CGFloat, name: String) {

@@ -9,5 +9,20 @@
 import Foundation
 
 class Game {
-    
+    struct Answer {
+        let turn: Int
+        let lat: Double
+        let lon: Double
+
+        init(turn: Int, lat: Double, lon: Double) {
+            self.turn = turn
+            self.lat = lat
+            self.lon = lon
+        }
+    }
+
+    func computeScore(answer: Answer) -> Double {
+        //let distance = planeDistance
+        return 0.0
+    }
 }
