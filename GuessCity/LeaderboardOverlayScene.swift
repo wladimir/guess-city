@@ -12,7 +12,7 @@ import SceneKit
 import Iconic
 
 class LeaderboardOverlayScene: SKScene {
-    let game = GameHelper.sharedInstance
+    let gameHelper = GameHelper.sharedInstance
 
     var sceneView: SCNView!
     var menuScene: SCNScene!
@@ -34,7 +34,7 @@ class LeaderboardOverlayScene: SKScene {
         title.position.y = 100
         title.position.x = 100
         title.text = "leaderboard"
-        title.fontColor = game.mainColor
+        title.fontColor = gameHelper.mainColor
         self.addChild(title)
     }
 
@@ -44,7 +44,7 @@ class LeaderboardOverlayScene: SKScene {
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
                 if node.name == "home" {
-                    game.playSound(filename: "misc_menu_4.wav")
+                    gameHelper.playSound(filename: "misc_menu_4.wav")
                     backToMenu()
                 }
             }

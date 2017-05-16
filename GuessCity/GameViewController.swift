@@ -23,11 +23,11 @@ class GameViewController: UIViewController {
     var leaderboardOverlayScene: LeaderboardOverlayScene!
     var aboutOverlayScene: AboutOverlayScene!
 
-    let game = GameHelper.sharedInstance
-
-    let cities = Cities()
+    let gameHelper = GameHelper.sharedInstance
 
     var audioPlayer: AVAudioPlayer!
+
+    let game = Game()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +61,8 @@ class GameViewController: UIViewController {
 
         handleNotifications()
 
-        game.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
-        game.playBackgroundMusic()
-
-        cities.load()
+        gameHelper.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
+        gameHelper.playBackgroundMusic()
     }
 
     func handleNotifications() {
@@ -87,7 +85,7 @@ class GameViewController: UIViewController {
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
-        if game.state != .playing {
+        if gameHelper.state != .playing {
             return
         }
 
@@ -111,7 +109,7 @@ class GameViewController: UIViewController {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        if game.state != .playing {
+        if gameHelper.state != .playing {
             return
         }
 

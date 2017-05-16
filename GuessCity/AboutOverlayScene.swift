@@ -12,7 +12,7 @@ import SceneKit
 import Iconic
 
 class AboutOverlayScene: SKScene {
-    let game = GameHelper.sharedInstance
+    let gameHelper = GameHelper.sharedInstance
 
     var sceneView: SCNView!
     var menuScene: SCNScene!
@@ -41,7 +41,7 @@ class AboutOverlayScene: SKScene {
         title.position.y = 100
         title.position.x = 100
         title.text = "about"
-        title.fontColor = game.mainColor
+        title.fontColor = gameHelper.mainColor
         self.addChild(title)
     }
 
@@ -51,7 +51,7 @@ class AboutOverlayScene: SKScene {
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
                 if node.name == "home" {
-                    game.soundsPlayer.play()
+                    gameHelper.soundsPlayer.play()
                     backToMenu()
                 }
             }

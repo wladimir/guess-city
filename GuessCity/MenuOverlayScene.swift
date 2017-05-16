@@ -12,7 +12,7 @@ import SceneKit
 import Iconic
 
 class MenuOverlayScene: SKScene {
-    let game = GameHelper.sharedInstance
+    let gameHelper = GameHelper.sharedInstance
 
     var sceneView: SCNView!
     var gameScene: SCNScene!
@@ -39,16 +39,20 @@ class MenuOverlayScene: SKScene {
 
         let title = SKLabelNode(fontNamed: "tycho")
         title.fontSize = 20
-        title.position.y = size.height - game.margin * 2
+        title.position.y = size.height - gameHelper.margin * 2
         title.position.x = size.width/2
         title.text = "CITYZEN"
-        title.fontColor = GameHelper.sharedInstance.mainColor
+        title.fontColor = gameHelper.mainColor
         self.addChild(title)
 
-        addButton(image: FontAwesomeIcon.playIcon.image(ofSize: game.largeIcon, color: game.mainColor), x: size.width/2, y: size.height/(13/10), name: "play")
-        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/3), y: size.height/(13/3), name: "leaderboard")
-        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/6.5), y: size.height/(13/3), name: "rate")
-        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: game.mediumIcon, color: game.mainColor), x: size.width/(13/10), y: size.height/(13/3), name: "about")
+        addButton(image: FontAwesomeIcon.playIcon.image(ofSize: gameHelper.largeIcon, color: gameHelper.mainColor),
+                  x: size.width/2, y: size.height/(13/10), name: "play")
+        addButton(image: FontAwesomeIcon.trophyIcon.image(ofSize: gameHelper.mediumIcon, color: gameHelper.mainColor),
+                  x: size.width/(13/3), y: size.height/(13/3), name: "leaderboard")
+        addButton(image: FontAwesomeIcon.thumbsUpAltIcon.image(ofSize: gameHelper.mediumIcon, color: gameHelper.mainColor),
+                  x: size.width/(13/6.5), y: size.height/(13/3), name: "rate")
+        addButton(image: FontAwesomeIcon.infoSignIcon.image(ofSize: gameHelper.mediumIcon, color: gameHelper.mainColor),
+                  x: size.width/(13/10), y: size.height/(13/3), name: "about")
     }
 
     private func addButton(image: UIImage,  x: CGFloat,  y: CGFloat, name: String) {
@@ -66,7 +70,7 @@ class MenuOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                game.playSound(filename: "misc_menu_4.wav")
+                gameHelper.playSound(filename: "misc_menu_4.wav")
 
                 switch node.name! {
                 case "play": play()
@@ -84,10 +88,10 @@ class MenuOverlayScene: SKScene {
     }
 
     private func play() {
-        game.fadeOutBackgroundMusic()
+        gameHelper.fadeOutBackgroundMusic()
 
         self.sceneView.overlaySKScene = self.gameOverlayScene
-        self.game.state = .playing
+        self.gameHelper.state = .playing
         sceneView.present(gameScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)
     }
 
