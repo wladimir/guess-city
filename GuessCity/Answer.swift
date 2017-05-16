@@ -8,36 +8,14 @@
 
 import Foundation
 
-struct Answer {
+class Answer {
     let turn: Int
-    let signature: String
     let lat: Double
     let lon: Double
-}
 
-extension Answer {
-    init?(json: [String: Any]) {
-        guard let turn = json["turn"] as? Int,
-            let signature = json["signature"] as? String,
-            let lat = json["lat"] as? Double,
-            let lon = json["lon"] as? Double
-                else {
-                    return nil
-            }
-
+    init(turn: Int, lat: Double, lon: Double) {
         self.turn = turn
-        self.signature = signature
         self.lat = lat
-        self.lon=lon
-    }
-
-    func toJSON() -> [String: Any] {
-        let jsonObject: [String: Any] = [
-            "turn": turn,
-            "signature": signature,
-            "lat": lat,
-            "lon": lon
-        ]
-        return jsonObject
+        self.lon = lon
     }
 }
