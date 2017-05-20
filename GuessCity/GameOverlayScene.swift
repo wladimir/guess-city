@@ -84,7 +84,7 @@ class GameOverlayScene: SKScene {
         self.addChild(button)
     }
 
-    private func addText(x: CGFloat,  y: CGFloat, text: String, size: CGFloat) -> SKLabelNode {
+    private func addText(x: CGFloat, y: CGFloat, text: String, size: CGFloat) -> SKLabelNode {
         let node = SKLabelNode(fontNamed: "Futura-Medium")
         node.fontSize = size
         node.position.x = x
@@ -114,12 +114,17 @@ class GameOverlayScene: SKScene {
 
     private func backToMenu() {
         gameHelper.fadeInBackgroundMusic()
-        
+
         self.sceneView.overlaySKScene = self.menuOverlayScene
         sceneView.present(menuScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+
+    override func update(_ currentTime: TimeInterval) {
+        /* Called before each frame is rendered */
+        print("x")
     }
 }

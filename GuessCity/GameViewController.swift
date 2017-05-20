@@ -32,7 +32,10 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sceneView = self.view as! SCNView
+        guard let sceneView = self.view as? SCNView else {
+            print("self.view is not SNCView \(self.view)")
+            return
+        }
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
@@ -177,7 +180,6 @@ class GameViewController: UIViewController {
 
         return CLLocation(latitude: lat, longitude: lon)
     }
-
 
     override var shouldAutorotate: Bool {
         return false

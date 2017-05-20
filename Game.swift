@@ -10,6 +10,7 @@ import Foundation
 
 class Game {
     let cities = Cities()
+    var turn = 0
 
     init() {
         cities.load()
@@ -25,6 +26,18 @@ class Game {
             self.lat = lat
             self.lon = lon
         }
+    }
+
+    func startTurn() {
+        turn += 1
+    }
+
+    func endTurn() {
+
+    }
+
+    func getCity() -> Cities.City {
+        return cities.getCity(turn: turn)
     }
 
     func computeScore(answer: Answer) -> Int {

@@ -108,7 +108,7 @@ class MenuOverlayScene: SKScene {
     private func rate() {
         let appID = "123"
         let urlStr = "itms-apps://itunes.apple.com/app/id\(appID)"
-        let urlStr2 = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(appID)"
+        _ = "itms-apps://itunes.apple.com/app/viewContentsUserReviews?id=\(appID)"
         UIApplication.shared.open(URL(string: urlStr)!, options: [:], completionHandler: nil)
     }
 }

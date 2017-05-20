@@ -11,7 +11,6 @@ import SceneKit
 import SpriteKit
 import AVFoundation
 
-
 public enum GameState {
     case playing
     case tapToPlay
@@ -63,7 +62,6 @@ class GameHelper {
             p.play()
         }
     }
-
 
     func stopBackgroundMusic() {
         if let p = musicPlayer {

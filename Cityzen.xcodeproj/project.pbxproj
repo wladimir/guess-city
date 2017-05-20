@@ -409,6 +409,7 @@
 				7DEABAFF1DE8F59A0047AE42 /* Resources */,
 				9088E28F1A85DBD547E048D6 /* [CP] Embed Pods Frameworks */,
 				4E504CE06F4B97ED6759C1AA /* [CP] Copy Pods Resources */,
+				7D5D7AB91ED043C100EE6E63 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -601,6 +602,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		7D5D7AB91ED043C100EE6E63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
 		};
 		9088E28F1A85DBD547E048D6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -3,10 +3,12 @@ PODS:
   - SQLite.swift (0.11.3):
     - SQLite.swift/standard (= 0.11.3)
   - SQLite.swift/standard (0.11.3)
+  - SwiftLint (0.18.1)
 
 DEPENDENCIES:
   - Iconic (from `https://github.com/dzenbot/Iconic.git`, tag `1.3`)
   - SQLite.swift (~> 0.11.3)
+  - SwiftLint
 
 EXTERNAL SOURCES:
   Iconic:
@@ -21,7 +23,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Iconic: 03d941cfad0c499ba0cde153cfbea6de6487f936
   SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
+  SwiftLint: b467d08f5b25dc3b3cfed243d8e1b74b91714c67
 
-PODFILE CHECKSUM: 8e8cac99de65bf100da850834d80d2d4eb525fe0
+PODFILE CHECKSUM: 0e897e62664785b43e8d54cac7aab7fddd09419e
 
 COCOAPODS: 1.2.0

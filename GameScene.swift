@@ -60,9 +60,9 @@ class GameScene: SCNScene {
     }
 
     private func createPin(headColor aColor: UIColor) -> SCNNode {
-        let bodyHeight: CGFloat = 0.25;
-        let bodyRadius: CGFloat = 0.015;
-        let headRadius: CGFloat = 0.05;
+        let bodyHeight: CGFloat = 0.25
+        let bodyRadius: CGFloat = 0.015
+        let headRadius: CGFloat = 0.05
 
         let body = SCNCylinder(radius: bodyRadius, height: bodyHeight)
         let head = SCNSphere(radius: headRadius)
@@ -75,10 +75,10 @@ class GameScene: SCNScene {
         bodyMaterial.specular.contents = UIColor.white
         bodyMaterial.emission.contents = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
         headMaterial.specular.contents = UIColor.white
-        bodyMaterial.shininess = 100;
+        bodyMaterial.shininess = 100
 
-        head.firstMaterial = headMaterial;
-        body.firstMaterial = bodyMaterial;
+        head.firstMaterial = headMaterial
+        body.firstMaterial = bodyMaterial
 
         let bodyNode = SCNNode(geometry: body)
         bodyNode.position = SCNVector3Make(0, Float(bodyHeight/2.0), 0)

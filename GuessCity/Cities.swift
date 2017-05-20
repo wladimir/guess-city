@@ -32,11 +32,25 @@ class Cities {
 
             let statement = try db.run("SELECT capital, country, lat, lon FROM cities ORDER BY RANDOM()", [:])
 
-            for row in statement {
-                if row.count==4 {
-                    let city = City(capital: row[0] as! String, country: row[1] as! String, lat: Double(row[2] as! String)!, lon: Double(row[3] as! String)!)
-                    cities.append(city)
+            for row in statement where row.count == 4 {
+                guard let capital = row[0] as? String else {
+                    print("Error with \(row)")
+                    return
                 }
+                guard let country = row[1] as? String else {
+                    print("Error with \(row)")
+                    return
+                }
+                guard let lat = row[2] as? String else {
+                    print("Error with \(row)")
+                    return
+                }
+                guard let lon = row[3] as? String else {
+                    print("Error with \(row)")
+                    return
+                }
+                let city = City(capital: capital, country: country, lat: Double(lat)!, lon: Double(lon)!)
+                self.cities.append(city)
             }
         } catch {
             print ("Datatabase error: \(error)")
