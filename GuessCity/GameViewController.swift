@@ -36,6 +36,8 @@ class GameViewController: UIViewController {
             print("self.view is not SNCView \(self.view)")
             return
         }
+        self.sceneView = sceneView
+        self.sceneView.isPlaying = true
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")

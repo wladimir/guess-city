@@ -106,7 +106,8 @@ class GameOverlayScene: SKScene {
             if let node = nodes.first {
                 if node.name == "home" {
                     gameHelper.soundsPlayer.play()
-                    backToMenu()
+                    //backToMenu()
+                    runProgressBar()
                 }
             }
         }
@@ -125,6 +126,8 @@ class GameOverlayScene: SKScene {
 
     override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
-        print("x")
+
+        // game loop
+        print(currentTime)
     }
 }

@@ -31,6 +31,8 @@ class MenuOverlayScene: SKScene {
         FontAwesomeIcon.register()
 
         self.sceneView = sceneView
+        self.sceneView.isPlaying = true
+        self.sceneView.play(self)
         self.gameScene = gameScene
         self.gameOverlayScene = gameOverlayScene
         self.blankScene = blankScene
