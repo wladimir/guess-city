@@ -12,13 +12,17 @@ import SpriteKit
 import AVFoundation
 
 public enum GameState {
-    case playing
     case tapToPlay
-    case gameOver
+    case playing
 }
 
-class GameHelper {
-    static let sharedInstance = GameHelper()
+public enum TurnState {
+    case turnStarted
+    case turnEnded
+}
+
+class Helper {
+    static let sharedInstance = Helper()
 
     var state = GameState.tapToPlay
 

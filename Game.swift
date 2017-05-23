@@ -28,32 +28,34 @@ class Game {
         }
     }
 
-    func startTurn() {
-        turn += 1
+    func startTurn() -> Cities.City {
+        self.turn += 1
+        return getCity()
     }
 
-    func endTurn() {
-
+    func endTurn(answer: Answer) {
+        let score = computeScore(answer: answer)
+        // write via game kit
     }
 
-    func getCity() -> Cities.City {
+    private func getCity() -> Cities.City {
         return cities.getCity(turn: turn)
     }
 
-    func computeScore(answer: Answer) -> Int {
+    private func computeScore(answer: Answer) -> Int {
         let city = cities.getCity(turn: answer.turn)
         let distance  = planeDistance(lat1: city.lat, lon1: city.lon, lat2: answer.lat, lon2: answer.lon)
         return score(distance: distance)
     }
 
-    func planeDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
+    private func planeDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
         let px = lon2 - lon1
         let py = lat2 - lat1
 
         return sqrt(px*px + py*py) * Constants.distancePerDegree
     }
 
-    func score(distance: Double) -> Int {
+    private func score(distance: Double) -> Int {
         let score = Constants.scoreMaxDistance - distance
         return Int(max(0, score))
     }

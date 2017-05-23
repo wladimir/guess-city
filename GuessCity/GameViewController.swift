@@ -13,17 +13,21 @@ import CoreLocation
 import AVFoundation
 import GameKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, GKGameCenterControllerDelegate {
+    var gcEnabled = Bool()
+    var gcDefaultLeaderBoard = String()
+
+    var score = 0
+
+    let LEADERBOARD_ID = "com.score.cityzen.solipsist"
+
     var sceneView: SCNView!
     var gameScene: GameScene!
     var menuScene: MenuScene!
-    var blankScene: BlankScene!
     var gameOverlayScene: GameOverlayScene!
     var menuOverlayScene: MenuOverlayScene!
-    var leaderboardOverlayScene: LeaderboardOverlayScene!
-    var aboutOverlayScene: AboutOverlayScene!
 
-    let gameHelper = GameHelper.sharedInstance
+    let helper = Helper.sharedInstance
 
     var audioPlayer: AVAudioPlayer!
 
@@ -37,24 +41,16 @@ class GameViewController: UIViewController {
             return
         }
         self.sceneView = sceneView
-        self.sceneView.isPlaying = true
 
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
-        blankScene = BlankScene(named: "blank.scn")
         sceneView.scene = menuScene
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        leaderboardOverlayScene = LeaderboardOverlayScene(size: sceneView.bounds.size)
-        aboutOverlayScene = AboutOverlayScene(size: sceneView.bounds.size)
 
         gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
-        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene,
-                               blankScene: blankScene, leaderboardOverlayScene: leaderboardOverlayScene,
-                               aboutOverlayScene: aboutOverlayScene)
-        leaderboardOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
-        aboutOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
+        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene)
 
         sceneView.overlaySKScene = menuOverlayScene
 
@@ -64,11 +60,67 @@ class GameViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
 
+        authenticateLocalPlayer()
+
         handleNotifications()
 
-        gameHelper.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
-        gameHelper.playBackgroundMusic()
+        helper.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
+        helper.playBackgroundMusic()
     }
+
+    @available(iOS 6.0, *)
+    func gameCenterViewControllerDidFinish(_ gameCenterViewController: GKGameCenterViewController) {
+        gameCenterViewController.dismiss(animated: true, completion: nil)
+    }
+
+    func authenticateLocalPlayer() {
+        let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
+
+        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
+            if((ViewController) != nil) {
+                // show login if player is not logged in
+                self.present(ViewController!, animated: true, completion: nil)
+            } else if (localPlayer.isAuthenticated) {
+                // player is already authenticated & logged in, load game center
+                self.gcEnabled = true
+
+                // get the default leaderboard ID
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                    if error == nil {
+                        self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                })
+            } else {
+                // game center is not enabled on the users device
+                self.gcEnabled = false
+                print("Local player could not be authenticated!")
+            }
+        }
+    }
+
+//    @IBAction func addScoreAndSubmitToGC(_ sender: AnyObject) {
+//        // Add 10 points to current score
+//        score += 10
+//        scoreLabel.text = "\(score)"
+//
+//        // Submit score to GC leaderboard
+//        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+//        bestScoreInt.value = Int64(score)
+//        GKScore.report([bestScoreInt]) { (error) in
+//            if error != nil {
+//                print(error!.localizedDescription)
+//            } else {
+//                print("Best Score submitted to your Leaderboard!")
+//            }
+//        }
+//    }
+
+//    @IBAction func checkGCLeaderboard(_ sender: AnyObject) {
+//        let gcVC = GKGameCenterViewController()
+//        gcVC.gameCenterDelegate = self
+//        gcVC.viewState = .leaderboards
+//        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+//        present(gcVC, animated: true, completion: nil)
+//    }
 
     func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
@@ -90,7 +142,7 @@ class GameViewController: UIViewController {
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
-        if gameHelper.state != .playing {
+        if helper.state != .playing {
             return
         }
 
@@ -114,7 +166,7 @@ class GameViewController: UIViewController {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        if gameHelper.state != .playing {
+        if helper.state != .playing {
             return
         }
 
