@@ -51,14 +51,8 @@ class GameOverlayScene: SKScene {
         location1 = addText(x: size.width/8, y: size.height/1.15, text: "BELGRADE", size: 20, name: "capital")
         location2 = addText(x: size.width/8, y: size.height/1.20, text: "SERBIA", size: 17, name: "country")
 
-        let pointsIcon = SKTexture(image: FontAwesomeIcon.trophyIcon.image(ofSize: helper.mediumIcon, color: helper.mainColor))
-        let pointsButton = SKSpriteNode(texture: pointsIcon)
-        pointsButton.position.x = size.width/8
-        pointsButton.position.y = size.height/6
-        pointsButton.name = "points"
-        self.addChild(pointsButton)
-        let pointsText = "0"
-        points = addText(x: size.width/7, y: size.height/6, text: pointsText, size: 25, name: "points")
+        let pointsText = "0 points"
+        points = addText(x: size.width/7, y: size.height/6, text: pointsText, size: 20, name: "points")
 
         band = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
         band.fillColor = helper.bandColor
@@ -93,7 +87,7 @@ class GameOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                if node.name == "back" {
+                if node.name == "home" {
                     helper.soundsPlayer.play()
                     backToMenu()
                 }

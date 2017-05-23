@@ -24,8 +24,6 @@ class MenuOverlayScene: SKScene {
     }
 
     func setup(sceneView: SCNView, gameScene: SCNScene, gameOverlayScene: SKScene) {
-        FontAwesomeIcon.register()
-
         self.sceneView = sceneView
         self.gameScene = gameScene
         self.gameOverlayScene = gameOverlayScene
