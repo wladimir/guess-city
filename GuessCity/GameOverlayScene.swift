@@ -17,7 +17,6 @@ class GameOverlayScene: SKScene {
     var location1: SKLabelNode!
     var location2: SKLabelNode!
     var points: SKLabelNode!
-    var back: SKLabelNode!
     var band: SKShapeNode!
 
     var score = 0 {
@@ -45,7 +44,7 @@ class GameOverlayScene: SKScene {
         let homeButton = SKSpriteNode(texture: homeTexture)
         homeButton.position.x = size.width - helper.margin
         homeButton.position.y = size.height - helper.margin
-        homeButton.name = "home"
+        homeButton.name = "menu"
         self.addChild(homeButton)
 
         location1 = addText(x: size.width/8, y: size.height/1.15, text: "BELGRADE", size: 20, name: "capital")
@@ -87,8 +86,8 @@ class GameOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                if node.name == "home" {
-                    helper.soundsPlayer.play()
+                if node.name == "menu" {
+                    helper.playSound(filename: "misc_menu_4.wav")
                     backToMenu()
                 }
             }
@@ -100,7 +99,7 @@ class GameOverlayScene: SKScene {
 
         self.sceneView.overlaySKScene = self.menuOverlayScene
         self.helper.state = .tapToPlay
-        sceneView.present(menuScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)
+        sceneView.present(menuScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: nil)
     }
 
     required init?(coder aDecoder: NSCoder) {

@@ -16,17 +16,21 @@ class MenuOverlayScene: SKScene {
 
     var sceneView: SCNView!
     var gameScene: SCNScene!
-    var blankScene: SCNScene!
     var gameOverlayScene: SKScene!
+
+    weak var gameViewController: GameViewController!
 
     override init(size: CGSize) {
         super.init(size: size)
     }
 
-    func setup(sceneView: SCNView, gameScene: SCNScene, gameOverlayScene: SKScene) {
+    func setup(sceneView: SCNView, gameScene: SCNScene, gameOverlayScene: SKScene,
+               gameViewController: GameViewController) {
         self.sceneView = sceneView
         self.gameScene = gameScene
         self.gameOverlayScene = gameOverlayScene
+
+        self.gameViewController = gameViewController
 
         let title = SKLabelNode(fontNamed: "Futura")
         title.fontSize = 20
@@ -47,12 +51,21 @@ class MenuOverlayScene: SKScene {
 
         let leaderboard = SKLabelNode(fontNamed: "Futura")
         leaderboard.fontSize = 25
-        leaderboard.position.y = size.height/5
+        leaderboard.position.y = size.height/4.5
         leaderboard.position.x = size.width/2
         leaderboard.text = "LEADERBOARD"
         leaderboard.fontColor = helper.mainColor
         leaderboard.name = "leaderboard"
         self.addChild(leaderboard)
+
+        let about = SKLabelNode(fontNamed: "Futura")
+        about.fontSize = 15
+        about.position.y = size.height/8
+        about.position.x = size.width/2
+        about.text = "ABOUT"
+        about.fontColor = helper.mainColor
+        about.name = "about"
+        self.addChild(about)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,6 +78,7 @@ class MenuOverlayScene: SKScene {
                 switch node.name! {
                 case "play": play()
                 case "leaderboard": showLeaderboard()
+                case "about": showAboutScreen()
                 default: break
                 }
             }
@@ -80,10 +94,16 @@ class MenuOverlayScene: SKScene {
 
         self.sceneView.overlaySKScene = self.gameOverlayScene
         self.helper.state = .playing
-        sceneView.present(gameScene, with: .fade(withDuration: 1), incomingPointOfView: nil, completionHandler: nil)
+        sceneView.present(gameScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: nil)
     }
 
     private func showLeaderboard() {
-        sceneView.present(blankScene, with: .push(with: .right, duration: 1), incomingPointOfView: nil, completionHandler: nil)
+
+    }
+
+    func showAboutScreen() {
+        let aboutViewController = gameViewController.storyboard?.instantiateViewController(withIdentifier: "about")
+        aboutViewController?.modalPresentationStyle = .popover
+        gameViewController.present(aboutViewController!, animated: true, completion: nil)
     }
 }

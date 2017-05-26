@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0080291E5BA4BC006CADEB /* MenuScene.swift */; };
 		7D0EAB7F1ECB3C0D006F6E6E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D0EAB7E1ECB3C0D006F6E6E /* Game.swift */; };
-		7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A051E55C228004EF899 /* Rise03.wav */; };
-		7D2D8A081E55C228004EF899 /* Downer01.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D2D8A061E55C228004EF899 /* Downer01.wav */; };
 		7D3EC1001E1F0F690084953E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* Helper.swift */; };
 		7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4674841E5EEB6D00F7A3C0 /* splash2.png */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
+		7D5027EA1ED57B3A00F70A21 /* positive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D5027E91ED57B3A00F70A21 /* positive.wav */; };
 		7D558FE61EC9F72B00952D07 /* cities.db in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6209A1EC9F2CF00AE909F /* cities.db */; };
 		7D6AEAA11ECB49040056D747 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEAA01ECB49040056D747 /* Constants.swift */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */; };
+		7DA642F61ED811CF0080A726 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA642F51ED811CF0080A726 /* AboutViewController.swift */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
 		7DB2E2721E680EEF00703F0E /* Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2E2541E680EEF00703F0E /* Icon-20@2x.png */; };
 		7DB2E2731E680EEF00703F0E /* Icon-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2E2551E680EEF00703F0E /* Icon-20@3x.png */; };
@@ -95,14 +95,14 @@
 		7D0EAB7E1ECB3C0D006F6E6E /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Game.swift; path = ../Game.swift; sourceTree = "<group>"; };
 		7D1D877C1E300CA8009144BB /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		7D1D877E1E300D34009144BB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		7D2D8A051E55C228004EF899 /* Rise03.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rise03.wav; sourceTree = "<group>"; };
-		7D2D8A061E55C228004EF899 /* Downer01.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Downer01.wav; sourceTree = "<group>"; };
 		7D3EC0FF1E1F0F690084953E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = ../Helper.swift; sourceTree = "<group>"; };
 		7D4674841E5EEB6D00F7A3C0 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		7D5027E91ED57B3A00F70A21 /* positive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = positive.wav; sourceTree = "<group>"; };
 		7D6AEAA01ECB49040056D747 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameOverlayScene.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = misc_menu_4.wav; sourceTree = "<group>"; };
+		7DA642F51ED811CF0080A726 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		7DB2E2541E680EEF00703F0E /* Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20@2x.png"; sourceTree = "<group>"; };
 		7DB2E2551E680EEF00703F0E /* Icon-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20@3x.png"; sourceTree = "<group>"; };
@@ -273,9 +273,8 @@
 			isa = PBXGroup;
 			children = (
 				7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */,
-				7D2D8A051E55C228004EF899 /* Rise03.wav */,
+				7D5027E91ED57B3A00F70A21 /* positive.wav */,
 				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
-				7D2D8A061E55C228004EF899 /* Downer01.wav */,
 			);
 			name = Sounds;
 			sourceTree = "<group>";
@@ -319,11 +318,12 @@
 				7DEABB061DE8F59A0047AE42 /* art.scnassets */,
 				7D593BD11DE9B03300695554 /* Resources */,
 				7DD903F71E33AEA900760688 /* GameScene.swift */,
+				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
 				7D0080291E5BA4BC006CADEB /* MenuScene.swift */,
 				7DE904CA1E0FCB90004BBF85 /* MenuOverlayScene.swift */,
-				7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */,
 				7DEABB041DE8F59A0047AE42 /* AppDelegate.swift */,
 				7DEABB081DE8F59A0047AE42 /* GameViewController.swift */,
+				7DA642F51ED811CF0080A726 /* AboutViewController.swift */,
 				7D3EC0FF1E1F0F690084953E /* Helper.swift */,
 				7DAE203A1E1DB7CF0095956C /* Cities.swift */,
 				7D0EAB7E1ECB3C0D006F6E6E /* Game.swift */,
@@ -501,7 +501,6 @@
 				7DE794ED1E3D7861006FCF54 /* water_4k.png in Resources */,
 				7DB2E2851E680EEF00703F0E /* Icon-76@2x.png in Resources */,
 				7DB2E28F1E680EEF00703F0E /* iTunesArtwork@3x.png in Resources */,
-				7D2D8A081E55C228004EF899 /* Downer01.wav in Resources */,
 				7DB2E28B1E680EEF00703F0E /* Icon@2x.png in Resources */,
 				7DE794E91E3D7861006FCF54 /* 2_no_clouds_4k.jpg in Resources */,
 				7DB2E2831E680EEF00703F0E /* Icon-72@3x.png in Resources */,
@@ -512,7 +511,6 @@
 				7DB2E2821E680EEF00703F0E /* Icon-72@2x.png in Resources */,
 				7DB2E27F1E680EEF00703F0E /* Icon-60@2x.png in Resources */,
 				7DE7B1EA1E6F1F9200A5CAD6 /* FontAwesome.ttf in Resources */,
-				7D2D8A071E55C228004EF899 /* Rise03.wav in Resources */,
 				7DB2E27E1E680EEF00703F0E /* Icon-60.png in Resources */,
 				7DB2E27C1E680EEF00703F0E /* Icon-57@2x.png in Resources */,
 				7DEABB071DE8F59A0047AE42 /* art.scnassets in Resources */,
@@ -523,6 +521,7 @@
 				7DEABB0E1DE8F59A0047AE42 /* Assets.xcassets in Resources */,
 				7DB2E28A1E680EEF00703F0E /* Icon.png in Resources */,
 				7DDE0DD71E3256EF009951D1 /* game.scn in Resources */,
+				7D5027EA1ED57B3A00F70A21 /* positive.wav in Resources */,
 				7DB2E2891E680EEF00703F0E /* Icon-96@2x.png in Resources */,
 				7DB2E2861E680EEF00703F0E /* Icon-76@3x.png in Resources */,
 				7DE794EB1E3D7861006FCF54 /* fair_clouds_4k.png in Resources */,
@@ -630,6 +629,7 @@
 			files = (
 				7DD903F81E33AEA900760688 /* GameScene.swift in Sources */,
 				7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */,
+				7DA642F61ED811CF0080A726 /* AboutViewController.swift in Sources */,
 				7DEABB091DE8F59A0047AE42 /* GameViewController.swift in Sources */,
 				7D00802A1E5BA4BC006CADEB /* MenuScene.swift in Sources */,
 				7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */,

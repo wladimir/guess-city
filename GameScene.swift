@@ -46,14 +46,14 @@ class GameScene: SCNScene {
     }
 
     func getUserPin() -> SCNNode {
-        if (userPin == nil) {
+        if userPin == nil {
             userPin = createPin(headColor: UIColor.red)
         }
         return userPin
     }
 
     func getActualPin() -> SCNNode {
-        if (actualPin == nil) {
+        if actualPin == nil {
             actualPin = createPin(headColor: UIColor.green)
         }
         return actualPin

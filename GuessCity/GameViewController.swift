@@ -48,9 +48,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-
         gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
-        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene)
+        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, gameViewController: self)
 
         sceneView.overlaySKScene = menuOverlayScene
 
@@ -76,11 +75,11 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     func authenticateLocalPlayer() {
         let localPlayer: GKLocalPlayer = GKLocalPlayer.localPlayer()
 
-        localPlayer.authenticateHandler = {(ViewController, error) -> Void in
-            if((ViewController) != nil) {
+        localPlayer.authenticateHandler = {(viewController, error) -> Void in
+            if viewController != nil {
                 // show login if player is not logged in
-                self.present(ViewController!, animated: true, completion: nil)
-            } else if (localPlayer.isAuthenticated) {
+                self.present(viewController!, animated: true, completion: nil)
+            } else if localPlayer.isAuthenticated {
                 // player is already authenticated & logged in, load game center
                 self.gcEnabled = true
 
@@ -174,7 +173,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         let hitResults = sceneView.hitTest(eventLocation, options: [SCNHitTestOption.rootNode: self.gameScene.earthNode,SCNHitTestOption.ignoreChildNodes: true] )
         let hit = hitResults.first
 
-        if (hit == nil) {
+        if hit == nil {
             return
         }
 
