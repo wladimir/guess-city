@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="game" id="BV1-FR-VrT" customClass="GameViewController" customModule="Cityzen" customModuleProvider="target" sceneMemberID="viewController">
                     <sceneKitView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" wantsMultisampling="YES" id="3se-qz-xqx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </sceneKitView>
@@ -33,17 +33,33 @@
                         <viewControllerLayoutGuide type="bottom" id="WD5-dt-lyp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YnC-p9-SVF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-38-gdC">
-                                <rect key="frame" x="56" y="250" width="263" height="167"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ySy-yw-IWp">
+                                <rect key="frame" x="116" y="382.5" width="88" height="87.5"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="backButton:" destination="Q7J-2z-RjL" eventType="touchUpInside" id="gLe-1K-YIX"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yfn-38-gdC">
+                                <rect key="frame" x="66" y="100" width="188" height="182.5"/>
                                 <attributedString key="attributedText">
-                                    <fragment content="label">
+                                    <fragment>
+                                        <string key="content">Hi there, thanks for playing!
+
+This game would not have been possible without beautiful Earth textures from Natural Earth III,
+Data for Visualizing Earth from Space.
+  
+Sounds effects are from LokiF on OpenGameArt.org, while music is a 'Blue Line Loop' theme from DL Sounds.</string>
                                         <attributes>
-                                            <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <font key="NSFont" size="17" name="Futura-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            <color key="NSColor" white="0.75" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                            <font key="NSFont" size="11" name="Futura-Medium"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="1" defaultTabInterval="28" tighteningFactorForTruncation="0.0" allowsDefaultTighteningForTruncation="NO">
+                                                <tabStops/>
+                                            </paragraphStyle>
                                         </attributes>
                                     </fragment>
                                 </attributedString>
@@ -52,20 +68,26 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Yfn-38-gdC" firstAttribute="top" secondItem="wyd-eh-gVW" secondAttribute="bottom" constant="250" id="LZ9-dP-IA3"/>
-                            <constraint firstItem="Yfn-38-gdC" firstAttribute="leading" secondItem="YnC-p9-SVF" secondAttribute="leadingMargin" constant="40" id="Oyz-0m-0Bp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Yfn-38-gdC" secondAttribute="trailing" constant="40" id="fRC-NA-0Rj"/>
-                            <constraint firstItem="WD5-dt-lyp" firstAttribute="top" secondItem="Yfn-38-gdC" secondAttribute="bottom" constant="250" id="gEA-SQ-U8u"/>
+                            <constraint firstItem="Yfn-38-gdC" firstAttribute="leading" secondItem="YnC-p9-SVF" secondAttribute="leadingMargin" constant="50" id="Try-me-QsW"/>
+                            <constraint firstItem="ySy-yw-IWp" firstAttribute="leading" secondItem="YnC-p9-SVF" secondAttribute="leadingMargin" constant="100" id="asE-Tp-GyG"/>
+                            <constraint firstItem="WD5-dt-lyp" firstAttribute="top" secondItem="ySy-yw-IWp" secondAttribute="bottom" constant="10" id="fkM-Rb-IR9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Yfn-38-gdC" secondAttribute="trailing" constant="50" id="j8E-Wm-645"/>
+                            <constraint firstItem="Yfn-38-gdC" firstAttribute="top" secondItem="wyd-eh-gVW" secondAttribute="bottom" constant="100" id="lxp-L3-C2S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ySy-yw-IWp" secondAttribute="trailing" constant="100" id="r81-aD-8OH"/>
+                            <constraint firstItem="ySy-yw-IWp" firstAttribute="top" secondItem="Yfn-38-gdC" secondAttribute="bottom" constant="100" id="tob-m9-yUH"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <modalPageSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="aboutLabel" destination="Yfn-38-gdC" id="ybw-Pg-taW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VYm-Wg-HdG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.6" y="44.527736131934034"/>
+            <point key="canvasLocation" x="1005" y="43.309859154929576"/>
         </scene>
     </scenes>
 </document>

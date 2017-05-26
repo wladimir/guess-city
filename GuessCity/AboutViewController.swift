@@ -9,11 +9,14 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-    @IBOutlet weak var label: UILabel!
+    let helper = Helper.sharedInstance
 
-    @IBAction func back(_ sender: UIButton) {
-
+    @IBAction func backButton(_ sender: UIButton) {
+        helper.playSound(filename: "misc_menu_4.wav")
+        self.dismiss(animated: true, completion: nil)
     }
+
+    @IBOutlet weak var aboutLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

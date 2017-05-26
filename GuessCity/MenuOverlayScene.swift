@@ -37,11 +37,11 @@ class MenuOverlayScene: SKScene {
         title.position.y = size.height - 20
         title.position.x = size.width/2
         title.text = "CITYZEN"
-        title.fontColor = helper.mainColor
+        title.fontColor = helper.nonInteractiveColor
         self.addChild(title)
 
         let play = SKLabelNode(fontNamed: "Futura")
-        play.fontSize = 40
+        play.fontSize = 50
         play.position.y = size.height/1.3
         play.position.x = size.width/2
         play.text = "PLAY"
@@ -50,7 +50,7 @@ class MenuOverlayScene: SKScene {
         self.addChild(play)
 
         let leaderboard = SKLabelNode(fontNamed: "Futura")
-        leaderboard.fontSize = 25
+        leaderboard.fontSize = 30
         leaderboard.position.y = size.height/4.5
         leaderboard.position.x = size.width/2
         leaderboard.text = "LEADERBOARD"
@@ -59,7 +59,7 @@ class MenuOverlayScene: SKScene {
         self.addChild(leaderboard)
 
         let about = SKLabelNode(fontNamed: "Futura")
-        about.fontSize = 15
+        about.fontSize = 20
         about.position.y = size.height/8
         about.position.x = size.width/2
         about.text = "ABOUT"
@@ -73,9 +73,13 @@ class MenuOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                helper.playSound(filename: "misc_menu_4.wav")
+                guard let name = node.name else {
+                    return
+                }
 
-                switch node.name! {
+                helper.playSound(filename: "misc_menu_4.wav")
+                
+                switch name {
                 case "play": play()
                 case "leaderboard": showLeaderboard()
                 case "about": showAboutScreen()
@@ -103,7 +107,6 @@ class MenuOverlayScene: SKScene {
 
     func showAboutScreen() {
         let aboutViewController = gameViewController.storyboard?.instantiateViewController(withIdentifier: "about")
-        aboutViewController?.modalPresentationStyle = .popover
         gameViewController.present(aboutViewController!, animated: true, completion: nil)
     }
 }

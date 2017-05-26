@@ -18,6 +18,7 @@
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */; };
 		7DA642F61ED811CF0080A726 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA642F51ED811CF0080A726 /* AboutViewController.swift */; };
+		7DA642FA1ED83BBE0080A726 /* arrow-left.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DA642F91ED83BBE0080A726 /* arrow-left.png */; };
 		7DAE203B1E1DB7CF0095956C /* Cities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DAE203A1E1DB7CF0095956C /* Cities.swift */; };
 		7DB2E2721E680EEF00703F0E /* Icon-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2E2541E680EEF00703F0E /* Icon-20@2x.png */; };
 		7DB2E2731E680EEF00703F0E /* Icon-20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DB2E2551E680EEF00703F0E /* Icon-20@3x.png */; };
@@ -103,6 +104,7 @@
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameOverlayScene.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = misc_menu_4.wav; sourceTree = "<group>"; };
 		7DA642F51ED811CF0080A726 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7DA642F91ED83BBE0080A726 /* arrow-left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrow-left.png"; sourceTree = "<group>"; };
 		7DAE203A1E1DB7CF0095956C /* Cities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cities.swift; sourceTree = "<group>"; };
 		7DB2E2541E680EEF00703F0E /* Icon-20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20@2x.png"; sourceTree = "<group>"; };
 		7DB2E2551E680EEF00703F0E /* Icon-20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20@3x.png"; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				7DE794E61E3D7860006FCF54 /* fair_clouds_4k.png */,
 				7DE794E81E3D7860006FCF54 /* water_4k.png */,
 				7D4674841E5EEB6D00F7A3C0 /* splash2.png */,
+				7DA642F91ED83BBE0080A726 /* arrow-left.png */,
 			);
 			name = Textures;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				7DB2E2871E680EEF00703F0E /* Icon-83.5@2x.png in Resources */,
 				7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */,
 				7DE794ED1E3D7861006FCF54 /* water_4k.png in Resources */,
+				7DA642FA1ED83BBE0080A726 /* arrow-left.png in Resources */,
 				7DB2E2851E680EEF00703F0E /* Icon-76@2x.png in Resources */,
 				7DB2E28F1E680EEF00703F0E /* iTunesArtwork@3x.png in Resources */,
 				7DB2E28B1E680EEF00703F0E /* Icon@2x.png in Resources */,
