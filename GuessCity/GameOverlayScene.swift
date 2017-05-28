@@ -19,9 +19,25 @@ class GameOverlayScene: SKScene {
     var points: SKLabelNode!
     var band: SKShapeNode!
 
+    var timestamp: CFTimeInterval = 0.0
+    let maxResponseTime: CFTimeInterval = Constants.maxResponseTime
+    let durationBetweenTurns: CFTimeInterval = Constants.durationBetweenTurns
+
+    var game: Game!
+
     var score = 0 {
         didSet {
-            self.points.text = "Score: \(self.score)"
+            if score % 1000 == 0 {
+                self.points.text = "Score: \(self.score) 🔥"
+            }
+            if score % 5000 == 0 {
+                self.points.text = "Score: \(self.score) 🔥🔥"
+            }
+            if score % 10000 == 0 {
+                self.points.text = "Score: \(self.score) 🔥🔥🔥"
+            } else {
+                self.points.text = "Score: \(self.score)"
+            }
         }
     }
 
@@ -33,7 +49,7 @@ class GameOverlayScene: SKScene {
         super.init(size: size)
     }
 
-    func setup(sceneView: SCNView, menuScene: SCNScene, menuOverlayScene: SKScene) {
+    func setup(sceneView: SCNView, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game) {
         FontAwesomeIcon.register()
 
         self.sceneView = sceneView
@@ -47,10 +63,10 @@ class GameOverlayScene: SKScene {
         homeButton.name = "menu"
         self.addChild(homeButton)
 
-        location1 = addText(x: size.width/8, y: size.height/1.15, text: "BELGRADE", size: 20, name: "capital")
-        location2 = addText(x: size.width/8, y: size.height/1.20, text: "SERBIA", size: 17, name: "country")
+        location1 = addText(x: size.width/8, y: size.height/1.15, text: "", size: 25, name: "capital")
+        location2 = addText(x: size.width/8, y: size.height/1.21, text: "", size: 17, name: "country")
 
-        let pointsText = "0 points"
+        let pointsText = "Score: 0"
         points = addText(x: size.width/7, y: size.height/6, text: pointsText, size: 20, name: "points")
 
         band = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
@@ -59,10 +75,31 @@ class GameOverlayScene: SKScene {
         band.position.x = 0
         band.position.y = self.size.height
         self.addChild(band)
+
+        self.game = game
+    }
+
+    func updatePoints(target: Int) {
+        let wait = SKAction.wait(forDuration: 0.1)
+        let times = target/10
+        let block = SKAction.run({
+            self.score += times
+        })
+
+        let sequence = SKAction.sequence([wait, block])
+        points.run(SKAction.repeat(sequence, count: 10))
     }
 
     func runProgressBar() {
-        let resize = SKAction.scaleX(to: self.frame.width, duration: 50)
+        let resize = SKAction.scaleX(to: self.frame.width/10, duration: 10)
+        band.run(resize, completion: { () -> Void in
+            self.endTurn()
+            self.updatePoints(target: 10000)
+        })
+    }
+
+    func resetProgressBar() {
+        let resize = SKAction.scaleX(to: 0.1, duration: 1)
         band.run(resize)
     }
 
@@ -106,14 +143,32 @@ class GameOverlayScene: SKScene {
         super.init(coder: aDecoder)
     }
 
+    func endTurn() {
+        resetProgressBar()
+    }
+
+    func startTurn() {
+        let city = game.startTurn()
+
+        location1.text = city.country
+        location2.text = city.capital
+
+        runProgressBar()
+    }
+
     override func update(_ currentTime: TimeInterval) {
-        /* Called before each frame is rendered */
+        if helper.state == .tapToPlay {
+            return
+        }
+
+        if currentTime - timestamp < maxResponseTime {
+            return
+        }
         
-        // game loop
-        // startTurn
-        // wait 10 sec
+        if helper.state == .turnStarted {
+            startTurn()
+        }
         
-        // end turn
-        // wait?
+        self.timestamp = currentTime
     }
 }

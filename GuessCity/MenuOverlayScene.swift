@@ -73,17 +73,15 @@ class MenuOverlayScene: SKScene {
             let location = touch.location(in: self)
             let nodes = self.nodes(at: location)
             if let node = nodes.first {
-                guard let name = node.name else {
-                    return
-                }
+                if let name = node.name {
+                    helper.playSound(filename: "misc_menu_4.wav")
 
-                helper.playSound(filename: "misc_menu_4.wav")
-                
-                switch name {
-                case "play": play()
-                case "leaderboard": showLeaderboard()
-                case "about": showAboutScreen()
-                default: break
+                    switch name {
+                    case "play": play()
+                    case "leaderboard": showLeaderboard()
+                    case "about": showAboutScreen()
+                    default: break
+                    }
                 }
             }
         }
@@ -97,7 +95,7 @@ class MenuOverlayScene: SKScene {
         helper.fadeOutBackgroundMusic()
 
         self.sceneView.overlaySKScene = self.gameOverlayScene
-        self.helper.state = .playing
+        self.helper.state = .turnStarted
         sceneView.present(gameScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: nil)
     }
 

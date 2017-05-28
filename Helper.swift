@@ -13,10 +13,6 @@ import AVFoundation
 
 public enum GameState {
     case tapToPlay
-    case playing
-}
-
-public enum TurnState {
     case turnStarted
     case turnEnded
 }

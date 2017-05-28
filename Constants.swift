@@ -6,10 +6,12 @@
 //  Copyright © 2017 Vladimir Cirkovic. All rights reserved.
 //
 
+import Foundation
+
 struct Constants {
-    static let  earthEquator         = 6378137.0
-    static let  distancePerDegree    = (2 * .pi * earthEquator) / (360 * 1000)
-    static let  scoreMaxDistance     = 1000.0
-    static let  maxResponseTime      = 10.0
-    static let  durationBetweenTurns = 5.0
+    static let  earthEquator                            = 6378137.0
+    static let  distancePerDegree                       = (2 * .pi * earthEquator) / (360 * 1000)
+    static let  scoreMaxDistance                        = 1000.0
+    static let  maxResponseTime: CFTimeInterval         = 15.0
+    static let  durationBetweenTurns: CFTimeInterval    = 5.0
 }

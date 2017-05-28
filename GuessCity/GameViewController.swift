@@ -48,7 +48,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene)
+        gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene, game: game)
         menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, gameViewController: self)
 
         sceneView.overlaySKScene = menuOverlayScene
@@ -141,7 +141,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
-        if helper.state != .playing {
+        if helper.state == .tapToPlay {
             return
         }
 
@@ -165,7 +165,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     }
 
     func handleTap(_ gestureRecognize: UITapGestureRecognizer) {
-        if helper.state != .playing {
+        if helper.state == .tapToPlay {
             return
         }
 
