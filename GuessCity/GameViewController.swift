@@ -48,7 +48,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        gameOverlayScene.setup(sceneView: sceneView, menuScene: menuScene, menuOverlayScene: menuOverlayScene, game: game)
+        gameOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, menuScene: menuScene, menuOverlayScene: menuOverlayScene, game: game)
         menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, gameViewController: self)
 
         sceneView.overlaySKScene = menuOverlayScene
@@ -96,30 +96,30 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
 
-//    @IBAction func addScoreAndSubmitToGC(_ sender: AnyObject) {
-//        // Add 10 points to current score
-//        score += 10
-//        scoreLabel.text = "\(score)"
-//
-//        // Submit score to GC leaderboard
-//        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-//        bestScoreInt.value = Int64(score)
-//        GKScore.report([bestScoreInt]) { (error) in
-//            if error != nil {
-//                print(error!.localizedDescription)
-//            } else {
-//                print("Best Score submitted to your Leaderboard!")
-//            }
-//        }
-//    }
+    //    @IBAction func addScoreAndSubmitToGC(_ sender: AnyObject) {
+    //        // Add 10 points to current score
+    //        score += 10
+    //        scoreLabel.text = "\(score)"
+    //
+    //        // Submit score to GC leaderboard
+    //        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
+    //        bestScoreInt.value = Int64(score)
+    //        GKScore.report([bestScoreInt]) { (error) in
+    //            if error != nil {
+    //                print(error!.localizedDescription)
+    //            } else {
+    //                print("Best Score submitted to your Leaderboard!")
+    //            }
+    //        }
+    //    }
 
-//    @IBAction func checkGCLeaderboard(_ sender: AnyObject) {
-//        let gcVC = GKGameCenterViewController()
-//        gcVC.gameCenterDelegate = self
-//        gcVC.viewState = .leaderboards
-//        gcVC.leaderboardIdentifier = LEADERBOARD_ID
-//        present(gcVC, animated: true, completion: nil)
-//    }
+    //    @IBAction func checkGCLeaderboard(_ sender: AnyObject) {
+    //        let gcVC = GKGameCenterViewController()
+    //        gcVC.gameCenterDelegate = self
+    //        gcVC.viewState = .leaderboards
+    //        gcVC.leaderboardIdentifier = LEADERBOARD_ID
+    //        present(gcVC, animated: true, completion: nil)
+    //    }
 
     func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
@@ -241,7 +241,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
+    
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown

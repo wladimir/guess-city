@@ -24,6 +24,7 @@ class GameOverlayScene: SKScene {
     let durationBetweenTurns: CFTimeInterval = Constants.durationBetweenTurns
 
     var game: Game!
+    var gameScene: GameScene!
 
     var score = 0 {
         didSet {
@@ -49,10 +50,11 @@ class GameOverlayScene: SKScene {
         super.init(size: size)
     }
 
-    func setup(sceneView: SCNView, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game) {
+    func setup(sceneView: SCNView, gameScene: GameScene, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game) {
         FontAwesomeIcon.register()
 
         self.sceneView = sceneView
+        self.gameScene = gameScene
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
 
@@ -80,26 +82,25 @@ class GameOverlayScene: SKScene {
     }
 
     func updatePoints(target: Int) {
-        let wait = SKAction.wait(forDuration: 0.1)
-        let times = target/10
+        let wait = SKAction.wait(forDuration: 0.001)
         let block = SKAction.run({
-            self.score += times
+            self.score += 1
         })
 
         let sequence = SKAction.sequence([wait, block])
-        points.run(SKAction.repeat(sequence, count: 10))
+        points.run(SKAction.repeat(sequence, count: target))
     }
 
     func runProgressBar() {
         let resize = SKAction.scaleX(to: self.frame.width/10, duration: 10)
-        band.run(resize, completion: { () -> Void in
+        band.run(resize, completion: {
             self.endTurn()
             self.updatePoints(target: 10000)
         })
     }
 
     func resetProgressBar() {
-        let resize = SKAction.scaleX(to: 0.1, duration: 1)
+        let resize = SKAction.scaleX(to: 0.1, duration: 0.5)
         band.run(resize)
     }
 
@@ -144,6 +145,9 @@ class GameOverlayScene: SKScene {
     }
 
     func endTurn() {
+        // receive answer
+        // compute score
+        // save score
         resetProgressBar()
     }
 

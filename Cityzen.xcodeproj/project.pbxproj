@@ -15,6 +15,7 @@
 		7D5027EA1ED57B3A00F70A21 /* positive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D5027E91ED57B3A00F70A21 /* positive.wav */; };
 		7D558FE61EC9F72B00952D07 /* cities.db in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6209A1EC9F2CF00AE909F /* cities.db */; };
 		7D6AEAA11ECB49040056D747 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEAA01ECB49040056D747 /* Constants.swift */; };
+		7D6D6A8A1EDF508400D5A2E8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */; };
 		7DA642F61ED811CF0080A726 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA642F51ED811CF0080A726 /* AboutViewController.swift */; };
@@ -170,6 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */,
+				7D6D6A8A1EDF508400D5A2E8 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +457,7 @@
 								enabled = 1;
 							};
 							com.apple.InAppPurchase = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
