@@ -96,31 +96,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
 
-    //    @IBAction func addScoreAndSubmitToGC(_ sender: AnyObject) {
-    //        // Add 10 points to current score
-    //        score += 10
-    //        scoreLabel.text = "\(score)"
-    //
-    //        // Submit score to GC leaderboard
-    //        let bestScoreInt = GKScore(leaderboardIdentifier: LEADERBOARD_ID)
-    //        bestScoreInt.value = Int64(score)
-    //        GKScore.report([bestScoreInt]) { (error) in
-    //            if error != nil {
-    //                print(error!.localizedDescription)
-    //            } else {
-    //                print("Best Score submitted to your Leaderboard!")
-    //            }
-    //        }
-    //    }
-
-    //    @IBAction func checkGCLeaderboard(_ sender: AnyObject) {
-    //        let gcVC = GKGameCenterViewController()
-    //        gcVC.gameCenterDelegate = self
-    //        gcVC.viewState = .leaderboards
-    //        gcVC.leaderboardIdentifier = LEADERBOARD_ID
-    //        present(gcVC, animated: true, completion: nil)
-    //    }
-
     func handleNotifications() {
         NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
                                                name: Notification.Name("connected"), object: nil)
@@ -241,7 +216,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     override var prefersStatusBarHidden: Bool {
         return true
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         if UIDevice.current.userInterfaceIdiom == .phone {
             return .allButUpsideDown

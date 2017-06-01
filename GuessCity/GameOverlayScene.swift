@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import SceneKit
 import Iconic
+import GameKit
 
 class GameOverlayScene: SKScene {
     let helper = Helper.sharedInstance
@@ -91,11 +92,24 @@ class GameOverlayScene: SKScene {
         points.run(SKAction.repeat(sequence, count: target))
     }
 
+    func submitToGC(score: Int) {
+        let bestScoreInt = GKScore(leaderboardIdentifier: "com.score.solipsist.Cityzen")
+        bestScoreInt.value = Int64(score)
+        GKScore.report([bestScoreInt]) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                print("Best Score submitted to your Leaderboard!")
+            }
+        }
+    }
+
     func runProgressBar() {
         let resize = SKAction.scaleX(to: self.frame.width/10, duration: 10)
         band.run(resize, completion: {
             self.endTurn()
-            self.updatePoints(target: 10000)
+            self.updatePoints(target: 1000)
+            self.submitToGC(score: 1000)
         })
     }
 

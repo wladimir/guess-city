@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import SceneKit
 import Iconic
+import GameKit
 
 class MenuOverlayScene: SKScene {
     let helper = Helper.sharedInstance
@@ -100,7 +101,11 @@ class MenuOverlayScene: SKScene {
     }
 
     private func showLeaderboard() {
-
+            let gcVC = GKGameCenterViewController()
+            gcVC.gameCenterDelegate = gameViewController
+            gcVC.viewState = .leaderboards
+            gcVC.leaderboardIdentifier = "com.score.solipsist.Cityzen"
+            gameViewController.present(gcVC, animated: true, completion: nil)
     }
 
     func showAboutScreen() {
