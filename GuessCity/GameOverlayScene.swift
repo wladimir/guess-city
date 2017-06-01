@@ -93,7 +93,7 @@ class GameOverlayScene: SKScene {
     }
 
     func submitToGC(score: Int) {
-        let bestScoreInt = GKScore(leaderboardIdentifier: "com.score.solipsist.Cityzen")
+        let bestScoreInt = GKScore(leaderboardIdentifier: "com.score.cityzen")
         bestScoreInt.value = Int64(score)
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
