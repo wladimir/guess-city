@@ -61,7 +61,7 @@ class GameOverlayScene: SKScene {
 
         let homeTexture = SKTexture(image: FontAwesomeIcon.arrowLeftIcon.image(ofSize: helper.smallIcon, color: helper.mainColor))
         let homeButton = SKSpriteNode(texture: homeTexture)
-        homeButton.position.x = size.width - helper.margin
+        homeButton.position.x = size.width - helper.margin/2
         homeButton.position.y = size.height - helper.margin
         homeButton.name = "menu"
         self.addChild(homeButton)

@@ -28,8 +28,6 @@ class GameScene: SCNScene {
 
         earthNode = self.rootNode.childNode(withName: "earth", recursively: true)!
         cameraNode = self.rootNode.childNode(withName: "camera", recursively: true)!
-
-        earthNode = self.rootNode.childNode(withName: "earth", recursively: true)!
         earthNode.rotation = SCNVector4Make(0, 1, 0, 0)
 
         pivot = earthNode.pivot

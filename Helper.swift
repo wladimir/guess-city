@@ -35,7 +35,7 @@ class Helper {
 
     let largeIcon = CGSize(width: 40, height: 40)
     let mediumIcon = CGSize(width: 30, height: 30)
-    let smallIcon = CGSize(width: 20, height: 20)
+    let smallIcon = CGSize(width: 25, height: 25)
     let margin: CGFloat = 25
 
     static func random(maxValue: UInt32) -> UInt32 {

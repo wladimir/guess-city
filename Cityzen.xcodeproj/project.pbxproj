@@ -16,6 +16,8 @@
 		7D558FE61EC9F72B00952D07 /* cities.db in Resources */ = {isa = PBXBuildFile; fileRef = 7DB6209A1EC9F2CF00AE909F /* cities.db */; };
 		7D6AEAA11ECB49040056D747 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEAA01ECB49040056D747 /* Constants.swift */; };
 		7D6D6A8A1EDF508400D5A2E8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; };
+		7D6E1BC21EE0481200A1BB9A /* CityzenUITestsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E1BC11EE0481200A1BB9A /* CityzenUITestsSnapshot.swift */; };
+		7D6E1BCA1EE0485100A1BB9A /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E1BC91EE0485100A1BB9A /* SnapshotHelper.swift */; };
 		7D71ADB41E4E32220088E962 /* GameOverlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */; };
 		7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */; };
 		7DA642F61ED811CF0080A726 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DA642F51ED811CF0080A726 /* AboutViewController.swift */; };
@@ -73,6 +75,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		7D6E1BC41EE0481200A1BB9A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7DEABAF91DE8F59A0047AE42 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7DEABB001DE8F59A0047AE42;
+			remoteInfo = Cityzen;
+		};
 		7DEABB181DE8F59A0047AE42 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7DEABAF91DE8F59A0047AE42 /* Project object */;
@@ -102,6 +111,10 @@
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7D5027E91ED57B3A00F70A21 /* positive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = positive.wav; sourceTree = "<group>"; };
 		7D6AEAA01ECB49040056D747 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
+		7D6E1BBF1EE0481200A1BB9A /* CityzenUITestsSnapshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITestsSnapshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D6E1BC11EE0481200A1BB9A /* CityzenUITestsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityzenUITestsSnapshot.swift; sourceTree = "<group>"; };
+		7D6E1BC31EE0481200A1BB9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7D6E1BC91EE0485100A1BB9A /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotHelper.swift; sourceTree = "<group>"; };
 		7D71ADB31E4E32220088E962 /* GameOverlayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = GameOverlayScene.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = misc_menu_4.wav; sourceTree = "<group>"; };
 		7DA642F51ED811CF0080A726 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +179,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7D6E1BBC1EE0481200A1BB9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7DEABAFE1DE8F59A0047AE42 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,6 +247,16 @@
 				7D593BD01DE9A98B00695554 /* Textures */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		7D6E1BC01EE0481200A1BB9A /* CityzenUITestsSnapshot */ = {
+			isa = PBXGroup;
+			children = (
+				7D6E1BC91EE0485100A1BB9A /* SnapshotHelper.swift */,
+				7D6E1BC11EE0481200A1BB9A /* CityzenUITestsSnapshot.swift */,
+				7D6E1BC31EE0481200A1BB9A /* Info.plist */,
+			);
+			path = CityzenUITestsSnapshot;
 			sourceTree = "<group>";
 		};
 		7D7E9C391E5F14D3003688B7 /* Icons */ = {
@@ -300,6 +330,7 @@
 				7DEABB031DE8F59A0047AE42 /* Cityzen */,
 				7DEABB1A1DE8F59A0047AE42 /* CityzenTests */,
 				7DEABB251DE8F59A0047AE42 /* CityzenUITests */,
+				7D6E1BC01EE0481200A1BB9A /* CityzenUITestsSnapshot */,
 				7DEABB021DE8F59A0047AE42 /* Products */,
 				7D1D877B1E300CA8009144BB /* Frameworks */,
 				D6CB019EE7C479D7305A02A0 /* Pods */,
@@ -312,6 +343,7 @@
 				7DEABB011DE8F59A0047AE42 /* Cityzen.app */,
 				7DEABB171DE8F59A0047AE42 /* CityzenTests.xctest */,
 				7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */,
+				7D6E1BBF1EE0481200A1BB9A /* CityzenUITestsSnapshot.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -381,6 +413,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7D6E1BBE1EE0481200A1BB9A /* CityzenUITestsSnapshot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D6E1BC81EE0481200A1BB9A /* Build configuration list for PBXNativeTarget "CityzenUITestsSnapshot" */;
+			buildPhases = (
+				7D6E1BBB1EE0481200A1BB9A /* Sources */,
+				7D6E1BBC1EE0481200A1BB9A /* Frameworks */,
+				7D6E1BBD1EE0481200A1BB9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D6E1BC51EE0481200A1BB9A /* PBXTargetDependency */,
+			);
+			name = CityzenUITestsSnapshot;
+			productName = CityzenUITestsSnapshot;
+			productReference = 7D6E1BBF1EE0481200A1BB9A /* CityzenUITestsSnapshot.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		7DEABB001DE8F59A0047AE42 /* Cityzen */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7DEABB2B1DE8F59A0047AE42 /* Build configuration list for PBXNativeTarget "Cityzen" */;
@@ -444,10 +494,16 @@
 		7DEABAF91DE8F59A0047AE42 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0810;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Vladimir Cirkovic";
 				TargetAttributes = {
+					7D6E1BBE1EE0481200A1BB9A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = ZXF6S9LSXH;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 7DEABB001DE8F59A0047AE42;
+					};
 					7DEABB001DE8F59A0047AE42 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = ZXF6S9LSXH;
@@ -491,11 +547,19 @@
 				7DEABB001DE8F59A0047AE42 /* Cityzen */,
 				7DEABB161DE8F59A0047AE42 /* CityzenTests */,
 				7DEABB211DE8F59A0047AE42 /* CityzenUITests */,
+				7D6E1BBE1EE0481200A1BB9A /* CityzenUITestsSnapshot */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7D6E1BBD1EE0481200A1BB9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7DEABAFF1DE8F59A0047AE42 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -629,6 +693,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7D6E1BBB1EE0481200A1BB9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D6E1BC21EE0481200A1BB9A /* CityzenUITestsSnapshot.swift in Sources */,
+				7D6E1BCA1EE0485100A1BB9A /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7DEABAFD1DE8F59A0047AE42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -666,6 +739,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		7D6E1BC51EE0481200A1BB9A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7DEABB001DE8F59A0047AE42 /* Cityzen */;
+			targetProxy = 7D6E1BC41EE0481200A1BB9A /* PBXContainerItemProxy */;
+		};
 		7DEABB191DE8F59A0047AE42 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 7DEABB001DE8F59A0047AE42 /* Cityzen */;
@@ -698,6 +776,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7D6E1BC61EE0481200A1BB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = ZXF6S9LSXH;
+				INFOPLIST_FILE = CityzenUITestsSnapshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.cityzentest.CityzenUITestsSnapshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Cityzen;
+			};
+			name = Debug;
+		};
+		7D6E1BC71EE0481200A1BB9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				DEVELOPMENT_TEAM = ZXF6S9LSXH;
+				INFOPLIST_FILE = CityzenUITestsSnapshot/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.cityzentest.CityzenUITestsSnapshot;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Cityzen;
+			};
+			name = Release;
+		};
 		7DEABB291DE8F59A0047AE42 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -882,6 +990,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7D6E1BC81EE0481200A1BB9A /* Build configuration list for PBXNativeTarget "CityzenUITestsSnapshot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D6E1BC61EE0481200A1BB9A /* Debug */,
+				7D6E1BC71EE0481200A1BB9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7DEABAFC1DE8F59A0047AE42 /* Build configuration list for PBXProject "Cityzen" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

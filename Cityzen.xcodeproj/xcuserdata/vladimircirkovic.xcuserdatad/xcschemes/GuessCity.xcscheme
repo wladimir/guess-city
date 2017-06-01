@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Cityzen.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "7D6E1BBE1EE0481200A1BB9A"
+               BuildableName = "CityzenUITestsSnapshot.xctest"
+               BlueprintName = "CityzenUITestsSnapshot"
+               ReferencedContainer = "container:Cityzen.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
