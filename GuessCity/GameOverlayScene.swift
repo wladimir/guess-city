@@ -27,21 +27,14 @@ class GameOverlayScene: SKScene {
     var game: Game!
     var gameScene: GameScene!
 
+    weak var gameViewController: GameViewController!
+
     var score = 0 {
         didSet {
-            if score % 1000 == 0 {
-                self.points.text = "Score: \(self.score) 🔥"
-            }
-            if score % 5000 == 0 {
-                self.points.text = "Score: \(self.score) 🔥🔥"
-            }
-            if score % 10000 == 0 {
-                self.points.text = "Score: \(self.score) 🔥🔥🔥"
-            } else {
-                self.points.text = "Score: \(self.score)"
-            }
+            self.points.text = "Score: \(self.score)"
         }
     }
+    var message = "🔥"
 
     var sceneView: SCNView!
     var menuScene: SCNScene!
@@ -51,13 +44,15 @@ class GameOverlayScene: SKScene {
         super.init(size: size)
     }
 
-    func setup(sceneView: SCNView, gameScene: GameScene, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game) {
+    func setup(sceneView: SCNView, gameScene: GameScene, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game, gameViewController: GameViewController) {
         FontAwesomeIcon.register()
 
         self.sceneView = sceneView
         self.gameScene = gameScene
         self.menuScene = menuScene
         self.menuOverlayScene = menuOverlayScene
+        self.game = game
+        self.gameViewController = gameViewController
 
         let homeTexture = SKTexture(image: FontAwesomeIcon.arrowLeftIcon.image(ofSize: helper.smallIcon, color: helper.mainColor))
         let homeButton = SKSpriteNode(texture: homeTexture)
@@ -79,7 +74,15 @@ class GameOverlayScene: SKScene {
         band.position.y = self.size.height
         self.addChild(band)
 
-        self.game = game
+        // message in center below score
+    }
+
+    func computeScore() {
+        if let coord = gameViewController.userLocation?.coordinate {
+            let score = game.computeScore(lat: coord.latitude, lon: coord.longitude)
+            updatePoints(target: score)
+            submitToGC(score: score)
+        }
     }
 
     func updatePoints(target: Int) {
@@ -98,8 +101,6 @@ class GameOverlayScene: SKScene {
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
                 print(error!.localizedDescription)
-            } else {
-                print("Best Score submitted to your Leaderboard!")
             }
         }
     }
@@ -108,13 +109,14 @@ class GameOverlayScene: SKScene {
         let resize = SKAction.scaleX(to: self.frame.width/10, duration: 10)
         band.run(resize, completion: {
             self.endTurn()
-            self.updatePoints(target: 1000)
-            self.submitToGC(score: 1000)
+            self.computeScore()
         })
     }
 
     func resetProgressBar() {
-        let resize = SKAction.scaleX(to: 0.1, duration: 0.5)
+        band.removeAllActions()
+
+        let resize = SKAction.scaleX(to: 0.1, duration: 0.1)
         band.run(resize)
     }
 
@@ -133,6 +135,13 @@ class GameOverlayScene: SKScene {
         return node
     }
 
+    override func didMove(to view: SKView) {
+        startTurn()
+        helper.state = .turnStarted
+
+        print("did move to")
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch = touches.first {
             let location = touch.location(in: self)
@@ -147,11 +156,13 @@ class GameOverlayScene: SKScene {
     }
 
     private func backToMenu() {
-        helper.fadeInBackgroundMusic()
-
         self.sceneView.overlaySKScene = self.menuOverlayScene
         self.helper.state = .tapToPlay
-        sceneView.present(menuScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: nil)
+        sceneView.present(menuScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: {
+            self.endTurn()
+            self.gameViewController.resetUserPin()
+            self.helper.fadeInBackgroundMusic()
+        })
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -159,17 +170,17 @@ class GameOverlayScene: SKScene {
     }
 
     func endTurn() {
-        // receive answer
-        // compute score
-        // save score
+        helper.state = .turnEnded
         resetProgressBar()
     }
 
     func startTurn() {
-        let city = game.startTurn()
+        game.startTurn()
+        helper.state = .turnStarted
+        let city = game.getCity()
 
-        location1.text = city.country
-        location2.text = city.capital
+        location1.text = city.capital
+        location2.text = city.country
 
         runProgressBar()
     }
@@ -183,7 +194,7 @@ class GameOverlayScene: SKScene {
             return
         }
         
-        if helper.state == .turnStarted {
+        if helper.state == .turnEnded {
             startTurn()
         }
         

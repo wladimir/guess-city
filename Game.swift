@@ -16,35 +16,17 @@ class Game {
         cities.load()
     }
 
-    struct Answer {
-        let turn: Int
-        let lat: Double
-        let lon: Double
-
-        init(turn: Int, lat: Double, lon: Double) {
-            self.turn = turn
-            self.lat = lat
-            self.lon = lon
-        }
-    }
-
-    func startTurn() -> Cities.City {
+    func startTurn() {
         self.turn += 1
-        return getCity()
     }
 
-    func endTurn(answer: Answer) {
-        let score = computeScore(answer: answer)
-        // write via game kit
-    }
-
-    private func getCity() -> Cities.City {
+    func getCity() -> Cities.City {
         return cities.getCity(turn: turn)
     }
 
-    private func computeScore(answer: Answer) -> Int {
-        let city = cities.getCity(turn: answer.turn)
-        let distance  = planeDistance(lat1: city.lat, lon1: city.lon, lat2: answer.lat, lon2: answer.lon)
+    func computeScore(lat: Double, lon: Double) -> Int {
+        let city = cities.getCity(turn: turn)
+        let distance  = planeDistance(lat1: city.lat, lon1: city.lon, lat2: lat, lon2: lon)
         return score(distance: distance)
     }
 
@@ -57,6 +39,6 @@ class Game {
 
     private func score(distance: Double) -> Int {
         let score = Constants.scoreMaxDistance - distance
-        return Int(max(0, score))
+        return Int(max(0, score/10))
     }
 }

@@ -96,7 +96,6 @@ class MenuOverlayScene: SKScene {
         helper.fadeOutBackgroundMusic()
 
         self.sceneView.overlaySKScene = self.gameOverlayScene
-        self.helper.state = .turnStarted
         sceneView.present(gameScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: nil)
     }
 

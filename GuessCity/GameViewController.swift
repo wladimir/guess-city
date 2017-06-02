@@ -33,6 +33,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
     let game = Game()
 
+    var userLocation: CLLocation?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,8 +50,10 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         gameOverlayScene = GameOverlayScene(size: sceneView.bounds.size)
         menuOverlayScene = MenuOverlayScene(size: sceneView.bounds.size)
-        gameOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, menuScene: menuScene, menuOverlayScene: menuOverlayScene, game: game)
-        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, gameOverlayScene: gameOverlayScene, gameViewController: self)
+        gameOverlayScene.setup(sceneView: sceneView, gameScene: gameScene, menuScene: menuScene,
+                               menuOverlayScene: menuOverlayScene, game: game, gameViewController: self)
+        menuOverlayScene.setup(sceneView: sceneView, gameScene: gameScene,
+                               gameOverlayScene: gameOverlayScene, gameViewController: self)
 
         sceneView.overlaySKScene = menuOverlayScene
 
@@ -153,13 +157,16 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
 
         let textureCoordinate = hit?.textureCoordinates(withMappingChannel: 0)
-        let location: CLLocation = coordinateFromPoint(point: textureCoordinate!)
+        userLocation = coordinateFromPoint(point: textureCoordinate!)
 
         setUserPin(vec: (hit?.localCoordinates)!)
-        setActualPin(latitude: 40.415363, longitude: -3.707398)
 
-        let delta = distance(loc1: location, loc2: CLLocation(latitude: 40.415363, longitude: -3.707398))
-        print(delta)
+        //let delta = distance(loc1: userLocation?, loc2: CLLocation(latitude: 40.415363, longitude: -3.707398))
+        //print(delta)
+    }
+
+    func resetUserPin() {
+        gameScene.getUserPin().isHidden = true
     }
 
     func distance(loc1: CLLocation, loc2: CLLocation) -> CLLocationDistance {
@@ -167,6 +174,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     }
 
     func setUserPin(vec: SCNVector3) {
+        gameScene.getUserPin().isHidden = false
         gameScene.getUserPin().position = vec
 
         let pinDirection = GLKVector3Make(0.0, 1.0, 0.0)
@@ -199,7 +207,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         gameScene.getActualPin().rotation = SCNVector4FromGLKVector4(rotation2)
     }
 
-    func coordinateFromPoint(point:CGPoint) -> CLLocation {
+    func coordinateFromPoint(point: CGPoint) -> CLLocation {
         let u = Double(point.x)
         let v = Double(point.y)
 
