@@ -19,6 +19,7 @@ class GameOverlayScene: SKScene {
     var location2: SKLabelNode!
     var points: SKLabelNode!
     var band: SKShapeNode!
+    var message: SKLabelNode!
 
     var timestamp: CFTimeInterval = 0.0
     let maxResponseTime: CFTimeInterval = Constants.maxResponseTime
@@ -29,12 +30,11 @@ class GameOverlayScene: SKScene {
 
     weak var gameViewController: GameViewController!
 
-    var score = 0 {
+    var score: Int64 = 0 {
         didSet {
             self.points.text = "Score: \(self.score)"
         }
     }
-    var message = "🔥"
 
     var sceneView: SCNView!
     var menuScene: SCNScene!
@@ -65,7 +65,10 @@ class GameOverlayScene: SKScene {
         location2 = addText(x: size.width/8, y: size.height/1.21, text: "", size: 17, name: "country")
 
         let pointsText = "Score: 0"
-        points = addText(x: size.width/7, y: size.height/6, text: pointsText, size: 20, name: "points")
+        points = addText(x: size.width/7, y: size.height/5, text: pointsText, size: 20, name: "points")
+
+        message = addText(x: size.width/2, y: size.height/9, text: "", size: 17, name: "message")
+        message.horizontalAlignmentMode = .center
 
         band = SKShapeNode(rectOf: CGSize(width: 20, height: 20))
         band.fillColor = helper.bandColor
@@ -73,26 +76,41 @@ class GameOverlayScene: SKScene {
         band.position.x = 0
         band.position.y = self.size.height
         self.addChild(band)
-
-        // message in center below score
     }
 
     func computeScore() {
         if let coord = gameViewController.userLocation?.coordinate {
-            let score = game.computeScore(lat: coord.latitude, lon: coord.longitude)
-            updatePoints(target: score)
+            let (distance, score) = game.computeScore(lat: coord.latitude, lon: coord.longitude)
+            updateMessage(distance: distance, score: score)
+            updatePoints(score: score)
             submitToGC(score: score)
         }
     }
 
-    func updatePoints(target: Int) {
+    func updateMessage(distance: Double, score: Int) {
+        if score == 0 {
+            message.text = "Too far away!"
+            message.fontColor = UIColor.red
+        } else if distance <= 1920 && distance > 1280 {
+            message.text = "Not too bad!"
+            message.fontColor = UIColor.orange
+        } else if distance <= 1280 && distance > 640 {
+            message.text = "Very good!"
+            message.fontColor = UIColor.yellow
+        } else if distance <= 640 {
+            message.text = "Excellent!"
+            message.fontColor = UIColor.green
+        }
+    }
+
+    func updatePoints(score: Int) {
         let wait = SKAction.wait(forDuration: 0.001)
         let block = SKAction.run({
             self.score += 1
         })
 
         let sequence = SKAction.sequence([wait, block])
-        points.run(SKAction.repeat(sequence, count: target))
+        points.run(SKAction.repeat(sequence, count: score))
     }
 
     func submitToGC(score: Int) {
@@ -109,8 +127,15 @@ class GameOverlayScene: SKScene {
         let resize = SKAction.scaleX(to: self.frame.width/10, duration: 10)
         band.run(resize, completion: {
             self.endTurn()
+            self.resetProgressBar()
             self.computeScore()
+            let city = self.game.getCity()
+            self.setActualPin(lat: city.lat, lon: city.lon)
         })
+    }
+
+    func setActualPin(lat: Double, lon: Double) {
+        gameViewController.setActualPin(lat: lat, lon: lon)
     }
 
     func resetProgressBar() {
@@ -138,8 +163,6 @@ class GameOverlayScene: SKScene {
     override func didMove(to view: SKView) {
         startTurn()
         helper.state = .turnStarted
-
-        print("did move to")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -158,6 +181,7 @@ class GameOverlayScene: SKScene {
     private func backToMenu() {
         self.sceneView.overlaySKScene = self.menuOverlayScene
         self.helper.state = .tapToPlay
+        resetProgressBar()
         sceneView.present(menuScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: {
             self.endTurn()
             self.gameViewController.resetUserPin()
@@ -171,14 +195,17 @@ class GameOverlayScene: SKScene {
 
     func endTurn() {
         helper.state = .turnEnded
-        resetProgressBar()
     }
 
     func startTurn() {
-        game.startTurn()
         helper.state = .turnStarted
-        let city = game.getCity()
 
+        game.startTurn()
+
+        message.text = ""
+        gameScene.removePins()
+
+        let city = game.getCity()
         location1.text = city.capital
         location2.text = city.country
 
@@ -189,7 +216,7 @@ class GameOverlayScene: SKScene {
         if helper.state == .tapToPlay {
             return
         }
-
+        
         if currentTime - timestamp < maxResponseTime {
             return
         }

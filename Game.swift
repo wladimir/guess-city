@@ -24,10 +24,10 @@ class Game {
         return cities.getCity(turn: turn)
     }
 
-    func computeScore(lat: Double, lon: Double) -> Int {
+    func computeScore(lat: Double, lon: Double) -> (distance: Double, score: Int) {
         let city = cities.getCity(turn: turn)
         let distance  = planeDistance(lat1: city.lat, lon1: city.lon, lat2: lat, lon2: lon)
-        return score(distance: distance)
+        return (distance, score(distance: distance))
     }
 
     private func planeDistance(lat1: Double, lon1: Double, lat2: Double, lon2: Double) -> Double {
@@ -38,7 +38,7 @@ class Game {
     }
 
     private func score(distance: Double) -> Int {
-        let score = Constants.scoreMaxDistance - distance
-        return Int(max(0, score/10))
+        let score = (Constants.scoreMaxDistance - distance)/10
+        return Int(max(0, score))
     }
 }

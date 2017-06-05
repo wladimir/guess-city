@@ -65,8 +65,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         authenticateLocalPlayer()
 
-        handleNotifications()
-
         helper.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
         helper.playBackgroundMusic()
     }
@@ -82,7 +80,9 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         localPlayer.authenticateHandler = {(viewController, error) -> Void in
             if viewController != nil {
                 // show login if player is not logged in
-                self.present(viewController!, animated: true, completion: nil)
+                self.present(viewController!, animated: true, completion: {
+                    self.getExistingScore()
+                })
             } else if localPlayer.isAuthenticated {
                 // player is already authenticated & logged in, load game center
                 self.gcEnabled = true
@@ -90,7 +90,10 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
                 // get the default leaderboard ID
                 localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
                     if error == nil {
-                        self.gcDefaultLeaderBoard = leaderboardIdentifer! }
+                        self.gcDefaultLeaderBoard = leaderboardIdentifer!
+
+                        self.getExistingScore()
+                    }
                 })
             } else {
                 // game center is not enabled on the users device
@@ -100,23 +103,17 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
     }
 
-    func handleNotifications() {
-        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleConnected),
-                                               name: Notification.Name("connected"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(GameViewController.handleDisconnected),
-                                               name: Notification.Name("disconnected"), object: nil)
-    }
-
-    func handleConnected() {
-
-    }
-
-    func handleDisconnected() {
-
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    func getExistingScore() {
+        let leaderboard = GKLeaderboard()
+        leaderboard.identifier = "com.score.cityzen"
+        leaderboard.loadScores(completionHandler: { _, error in
+            if error == nil {
+                if let value = leaderboard.localPlayerScore {
+                    self.gameOverlayScene.score = value.value
+                    self.gameOverlayScene.points.text = value.formattedValue
+                }
+            }
+        })
     }
 
     func handlePan(_ gestureRecognize: UIPanGestureRecognizer) {
@@ -160,21 +157,14 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         userLocation = coordinateFromPoint(point: textureCoordinate!)
 
         setUserPin(vec: (hit?.localCoordinates)!)
-
-        //let delta = distance(loc1: userLocation?, loc2: CLLocation(latitude: 40.415363, longitude: -3.707398))
-        //print(delta)
     }
 
     func resetUserPin() {
-        gameScene.getUserPin().isHidden = true
-    }
-
-    func distance(loc1: CLLocation, loc2: CLLocation) -> CLLocationDistance {
-        return loc1.distance(from: loc2)
+        gameScene.removePins()
+        userLocation = nil
     }
 
     func setUserPin(vec: SCNVector3) {
-        gameScene.getUserPin().isHidden = false
         gameScene.getUserPin().position = vec
 
         let pinDirection = GLKVector3Make(0.0, 1.0, 0.0)
@@ -187,9 +177,9 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         gameScene.getUserPin().rotation = SCNVector4FromGLKVector4(rotation)
     }
 
-    func setActualPin(latitude: Double, longitude: Double) {
-        let lat = latitude * .pi/180
-        let lon = longitude * .pi/180
+    func setActualPin(lat: Double, lon: Double) {
+        let lat = lat * .pi/180
+        let lon = lon * .pi/180
         let x = 1 * cos(lat) * sin(lon)
         let y = 1 * sin(lat)
         let z = 1 * cos(lat) * cos(lon)

@@ -43,6 +43,17 @@ class GameScene: SCNScene {
         SCNTransaction.commit()
     }
 
+    func removePins() {
+        if let pin = userPin {
+            pin.removeFromParentNode()
+            userPin = nil
+        }
+        if let pin = actualPin {
+            pin.removeFromParentNode()
+            actualPin = nil
+        }
+    }
+
     func getUserPin() -> SCNNode {
         if userPin == nil {
             userPin = createPin(headColor: UIColor.red)
