@@ -28,11 +28,14 @@ class GameOverlayScene: SKScene {
     var game: Game!
     var gameScene: GameScene!
 
+    let formatter = NumberFormatter()
+
     weak var gameViewController: GameViewController!
 
     var score: Int64 = 0 {
         didSet {
-            self.points.text = "Score: \(self.score)"
+            let formatted = formatter.string(from: NSNumber(value: score))
+            self.points.text = "Score: \(formatted ?? "0")"
         }
     }
 
@@ -42,6 +45,10 @@ class GameOverlayScene: SKScene {
 
     override init(size: CGSize) {
         super.init(size: size)
+
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+        formatter.maximumFractionDigits = 0
     }
 
     func setup(sceneView: SCNView, gameScene: GameScene, menuScene: SCNScene, menuOverlayScene: SKScene, game: Game, gameViewController: GameViewController) {
@@ -129,6 +136,7 @@ class GameOverlayScene: SKScene {
             self.endTurn()
             self.resetProgressBar()
             self.computeScore()
+            
             let city = self.game.getCity()
             self.setActualPin(lat: city.lat, lon: city.lon)
         })

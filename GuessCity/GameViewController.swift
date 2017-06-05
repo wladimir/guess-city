@@ -110,7 +110,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
             if error == nil {
                 if let value = leaderboard.localPlayerScore {
                     self.gameOverlayScene.score = value.value
-                    self.gameOverlayScene.points.text = value.formattedValue
                 }
             }
         })
