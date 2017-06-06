@@ -121,8 +121,9 @@ class GameOverlayScene: SKScene {
     }
 
     func submitToGC(score: Int) {
-        let bestScoreInt = GKScore(leaderboardIdentifier: "grp.com.score.cityzen")
-        bestScoreInt.value = Int64(score)
+        let total = self.score + score
+        let bestScoreInt = GKScore(leaderboardIdentifier: "com.score.cityzen")
+        bestScoreInt.value = Int64(total)
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
                 print(error!.localizedDescription)

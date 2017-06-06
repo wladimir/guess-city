@@ -15,7 +15,7 @@ import GameKit
 
 class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcEnabled = Bool()
-    let gcDefaultLeaderBoard = "grp.com.score.cityzen"
+    let gcDefaultLeaderBoard = "com.score.cityzen"
 
     var score = 0
 
