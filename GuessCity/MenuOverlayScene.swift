@@ -103,7 +103,7 @@ class MenuOverlayScene: SKScene {
         let gcVC = GKGameCenterViewController()
         gcVC.gameCenterDelegate = gameViewController
         gcVC.viewState = .leaderboards
-        gcVC.leaderboardIdentifier = "com.score.cityzen"
+        gcVC.leaderboardIdentifier = "grp.com.score.cityzen"
         gcVC.gameCenterDelegate = gameViewController
         gameViewController.present(gcVC, animated: true, completion: nil)
     }

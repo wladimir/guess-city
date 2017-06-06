@@ -15,7 +15,7 @@ import GameKit
 
 class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcEnabled = Bool()
-    let gcDefaultLeaderBoard = "com.score.cityzen"
+    let gcDefaultLeaderBoard = "grp.com.score.cityzen"
 
     var score = 0
 
@@ -105,7 +105,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         leaderboard.loadScores(completionHandler: { _, error in
             if error == nil {
                 if let value = leaderboard.localPlayerScore {
-                    self.gameOverlayScene.score = value.value
+                    self.gameOverlayScene.score = Int(value.value)
                 }
             }
         })

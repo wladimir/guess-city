@@ -32,7 +32,7 @@ class GameOverlayScene: SKScene {
 
     private weak var gameViewController: GameViewController!
 
-    var score: Int64 = 0 {
+    var score: Int = 0 {
         didSet {
             let formatted = formatter.string(from: NSNumber(value: score))
             self.points.text = "Score: \(formatted ?? "0")"
@@ -121,7 +121,7 @@ class GameOverlayScene: SKScene {
     }
 
     func submitToGC(score: Int) {
-        let bestScoreInt = GKScore(leaderboardIdentifier: "com.score.cityzen")
+        let bestScoreInt = GKScore(leaderboardIdentifier: "grp.com.score.cityzen")
         bestScoreInt.value = Int64(score)
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
