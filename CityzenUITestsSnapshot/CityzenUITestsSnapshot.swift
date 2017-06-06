@@ -31,16 +31,6 @@ class CityzenUITestsSnapshot: XCTestCase {
     }
 
     func testSnapshot() {
-        snapshot("01Menu")
-
-        snapshot("02FirstLocation")
-
-        let element = XCUIApplication().children(matching: .window).element(boundBy: 0).children(matching: .other).element
-        element.swipeLeft()
-        element.press(forDuration: 0.9);
-        element.tap()
-
-        snapshot("03SecondLocation")
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
