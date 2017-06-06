@@ -9,8 +9,8 @@
 import Foundation
 
 class Game {
-    let cities = Cities()
-    var turn = 0
+    private let cities = Cities()
+    private var turn = 0
 
     init() {
         cities.load()

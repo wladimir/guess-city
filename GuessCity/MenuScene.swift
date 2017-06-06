@@ -10,7 +10,7 @@ import UIKit
 import SceneKit
 
 class MenuScene: SCNScene {
-    var earthNode: SCNNode!
+    private var earthNode: SCNNode!
 
     override init() {
         super.init()

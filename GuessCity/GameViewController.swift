@@ -15,11 +15,9 @@ import GameKit
 
 class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     var gcEnabled = Bool()
-    var gcDefaultLeaderBoard = String()
+    let gcDefaultLeaderBoard = "com.score.cityzen"
 
     var score = 0
-
-    let LEADERBOARD_ID = "com.score.cityzen.solipsist"
 
     var sceneView: SCNView!
     var gameScene: GameScene!
@@ -44,6 +42,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         }
         self.sceneView = sceneView
 
+        authenticateLocalPlayer()
+
         gameScene = GameScene(named: "game.scn")
         menuScene = MenuScene(named: "menu.scn")
         sceneView.scene = menuScene
@@ -62,8 +62,6 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
 
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(handlePan(_:)))
         sceneView.addGestureRecognizer(panGesture)
-
-        authenticateLocalPlayer()
 
         helper.createMusicPlayer(filename: "BlueLineLoopFixed.mp3")
         helper.playBackgroundMusic()
@@ -88,10 +86,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
                 self.gcEnabled = true
 
                 // get the default leaderboard ID
-                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (leaderboardIdentifer, error) in
+                localPlayer.loadDefaultLeaderboardIdentifier(completionHandler: { (_, error) in
                     if error == nil {
-                        self.gcDefaultLeaderBoard = leaderboardIdentifer!
-
                         self.getExistingScore()
                     }
                 })
@@ -104,8 +100,8 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
     }
 
     func getExistingScore() {
-        let leaderboard = GKLeaderboard()
-        leaderboard.identifier = "com.score.cityzen"
+        let leaderboard = GKLeaderboard(players: [GKLocalPlayer.localPlayer()])
+        leaderboard.identifier = gcDefaultLeaderBoard
         leaderboard.loadScores(completionHandler: { _, error in
             if error == nil {
                 if let value = leaderboard.localPlayerScore {
@@ -158,8 +154,7 @@ class GameViewController: UIViewController, GKGameCenterControllerDelegate {
         setUserPin(vec: (hit?.localCoordinates)!)
     }
 
-    func resetUserPin() {
-        gameScene.removePins()
+    func resetUserLocation() {
         userLocation = nil
     }
 

@@ -13,24 +13,24 @@ import Iconic
 import GameKit
 
 class GameOverlayScene: SKScene {
-    let helper = Helper.sharedInstance
+    private let helper = Helper.sharedInstance
 
-    var location1: SKLabelNode!
-    var location2: SKLabelNode!
-    var points: SKLabelNode!
-    var band: SKShapeNode!
-    var message: SKLabelNode!
+    private var capital: SKLabelNode!
+    private var country: SKLabelNode!
+    private var points: SKLabelNode!
+    private var band: SKShapeNode!
+    private var message: SKLabelNode!
 
-    var timestamp: CFTimeInterval = 0.0
-    let maxResponseTime: CFTimeInterval = Constants.maxResponseTime
-    let durationBetweenTurns: CFTimeInterval = Constants.durationBetweenTurns
+    private var timestamp: CFTimeInterval = 0.0
+    private let maxResponseTime: CFTimeInterval = Constants.maxResponseTime
+    private let durationBetweenTurns: CFTimeInterval = Constants.durationBetweenTurns
 
-    var game: Game!
-    var gameScene: GameScene!
+    private var game: Game!
+    private var gameScene: GameScene!
 
-    let formatter = NumberFormatter()
+    private let formatter = NumberFormatter()
 
-    weak var gameViewController: GameViewController!
+    private weak var gameViewController: GameViewController!
 
     var score: Int64 = 0 {
         didSet {
@@ -39,9 +39,9 @@ class GameOverlayScene: SKScene {
         }
     }
 
-    var sceneView: SCNView!
-    var menuScene: SCNScene!
-    var menuOverlayScene: SKScene!
+    private var sceneView: SCNView!
+    private var menuScene: SCNScene!
+    private var menuOverlayScene: SKScene!
 
     override init(size: CGSize) {
         super.init(size: size)
@@ -68,8 +68,8 @@ class GameOverlayScene: SKScene {
         homeButton.name = "menu"
         self.addChild(homeButton)
 
-        location1 = addText(x: size.width/8, y: size.height/1.15, text: "", size: 25, name: "capital")
-        location2 = addText(x: size.width/8, y: size.height/1.21, text: "", size: 17, name: "country")
+        capital = addText(x: size.width/8, y: size.height/1.15, text: "", size: 25, name: "capital")
+        country = addText(x: size.width/8, y: size.height/1.21, text: "", size: 17, name: "country")
 
         let pointsText = "Score: 0"
         points = addText(x: size.width/7, y: size.height/5, text: pointsText, size: 20, name: "points")
@@ -126,6 +126,8 @@ class GameOverlayScene: SKScene {
         GKScore.report([bestScoreInt]) { (error) in
             if error != nil {
                 print(error!.localizedDescription)
+            } else {
+                print("Best Score submitted to your Leaderboard!")
             }
         }
     }
@@ -136,7 +138,7 @@ class GameOverlayScene: SKScene {
             self.endTurn()
             self.resetProgressBar()
             self.computeScore()
-            
+
             let city = self.game.getCity()
             self.setActualPin(lat: city.lat, lon: city.lon)
         })
@@ -170,7 +172,6 @@ class GameOverlayScene: SKScene {
 
     override func didMove(to view: SKView) {
         startTurn()
-        helper.state = .turnStarted
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -192,7 +193,8 @@ class GameOverlayScene: SKScene {
         resetProgressBar()
         sceneView.present(menuScene, with: .fade(withDuration: 2), incomingPointOfView: nil, completionHandler: {
             self.endTurn()
-            self.gameViewController.resetUserPin()
+            self.gameScene.removePins()
+            self.gameViewController.resetUserLocation()
             self.helper.fadeInBackgroundMusic()
         })
     }
@@ -208,14 +210,15 @@ class GameOverlayScene: SKScene {
     func startTurn() {
         helper.state = .turnStarted
 
-        game.startTurn()
-
-        message.text = ""
         gameScene.removePins()
+        gameViewController.resetUserLocation()
+
+        game.startTurn()
+        message.text = ""
 
         let city = game.getCity()
-        location1.text = city.capital
-        location2.text = city.country
+        capital.text = city.capital
+        country.text = city.country
 
         runProgressBar()
     }

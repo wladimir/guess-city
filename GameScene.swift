@@ -13,8 +13,8 @@ class GameScene: SCNScene {
     var earthNode: SCNNode!
     var cameraNode: SCNNode!
 
-    var pivot: SCNMatrix4!
-    var rotation: SCNVector4!
+    private var pivot: SCNMatrix4!
+    private var rotation: SCNVector4!
 
     private var userPin: SCNNode!
     private var actualPin: SCNNode!
@@ -34,9 +34,10 @@ class GameScene: SCNScene {
         rotation = earthNode.rotation
     }
 
-    func turnStarted() {
+    // not used
+    func resetEarth() {
         SCNTransaction.begin()
-        SCNTransaction.animationDuration = 1.0
+        SCNTransaction.animationDuration = 0.001
         earthNode.pivot = pivot
         earthNode.rotation = rotation
         earthNode.transform = SCNMatrix4Identity

@@ -9,7 +9,7 @@
 import SQLite
 
 class Cities {
-    var cities = [City]()
+    private var cities = [City]()
 
     struct City {
         let capital: String

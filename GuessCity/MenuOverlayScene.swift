@@ -13,13 +13,13 @@ import Iconic
 import GameKit
 
 class MenuOverlayScene: SKScene {
-    let helper = Helper.sharedInstance
+    private let helper = Helper.sharedInstance
 
-    var sceneView: SCNView!
-    var gameScene: SCNScene!
-    var gameOverlayScene: SKScene!
+    private var sceneView: SCNView!
+    private var gameScene: SCNScene!
+    private var gameOverlayScene: SKScene!
 
-    weak var gameViewController: GameViewController!
+    private weak var gameViewController: GameViewController!
 
     override init(size: CGSize) {
         super.init(size: size)
@@ -100,11 +100,12 @@ class MenuOverlayScene: SKScene {
     }
 
     private func showLeaderboard() {
-            let gcVC = GKGameCenterViewController()
-            gcVC.gameCenterDelegate = gameViewController
-            gcVC.viewState = .leaderboards
-            gcVC.leaderboardIdentifier = "com.score.cityzen"
-            gameViewController.present(gcVC, animated: true, completion: nil)
+        let gcVC = GKGameCenterViewController()
+        gcVC.gameCenterDelegate = gameViewController
+        gcVC.viewState = .leaderboards
+        gcVC.leaderboardIdentifier = "com.score.cityzen"
+        gcVC.gameCenterDelegate = gameViewController
+        gameViewController.present(gcVC, animated: true, completion: nil)
     }
 
     func showAboutScreen() {

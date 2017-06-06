@@ -9,7 +9,7 @@
 import UIKit
 
 class AboutViewController: UIViewController {
-    let helper = Helper.sharedInstance
+    private let helper = Helper.sharedInstance
 
     @IBAction func backButton(_ sender: UIButton) {
         helper.playSound(filename: "misc_menu_4.wav")
