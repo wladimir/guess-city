@@ -228,7 +228,7 @@ class GameOverlayScene: SKScene {
         if helper.state == .tapToPlay {
             return
         }
-        
+
         if currentTime - timestamp < maxResponseTime {
             return
         }

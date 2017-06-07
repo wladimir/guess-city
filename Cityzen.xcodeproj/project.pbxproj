@@ -71,6 +71,7 @@
 		7DEABB111DE8F59A0047AE42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEABB0F1DE8F59A0047AE42 /* LaunchScreen.storyboard */; };
 		7DEABB1C1DE8F59A0047AE42 /* GuessCityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB1B1DE8F59A0047AE42 /* GuessCityTests.swift */; };
 		7DEABB271DE8F59A0047AE42 /* GuessCityUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */; };
+		7DFD9DF01EE82E4100A72A18 /* 5.5 in Resources */ = {isa = PBXBuildFile; fileRef = 7DFD9DEF1EE82E4100A72A18 /* 5.5 */; };
 		B9AA024FA3434C16875F3D03 /* Pods_Cityzen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12B84ABC286EEE58CADB2611 /* Pods_Cityzen.framework */; };
 /* End PBXBuildFile section */
 
@@ -175,6 +176,7 @@
 		7DEABB221DE8F59A0047AE42 /* CityzenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEABB261DE8F59A0047AE42 /* GuessCityUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessCityUITests.swift; sourceTree = "<group>"; };
 		7DEABB281DE8F59A0047AE42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7DFD9DEF1EE82E4100A72A18 /* 5.5 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = 5.5; sourceTree = "<group>"; };
 		AB144F397AEF1D97172E260C /* Pods-Cityzen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cityzen.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cityzen/Pods-Cityzen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -326,6 +328,7 @@
 		7DEABAF81DE8F59A0047AE42 = {
 			isa = PBXGroup;
 			children = (
+				7DFD9DEE1EE82E3600A72A18 /* Screenshots */,
 				7D470D4C1E1D202E000BF4F0 /* README.md */,
 				7DEABB031DE8F59A0047AE42 /* Cityzen */,
 				7DEABB1A1DE8F59A0047AE42 /* CityzenTests */,
@@ -391,6 +394,14 @@
 			);
 			name = CityzenUITests;
 			path = GuessCityUITests;
+			sourceTree = "<group>";
+		};
+		7DFD9DEE1EE82E3600A72A18 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				7DFD9DEF1EE82E4100A72A18 /* 5.5 */,
+			);
+			name = Screenshots;
 			sourceTree = "<group>";
 		};
 		7DFF5B701E5F33FE00A4A50B /* Fonts */ = {
@@ -568,6 +579,7 @@
 				7DB2E2871E680EEF00703F0E /* Icon-83.5@2x.png in Resources */,
 				7D9DCAFB1E7D3CFD00B7D8BA /* misc_menu_4.wav in Resources */,
 				7DE794ED1E3D7861006FCF54 /* water_4k.png in Resources */,
+				7DFD9DF01EE82E4100A72A18 /* 5.5 in Resources */,
 				7DA642FA1ED83BBE0080A726 /* arrow-left.png in Resources */,
 				7DB2E2851E680EEF00703F0E /* Icon-76@2x.png in Resources */,
 				7DB2E28F1E680EEF00703F0E /* iTunesArtwork@3x.png in Resources */,

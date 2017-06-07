@@ -31,6 +31,7 @@ class Cities {
             let db = try Connection(path, readonly: true)
 
             let statement = try db.run("SELECT name, country, latitude, longitude FROM cities ORDER BY RANDOM()", [:])
+            //let statement = try db.run("SELECT name, country, latitude, longitude FROM cities where name in ('New York City', 'Rio de Janeiro')", [:])
 
             for row in statement where row.count == 4 {
                 guard let capital = row[0] as? String else {
