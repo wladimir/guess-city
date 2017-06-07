@@ -12,7 +12,6 @@
 		7D3EC1001E1F0F690084953E /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3EC0FF1E1F0F690084953E /* Helper.swift */; };
 		7D4674851E5EEB6D00F7A3C0 /* splash2.png in Resources */ = {isa = PBXBuildFile; fileRef = 7D4674841E5EEB6D00F7A3C0 /* splash2.png */; };
 		7D470D4D1E1D202E000BF4F0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 7D470D4C1E1D202E000BF4F0 /* README.md */; };
-		7D5027EA1ED57B3A00F70A21 /* positive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7D5027E91ED57B3A00F70A21 /* positive.wav */; };
 		7D6AEAA11ECB49040056D747 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6AEAA01ECB49040056D747 /* Constants.swift */; };
 		7D6D6A8A1EDF508400D5A2E8 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D1D877C1E300CA8009144BB /* GameKit.framework */; };
 		7D6E1BC21EE0481200A1BB9A /* CityzenUITestsSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D6E1BC11EE0481200A1BB9A /* CityzenUITestsSnapshot.swift */; };
@@ -110,7 +109,6 @@
 		7D3EC0FF1E1F0F690084953E /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = ../Helper.swift; sourceTree = "<group>"; };
 		7D4674841E5EEB6D00F7A3C0 /* splash2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash2.png; sourceTree = "<group>"; };
 		7D470D4C1E1D202E000BF4F0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		7D5027E91ED57B3A00F70A21 /* positive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = positive.wav; sourceTree = "<group>"; };
 		7D6AEAA01ECB49040056D747 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = ../Constants.swift; sourceTree = "<group>"; };
 		7D6E1BBF1EE0481200A1BB9A /* CityzenUITestsSnapshot.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityzenUITestsSnapshot.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D6E1BC11EE0481200A1BB9A /* CityzenUITestsSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityzenUITestsSnapshot.swift; sourceTree = "<group>"; };
@@ -310,7 +308,6 @@
 			isa = PBXGroup;
 			children = (
 				7D9DCAFA1E7D3CFD00B7D8BA /* misc_menu_4.wav */,
-				7D5027E91ED57B3A00F70A21 /* positive.wav */,
 				7DE9323F1E55E90A007CB28C /* BlueLineLoopFixed.mp3 */,
 			);
 			name = Sounds;
@@ -603,7 +600,6 @@
 				7DEABB0E1DE8F59A0047AE42 /* Assets.xcassets in Resources */,
 				7DB2E28A1E680EEF00703F0E /* Icon.png in Resources */,
 				7DDE0DD71E3256EF009951D1 /* game.scn in Resources */,
-				7D5027EA1ED57B3A00F70A21 /* positive.wav in Resources */,
 				7DB2E2891E680EEF00703F0E /* Icon-96@2x.png in Resources */,
 				7DB2E2861E680EEF00703F0E /* Icon-76@3x.png in Resources */,
 				7DE9CC341EE1B68700499CE1 /* cities.db in Resources */,
@@ -859,7 +855,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -903,7 +899,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -919,6 +915,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GuessCity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.Cityzen;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -934,6 +931,7 @@
 				DEVELOPMENT_TEAM = ZXF6S9LSXH;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = GuessCity/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.solipsist.Cityzen;
 				PRODUCT_NAME = "$(TARGET_NAME)";

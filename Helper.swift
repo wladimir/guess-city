@@ -72,13 +72,13 @@ class Helper {
 
     func fadeOutBackgroundMusic() {
         if let p = musicPlayer {
-            p.setVolume(0.0, fadeDuration: 2)
+            p.volume = 0
         }
     }
 
     func fadeInBackgroundMusic() {
         if let p = musicPlayer {
-            p.setVolume(0.5, fadeDuration: 2)
+            p.volume = 0.5
         }
     }
 
